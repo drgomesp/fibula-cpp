@@ -26,23 +26,23 @@ public:
 template<template<class> class EventType, class PayloadType>
 class SimpleListener : public Listener<EventType, PayloadType> {
 public:
-    virtual void handleEvent(const EventType<PayloadType> &event) override {
+    virtual const void handleEvent(EventType<PayloadType> *event) override {
         cout << "SimpleListener::handleEvent" << endl;
     }
+
+    ~SimpleListener() {}
 };
 
 int main() {
-    SimplePayload *simplePayload = new SimplePayload(25);
-    SimpleEvent<SimplePayload> *simpleEvent = new SimpleEvent<SimplePayload>(*simplePayload);
+    Payload *simplePayload = new SimplePayload(25);
+    Event<Payload> *simpleEvent = new SimpleEvent<Payload>(*simplePayload);
 
-    SimpleListener<SimpleEvent, SimplePayload> *simpleListener = new SimpleListener<SimpleEvent, SimplePayload>();
+    Listener<Event, Payload> *simpleListener = new SimpleListener<Event, Payload>();
 
-    Dispatcher *dispatcher = new Dispatcher({});
-    Listener<Event, Payload> *cSimpleListener = dynamic_cast<Listener<Event, Payload> *>(simpleListener);
-    dispatcher->addListener(cSimpleListener);
+    Dispatcher *dispatcher = new Dispatcher();
 
-    Event<Payload> *cSimpleEvent = dynamic_cast<Event<Payload> *>(simpleEvent);
-    dispatcher->dispatchEvent(*cSimpleEvent);
+    dispatcher->addListener(simpleListener);
+    dispatcher->dispatchEvent(simpleEvent);
 
     return EXIT_SUCCESS;
 }

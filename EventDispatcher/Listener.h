@@ -8,7 +8,8 @@ namespace Fibula {
         template<template<class> class EventType, class PayloadType>
         class Listener {
         public:
-            virtual void handleEvent(const EventType<PayloadType> &event) = 0;
+            virtual const void handleEvent(EventType<PayloadType> *event) = 0;
+            virtual ~Listener() {};
         };
     }
 }
