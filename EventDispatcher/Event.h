@@ -1,14 +1,15 @@
 #pragma once
 
+#include "Payload.h"
+
 namespace Fibula {
     namespace EventDispatcher {
-        template<class PayloadType>
         class Event {
         protected:
-            PayloadType payload;
+            Payload payload;
         public:
-            Event(PayloadType &payload) : payload(payload) { }
-            PayloadType getPayload() { return payload; }
+            Event(Payload &payload) : payload(payload) { }
+            Payload getPayload() { return payload; }
             virtual ~Event() {}
         };
     }

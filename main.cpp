@@ -15,33 +15,49 @@ public:
     int getNumber() { return number; };
 };
 
-template<class PayloadType>
-class SimpleEvent : public Event<PayloadType> {
-protected:
-    PayloadType payload;
+class SimpleEvent : public Event {
 public:
-    SimpleEvent(PayloadType &payload) : Event<PayloadType>(payload), payload(payload) { }
+    SimpleEvent(SimplePayload &payload) : Event(payload) { }
 };
 
-template<template<class> class EventType, class PayloadType>
-class SimpleListener : public Listener<EventType, PayloadType> {
+class ComplexEvent : public Event {
 public:
-    virtual const void handleEvent(EventType<PayloadType> *event) override {
-        cout << "SimpleListener::handleEvent" << endl;
-    }
+    ComplexEvent(SimplePayload &payload) : Event(payload) { }
+};
 
-    ~SimpleListener() {}
+class SimpleListener : public Listener {
+public:
+    virtual const void handleEvent(Event *event) override {
+        SimpleEvent *e = dynamic_cast<SimpleEvent *>(event);
+
+        if (e) {
+            cout << "SimpleListener::handleEvent" << endl;
+        }
+    }
+};
+
+class ComplexListener : public Listener {
+public:
+    virtual const void handleEvent(Event *event) override {
+        ComplexEvent *e = dynamic_cast<ComplexEvent *>(event);
+
+        if (e) {
+            cout << "ComplexListener::handleEvent" << endl;
+        }
+    }
 };
 
 int main() {
-    Payload *simplePayload = new SimplePayload(25);
-    Event<Payload> *simpleEvent = new SimpleEvent<Payload>(*simplePayload);
+    SimplePayload *simplePayload = new SimplePayload(25);
+    Event *simpleEvent = new SimpleEvent(*simplePayload);
 
-    Listener<Event, Payload> *simpleListener = new SimpleListener<Event, Payload>();
-
+    SimpleListener *simpleListener = new SimpleListener();
+    ComplexListener *complexListener = new ComplexListener();
     Dispatcher *dispatcher = new Dispatcher();
 
     dispatcher->addListener(simpleListener);
+    dispatcher->addListener(complexListener);
+    
     dispatcher->dispatchEvent(simpleEvent);
 
     return EXIT_SUCCESS;

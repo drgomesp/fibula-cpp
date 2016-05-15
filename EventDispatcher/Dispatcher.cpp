@@ -4,12 +4,12 @@
 
 using namespace Fibula::EventDispatcher;
 
-void Dispatcher::addListener(Listener<Event, Payload> *listener) {
+void Dispatcher::addListener(Listener *listener) {
     listeners.push_back(listener);
 }
 
-void Dispatcher::dispatchEvent(Event<Payload> *event) {
-    for (Listener<Event, Payload> *listener: listeners) {
+void Dispatcher::dispatchEvent(Event *event) {
+    for (Listener *listener: listeners) {
         listener->handleEvent(event);
     }
 }

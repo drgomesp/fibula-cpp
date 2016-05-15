@@ -11,10 +11,10 @@ namespace Fibula {
     namespace EventDispatcher {
         class Dispatcher {
         protected:
-            std::vector<Listener<Event, Payload> *> listeners;
+            std::vector<Listener *> listeners;
         public:
-            void addListener(Listener<Event, Payload> *listener);
-            void dispatchEvent(Event<Payload> *event);
+            void addListener(Listener *listener);
+            void dispatchEvent(Event *event);
         };
     }
 }
