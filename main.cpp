@@ -48,17 +48,17 @@ public:
 };
 
 int main() {
-    SimplePayload *simplePayload = new SimplePayload(25);
-    Event *simpleEvent = new SimpleEvent(*simplePayload);
+    boost::shared_ptr<SimplePayload> simplePayload(new SimplePayload(25));
+    boost::shared_ptr<Event> simpleEvent(new SimpleEvent(*boost::get_pointer(simplePayload)));
 
-    SimpleListener *simpleListener = new SimpleListener();
-    ComplexListener *complexListener = new ComplexListener();
-    Dispatcher *dispatcher = new Dispatcher();
+    boost::shared_ptr<SimpleListener> simpleListener(new SimpleListener());
+    boost::shared_ptr<ComplexListener> complexListener(new ComplexListener());
+    boost::shared_ptr<Dispatcher> dispatcher(new Dispatcher());
 
-    dispatcher->addListener(simpleListener);
-    dispatcher->addListener(complexListener);
+    dispatcher->addListener(boost::get_pointer(simpleListener));
+    dispatcher->addListener(boost::get_pointer(complexListener));
     
-    dispatcher->dispatchEvent(simpleEvent);
+    dispatcher->dispatchEvent(boost::get_pointer(simpleEvent));
 
     return EXIT_SUCCESS;
 }
