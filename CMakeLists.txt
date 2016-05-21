@@ -1,7 +1,27 @@
 cmake_minimum_required(VERSION 3.5)
 project(Fibula)
 
+include_directories( BEFORE src/ )
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wall -W -pedantic")
 
-set(SOURCE_FILES main.cpp EventDispatcher/Event.cpp EventDispatcher/Event.h EventDispatcher/Listener.cpp EventDispatcher/Listener.h EventDispatcher/Dispatcher.cpp EventDispatcher/Dispatcher.h EventDispatcher/Payload.h)
+find_package(SDL2 REQUIRED)
+
+set(SOURCE_FILES
+    main.cpp
+        src/Fibula/Core/Kernel.cpp
+        src/Fibula/Core/Kernel.h
+        src/Fibula/EventDispatcher/Event.cpp
+        src/Fibula/EventDispatcher/Event.h
+        src/Fibula/EventDispatcher/Listener.cpp
+        src/Fibula/EventDispatcher/Listener.h
+        src/Fibula/EventDispatcher/Dispatcher.cpp
+        src/Fibula/EventDispatcher/Dispatcher.h
+        src/Fibula/EventDispatcher/Payload.h
+        src/Fibula/Core.h src/Fibula/Graphics/Window.cpp src/Fibula/Graphics/Window.h)
+
 add_executable(Fibula ${SOURCE_FILES})
+
+include_directories(${SDL2_INCLUDE_DIRS})
+target_link_libraries(Fibula ${SDL2_LIBRARIES})
+
+add_custom_target(valgrind)

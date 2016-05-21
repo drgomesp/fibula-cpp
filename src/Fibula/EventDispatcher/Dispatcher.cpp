@@ -1,7 +1,5 @@
 #include "Dispatcher.h"
 
-#include <iostream>
-
 using namespace Fibula::EventDispatcher;
 
 void Dispatcher::addListener(Listener *listener) {
