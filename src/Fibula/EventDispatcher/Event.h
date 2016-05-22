@@ -4,13 +4,24 @@
 
 namespace Fibula {
     namespace EventDispatcher {
-        class Event {
+        class Event
+        {
         protected:
             Payload payload;
         public:
-            Event(Payload &payload) : payload(payload) { }
-            Payload getPayload() { return payload; }
-            virtual ~Event() {}
+            Event()
+            { }
+
+            Event(Payload &payload) : payload(payload)
+            { }
+
+            Payload getPayload()
+            {
+                return payload;
+            }
+
+            virtual ~Event()
+            { }
         };
     }
 }

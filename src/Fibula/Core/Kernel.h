@@ -1,9 +1,8 @@
 #pragma once
 
-#include <Fibula/EventDispatcher.h>
-#include <Fibula/Graphics.h>
+#include <Fibula/Graphics/Window.h>
+#include <Fibula/EventDispatcher/Dispatcher.h>
 
-using namespace std;
 using namespace Fibula::Graphics;
 using namespace Fibula::EventDispatcher;
 

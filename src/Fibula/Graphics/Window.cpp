@@ -1,11 +1,15 @@
 #include "Window.h"
 
-#include <iostream>
+#include <boost/shared_ptr.hpp>
+#include <Fibula/Bridge/EventDispatcher/SDLEventListener.h>
 
-Fibula::Graphics::Window::Window(const string &title, int width, int height)
+using namespace Fibula::Graphics;
+
+Window::Window(const string &title, int width, int height, Dispatcher *dispatcher)
         : title(title),
           width(width),
-          height(height)
+          height(height),
+          dispatcher(dispatcher)
 {
     SDL_Init(SDL_INIT_VIDEO);
 
@@ -23,7 +27,18 @@ Fibula::Graphics::Window::Window(const string &title, int width, int height)
     }
 }
 
-Fibula::Graphics::Window::~Window()
+Window::~Window()
 {
 
 }
+
+void Window::handleEvents()
+{
+    SDL_Event event;
+
+    while (SDL_PollEvent(&event)) {
+        boost::shared_ptr<SDLEvent> sdlEvent(new SDLEvent(event.type));
+        this->dispatcher->dispatchEvent(boost::get_pointer(sdlEvent));
+    }
+}
+

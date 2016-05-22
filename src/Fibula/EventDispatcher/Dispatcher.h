@@ -1,11 +1,10 @@
 #pragma once
 
 #include <vector>
-#include <boost/shared_ptr.hpp>
 
-#include "Event.h"
-#include "Listener.h"
-#include "Payload.h"
+#include <Fibula/EventDispatcher/Event.h>
+#include <Fibula/EventDispatcher/Listener.h>
+#include <Fibula/EventDispatcher/Payload.h>
 
 using namespace std;
 
