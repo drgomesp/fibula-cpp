@@ -5,7 +5,7 @@
 
 using namespace Fibula::Graphics;
 
-Window::Window(const string &title, int width, int height, Dispatcher *dispatcher)
+Window::Window(const string &title, int width, int height, boost::shared_ptr<Dispatcher> dispatcher)
         : title(title),
           width(width),
           height(height),
@@ -38,7 +38,7 @@ void Window::handleEvents()
 
     while (SDL_PollEvent(&event)) {
         boost::shared_ptr<SDLEvent> sdlEvent(new SDLEvent(event.type));
-        this->dispatcher->dispatchEvent(boost::get_pointer(sdlEvent));
+        this->dispatcher->dispatchEvent(sdlEvent);
     }
 }
 

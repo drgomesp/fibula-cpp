@@ -17,7 +17,7 @@ namespace Fibula {
                 SDLEvent(Uint32 type) : type(type)
                 {}
 
-                Uint32 getType()
+                Uint32 getType() const
                 {
                     return this->type;
                 }

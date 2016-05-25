@@ -1,5 +1,6 @@
 #include "Kernel.h"
 
+#include <iostream>
 #include <boost/shared_ptr.hpp>
 #include <Fibula/Bridge/EventDispatcher/SDLEventListener.h>
 
@@ -8,44 +9,40 @@ using namespace Fibula::Graphics;
 using namespace Fibula::EventDispatcher;
 using namespace Fibula::Bridge::EventDispatcher;
 
-class FakeListener : public Listener
+class SimpleListener : public Listener
 {
 public:
-    FakeListener()
-    { }
+    virtual void handleEvent(boost::shared_ptr<Event> event) override
+    {
+        std::cout << "SimpleListener::handleEvent()" << std::endl;
+    }
+
+    ~SimpleListener()
+    {}
 };
 
 Kernel::Kernel()
 {
-    this->bootstrap();
 }
 
 void Kernel::bootstrap()
 {
-    try {
-        boost::shared_ptr<Dispatcher> eventDispatcher(new Dispatcher);
-        this->eventDispatcher = boost::get_pointer(eventDispatcher);
+    boost::shared_ptr<Dispatcher> eventDispatcher(new Dispatcher);
+    boost::shared_ptr<SimpleListener> sdlEventListener(new SimpleListener);
 
-        boost::shared_ptr<SDLEventListener> sdlEventListener(new SDLEventListener(this));
-        this->eventDispatcher->addListener(boost::get_pointer(sdlEventListener));
-    } catch (exception const &e) {
-        this->booted = false;
-        throw e;
-    }
+    eventDispatcher->addListener(sdlEventListener);
+    this->eventDispatcher = eventDispatcher;
 
-    try {
-        boost::shared_ptr<Window> window(new Window("Fibula Engine :: v1.0.0", 640, 480, this->eventDispatcher));
-        this->window = boost::get_pointer(window);
-    } catch (exception const &e) {
-        this->booted = false;
-        throw e;
-    }
+    boost::shared_ptr<Window> window(new Window("Fibula Engine :: v1.0.0", 640, 480, eventDispatcher));
+    this->window = window;
 
     this->booted = true;
 }
 
 void Kernel::run()
 {
+    this->bootstrap();
+
     if (!this->booted) {
         throw runtime_error("Failed to run engine because it was never booted");
     }

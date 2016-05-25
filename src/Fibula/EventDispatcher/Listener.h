@@ -1,13 +1,13 @@
 #pragma once
 
+#include <boost/shared_ptr.hpp>
 #include "Event.h"
-#include <iostream>
 
 namespace Fibula {
     namespace EventDispatcher {
         class Listener {
         public:
-            virtual void handleEvent(Event *event) = 0;
+            virtual void handleEvent(boost::shared_ptr<Event> event) = 0;
             virtual ~Listener() {};
         };
     }

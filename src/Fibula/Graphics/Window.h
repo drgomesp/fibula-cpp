@@ -4,6 +4,7 @@
 #include <SDL2/SDL.h>
 
 #include <Fibula/EventDispatcher/Dispatcher.h>
+#include <boost/shared_ptr.hpp>
 
 using namespace std;
 using namespace Fibula::EventDispatcher;
@@ -17,9 +18,9 @@ namespace Fibula {
             int width;
             int height;
             SDL_Window *window;
-            Dispatcher *dispatcher;
+            boost::shared_ptr<Dispatcher> dispatcher;
         public:
-            Window(const string &title, int width, int height, Dispatcher *dispatcher);
+            Window(const string &title, int width, int height, boost::shared_ptr<Dispatcher> dispatcher);
             ~Window();
             void handleEvents();
         };

@@ -2,13 +2,11 @@
 
 using namespace Fibula::Bridge::EventDispatcher;
 
-void SDLEventListener::handleEvent(Event *event)
+void SDLEventListener::handleEvent(boost::shared_ptr<Event> event)
 {
-    SDLEvent *sdlEvent = dynamic_cast<SDLEvent *>(event);
+    SDLEvent *sdlEvent = dynamic_cast<SDLEvent *>(event.get());
 
-    if (sdlEvent) {
-        if (sdlEvent->getType() == SDL_QUIT) {
-            this->kernel->terminate();
-        }
+    if (sdlEvent->getType() == SDL_QUIT) {
+        this->kernel->terminate();
     }
 }

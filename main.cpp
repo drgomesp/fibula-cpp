@@ -5,10 +5,12 @@ using namespace std;
 using namespace Fibula::Core;
 
 int main() {
+    Kernel game;
+
     try {
-        Kernel game;
         game.run();
     } catch (exception const &e) {
+        game.terminate();
         cout << e.what() << endl;
         return EXIT_FAILURE;
     }
