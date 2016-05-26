@@ -28,7 +28,10 @@ set(SOURCE_FILES
     src/Fibula/Bridge/EventDispatcher/SDLEventListener.hpp
     src/Fibula/Bridge/EventDispatcher/SDLEvent.hpp
     src/Fibula/Bridge/EventDispatcher/SDLPayload.hpp
-    src/Fibula/EventDispatcher/Payload.hpp)
+    src/Fibula/EventDispatcher/Payload.hpp
+    src/Fibula/Console/ConsoleListener.cpp
+    src/Fibula/Console/ConsoleListener.hpp
+    src/Fibula/Console/ConsoleEvent.hpp src/Fibula/Console/ConsolePayload.hpp)
 
 add_executable(Fibula ${SOURCE_FILES})
 

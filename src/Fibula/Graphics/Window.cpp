@@ -6,7 +6,7 @@ using namespace Fibula::Graphics;
 using namespace Fibula::EventDispatcher;
 using namespace Fibula::Bridge::EventDispatcher;
 
-Window::Window(const std::string &title, int width, int height, const Dispatcher &dispatcher)
+Window::Window(const std::string &title, int width, int height, Dispatcher &dispatcher)
         : title(title),
           width(width),
           height(height),
@@ -42,11 +42,9 @@ void Window::handleEvents()
         boost::shared_ptr<SDLPayload> sdlPayload(new SDLPayload(event));
         SDLPayload *pSDLPayload = sdlPayload.get();
 
-        boost::shared_ptr<SDLEvent> sdlEvent(
-                new SDLEvent(boost::str(boost::format("event.sdl.%1%") % event.type), *pSDLPayload)
-        );
+        boost::shared_ptr<SDLEvent> sdlEvent(new SDLEvent(boost::str(boost::format("event.sdl.%1%") % event.type), *pSDLPayload));
 
-        this->dispatcher.dispatchEvent(sdlEvent.get());
+        this->dispatcher.dispatchEvent(sdlEvent);
     }
 }
 

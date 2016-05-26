@@ -3,15 +3,15 @@
 
 using namespace Fibula::EventDispatcher;
 
-void Dispatcher::addListener(Listener *listener)
+void Dispatcher::addListener(boost::shared_ptr<Listener> listener)
 {
-    this->listeners.reserve(this->getListenerMemorySize(*listener));
+    this->listeners.reserve(this->getListenerMemorySize(*listener.get()));
     this->listeners.push_back(listener);
 }
 
-void Dispatcher::dispatchEvent(Event *event) const
+void Dispatcher::dispatchEvent(boost::shared_ptr<Event> event) const
 {
-    for (Listener *listener: this->listeners) {
+    for (boost::shared_ptr<Listener> listener: this->listeners) {
         LISTENER_RESPONSE response = listener->handleEvent(event);
     }
 }
@@ -19,13 +19,4 @@ void Dispatcher::dispatchEvent(Event *event) const
 size_t Dispatcher::getListenerMemorySize(Listener listener) const
 {
     return sizeof(listener) + this->listeners.size();
-}
-
-
-Dispatcher::~Dispatcher()
-{
-    for (Listener *listener: this->listeners) {
-        delete listener;
-        listener = NULL;
-    }
 }

@@ -1,8 +1,10 @@
 #include <stdexcept>
 #include <Fibula/Core/Kernel.hpp>
 #include <Fibula/Bridge/EventDispatcher/SDLEventListener.hpp>
+#include <Fibula/Console/ConsoleListener.hpp>
 
 using namespace Fibula::Core;
+using namespace Fibula::Console;
 using namespace Fibula::Graphics;
 using namespace Fibula::EventDispatcher;
 using namespace Fibula::Bridge::EventDispatcher;
@@ -13,10 +15,13 @@ Kernel::Kernel()
 
 void Kernel::bootstrap()
 {
-    SDLEventListener *sdlEventListener = new SDLEventListener(this);
-    this->dispatcher.addListener(sdlEventListener);
+    boost::shared_ptr<SDLEventListener> sdlEventListener(new SDLEventListener(this));
+    boost::shared_ptr<ConsoleListener> consoleListener(new ConsoleListener(this));
 
-    Window *window = new Window("Fibula Engine :: v1.0.0", 640, 480, this->dispatcher);
+    this->dispatcher.addListener(sdlEventListener);
+    this->dispatcher.addListener(consoleListener);
+
+    boost::shared_ptr<Window> window(new Window("Fibula Engine :: v1.0.0", 1024, 768, this->dispatcher));
     this->window = window;
 
     this->booted = true;
@@ -39,8 +44,5 @@ void Kernel::run()
 
 void Kernel::terminate()
 {
-    delete this->window;
-    this->window = NULL;
-
     this->running = false;
 }

@@ -15,9 +15,9 @@ namespace Fibula {
             int width;
             int height;
             SDL_Window *window;
-            const Fibula::EventDispatcher::Dispatcher &dispatcher;
+            Fibula::EventDispatcher::Dispatcher &dispatcher;
         public:
-            Window(const std::string &title, int width, int height, const Fibula::EventDispatcher::Dispatcher &dispatcher);
+            Window(const std::string &title, int width, int height, Fibula::EventDispatcher::Dispatcher &dispatcher);
             ~Window();
             void handleEvents();
         };
