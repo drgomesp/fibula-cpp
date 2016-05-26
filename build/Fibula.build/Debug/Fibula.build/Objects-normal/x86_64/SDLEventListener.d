@@ -1,9 +1,9 @@
 dependencies: \
   /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.cpp \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.h \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/KernelAwareListener.h \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/Kernel.h \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.h \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.hpp \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/KernelAwareListener.hpp \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/Kernel.hpp \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.hpp \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL.h \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL_main.h \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL_stdinc.h \
@@ -47,7 +47,7 @@ dependencies: \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL_system.h \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL_timer.h \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL_version.h \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.h \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.hpp \
   /usr/local/include/boost/ptr_container/ptr_vector.hpp \
   /usr/local/include/boost/ptr_container/ptr_sequence_adapter.hpp \
   /usr/local/include/boost/ptr_container/detail/reversible_ptr_container.hpp \
@@ -382,150 +382,8 @@ dependencies: \
   /usr/local/include/boost/detail/is_incrementable.hpp \
   /usr/local/include/boost/type_traits/detail/bool_trait_undef.hpp \
   /usr/local/include/boost/ptr_container/detail/void_ptr_iterator.hpp \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Event.h \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Payload.h \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Listener.h \
-  /usr/local/include/boost/shared_ptr.hpp \
-  /usr/local/include/boost/smart_ptr/shared_ptr.hpp \
-  /usr/local/include/boost/config/no_tr1/memory.hpp \
-  /usr/local/include/boost/throw_exception.hpp \
-  /usr/local/include/boost/smart_ptr/detail/shared_count.hpp \
-  /usr/local/include/boost/smart_ptr/bad_weak_ptr.hpp \
-  /usr/local/include/boost/smart_ptr/detail/sp_counted_base.hpp \
-  /usr/local/include/boost/smart_ptr/detail/sp_has_sync.hpp \
-  /usr/local/include/boost/smart_ptr/detail/sp_counted_base_clang.hpp \
-  /usr/local/include/boost/detail/sp_typeinfo.hpp \
-  /usr/local/include/boost/core/typeinfo.hpp \
-  /usr/local/include/boost/core/demangle.hpp \
-  /usr/local/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
-  /usr/local/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
-  /usr/local/include/boost/smart_ptr/detail/sp_convertible.hpp \
-  /usr/local/include/boost/smart_ptr/detail/spinlock_pool.hpp \
-  /usr/local/include/boost/smart_ptr/detail/spinlock.hpp \
-  /usr/local/include/boost/smart_ptr/detail/spinlock_sync.hpp \
-  /usr/local/include/boost/smart_ptr/detail/yield_k.hpp \
-  /usr/local/include/boost/predef.h \
-  /usr/local/include/boost/predef/language.h \
-  /usr/local/include/boost/predef/language/stdc.h \
-  /usr/local/include/boost/predef/version_number.h \
-  /usr/local/include/boost/predef/make.h \
-  /usr/local/include/boost/predef/detail/test.h \
-  /usr/local/include/boost/predef/language/stdcpp.h \
-  /usr/local/include/boost/predef/language/objc.h \
-  /usr/local/include/boost/predef/architecture.h \
-  /usr/local/include/boost/predef/architecture/alpha.h \
-  /usr/local/include/boost/predef/architecture/arm.h \
-  /usr/local/include/boost/predef/architecture/blackfin.h \
-  /usr/local/include/boost/predef/architecture/convex.h \
-  /usr/local/include/boost/predef/architecture/ia64.h \
-  /usr/local/include/boost/predef/architecture/m68k.h \
-  /usr/local/include/boost/predef/architecture/mips.h \
-  /usr/local/include/boost/predef/architecture/parisc.h \
-  /usr/local/include/boost/predef/architecture/ppc.h \
-  /usr/local/include/boost/predef/architecture/pyramid.h \
-  /usr/local/include/boost/predef/architecture/rs6k.h \
-  /usr/local/include/boost/predef/architecture/sparc.h \
-  /usr/local/include/boost/predef/architecture/superh.h \
-  /usr/local/include/boost/predef/architecture/sys370.h \
-  /usr/local/include/boost/predef/architecture/sys390.h \
-  /usr/local/include/boost/predef/architecture/x86.h \
-  /usr/local/include/boost/predef/architecture/x86/32.h \
-  /usr/local/include/boost/predef/architecture/x86/64.h \
-  /usr/local/include/boost/predef/architecture/z.h \
-  /usr/local/include/boost/predef/compiler.h \
-  /usr/local/include/boost/predef/compiler/borland.h \
-  /usr/local/include/boost/predef/compiler/clang.h \
-  /usr/local/include/boost/predef/detail/comp_detected.h \
-  /usr/local/include/boost/predef/compiler/comeau.h \
-  /usr/local/include/boost/predef/compiler/compaq.h \
-  /usr/local/include/boost/predef/compiler/diab.h \
-  /usr/local/include/boost/predef/compiler/digitalmars.h \
-  /usr/local/include/boost/predef/compiler/dignus.h \
-  /usr/local/include/boost/predef/compiler/edg.h \
-  /usr/local/include/boost/predef/compiler/ekopath.h \
-  /usr/local/include/boost/predef/compiler/gcc_xml.h \
-  /usr/local/include/boost/predef/compiler/gcc.h \
-  /usr/local/include/boost/predef/compiler/greenhills.h \
-  /usr/local/include/boost/predef/compiler/hp_acc.h \
-  /usr/local/include/boost/predef/compiler/iar.h \
-  /usr/local/include/boost/predef/compiler/ibm.h \
-  /usr/local/include/boost/predef/compiler/intel.h \
-  /usr/local/include/boost/predef/compiler/kai.h \
-  /usr/local/include/boost/predef/compiler/llvm.h \
-  /usr/local/include/boost/predef/compiler/metaware.h \
-  /usr/local/include/boost/predef/compiler/metrowerks.h \
-  /usr/local/include/boost/predef/compiler/microtec.h \
-  /usr/local/include/boost/predef/compiler/mpw.h \
-  /usr/local/include/boost/predef/compiler/palm.h \
-  /usr/local/include/boost/predef/compiler/pgi.h \
-  /usr/local/include/boost/predef/compiler/sgi_mipspro.h \
-  /usr/local/include/boost/predef/compiler/sunpro.h \
-  /usr/local/include/boost/predef/compiler/tendra.h \
-  /usr/local/include/boost/predef/compiler/visualc.h \
-  /usr/local/include/boost/predef/compiler/watcom.h \
-  /usr/local/include/boost/predef/library.h \
-  /usr/local/include/boost/predef/library/c.h \
-  /usr/local/include/boost/predef/library/c/_prefix.h \
-  /usr/local/include/boost/predef/detail/_cassert.h \
-  /usr/local/include/boost/predef/library/c/gnu.h \
-  /usr/local/include/boost/predef/library/c/uc.h \
-  /usr/local/include/boost/predef/library/c/vms.h \
-  /usr/local/include/boost/predef/library/c/zos.h \
-  /usr/local/include/boost/predef/library/std.h \
-  /usr/local/include/boost/predef/library/std/_prefix.h \
-  /usr/local/include/boost/predef/detail/_exception.h \
-  /usr/local/include/boost/predef/library/std/cxx.h \
-  /usr/local/include/boost/predef/library/std/dinkumware.h \
-  /usr/local/include/boost/predef/library/std/libcomo.h \
-  /usr/local/include/boost/predef/library/std/modena.h \
-  /usr/local/include/boost/predef/library/std/msl.h \
-  /usr/local/include/boost/predef/library/std/roguewave.h \
-  /usr/local/include/boost/predef/library/std/sgi.h \
-  /usr/local/include/boost/predef/library/std/stdcpp3.h \
-  /usr/local/include/boost/predef/library/std/stlport.h \
-  /usr/local/include/boost/predef/library/std/vacpp.h \
-  /usr/local/include/boost/predef/os.h \
-  /usr/local/include/boost/predef/os/aix.h \
-  /usr/local/include/boost/predef/os/amigaos.h \
-  /usr/local/include/boost/predef/os/android.h \
-  /usr/local/include/boost/predef/os/beos.h \
-  /usr/local/include/boost/predef/os/bsd.h \
-  /usr/local/include/boost/predef/os/macos.h \
-  /usr/local/include/boost/predef/os/ios.h \
-  /usr/local/include/boost/predef/detail/os_detected.h \
-  /usr/local/include/boost/predef/os/bsd/bsdi.h \
-  /usr/local/include/boost/predef/os/bsd/dragonfly.h \
-  /usr/local/include/boost/predef/os/bsd/free.h \
-  /usr/local/include/boost/predef/os/bsd/open.h \
-  /usr/local/include/boost/predef/os/bsd/net.h \
-  /usr/local/include/boost/predef/os/cygwin.h \
-  /usr/local/include/boost/predef/os/haiku.h \
-  /usr/local/include/boost/predef/os/hpux.h \
-  /usr/local/include/boost/predef/os/irix.h \
-  /usr/local/include/boost/predef/os/linux.h \
-  /usr/local/include/boost/predef/os/os400.h \
-  /usr/local/include/boost/predef/os/qnxnto.h \
-  /usr/local/include/boost/predef/os/solaris.h \
-  /usr/local/include/boost/predef/os/unix.h \
-  /usr/local/include/boost/predef/os/vms.h \
-  /usr/local/include/boost/predef/os/windows.h \
-  /usr/local/include/boost/predef/other.h \
-  /usr/local/include/boost/predef/other/endian.h \
-  /usr/local/include/boost/predef/platform.h \
-  /usr/local/include/boost/predef/platform/mingw.h \
-  /usr/local/include/boost/predef/platform/windows_desktop.h \
-  /usr/local/include/boost/predef/platform/windows_store.h \
-  /usr/local/include/boost/predef/platform/windows_phone.h \
-  /usr/local/include/boost/predef/platform/windows_runtime.h \
-  /usr/local/include/boost/predef/hardware.h \
-  /usr/local/include/boost/predef/hardware/simd.h \
-  /usr/local/include/boost/predef/hardware/simd/x86.h \
-  /usr/local/include/boost/predef/hardware/simd/x86/versions.h \
-  /usr/local/include/boost/predef/hardware/simd/x86_amd.h \
-  /usr/local/include/boost/predef/hardware/simd/x86_amd/versions.h \
-  /usr/local/include/boost/predef/hardware/simd/arm.h \
-  /usr/local/include/boost/predef/hardware/simd/arm/versions.h \
-  /usr/local/include/boost/predef/hardware/simd/ppc.h \
-  /usr/local/include/boost/predef/hardware/simd/ppc/versions.h \
-  /usr/local/include/boost/predef/version.h \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEvent.h
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Event.hpp \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Payload.hpp \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Listener.hpp \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEvent.hpp \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLPayload.hpp

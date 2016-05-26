@@ -1,6 +1,6 @@
 dependencies: \
   /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.cpp \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.h \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.hpp \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL.h \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL_main.h \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL_stdinc.h \
@@ -44,7 +44,7 @@ dependencies: \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL_system.h \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL_timer.h \
   /usr/local/Cellar/sdl2/2.0.4/include/SDL2/SDL_version.h \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.h \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.hpp \
   /usr/local/include/boost/ptr_container/ptr_vector.hpp \
   /usr/local/include/boost/ptr_container/ptr_sequence_adapter.hpp \
   /usr/local/include/boost/ptr_container/detail/reversible_ptr_container.hpp \
@@ -379,13 +379,58 @@ dependencies: \
   /usr/local/include/boost/detail/is_incrementable.hpp \
   /usr/local/include/boost/type_traits/detail/bool_trait_undef.hpp \
   /usr/local/include/boost/ptr_container/detail/void_ptr_iterator.hpp \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Event.h \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Payload.h \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Listener.h \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Event.hpp \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Payload.hpp \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Listener.hpp \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEvent.hpp \
+  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLPayload.hpp \
+  /usr/local/include/boost/format.hpp \
+  /usr/local/include/boost/format/detail/compat_workarounds.hpp \
+  /usr/local/include/boost/format/detail/config_macros.hpp \
+  /usr/local/include/boost/format/detail/workarounds_gcc-2_95.hpp \
+  /usr/local/include/boost/format/detail/workarounds_stlport.hpp \
+  /usr/local/include/boost/format/format_fwd.hpp \
+  /usr/local/include/boost/format/internals_fwd.hpp \
+  /usr/local/include/boost/format/internals.hpp \
+  /usr/local/include/boost/optional.hpp \
+  /usr/local/include/boost/optional/optional.hpp \
+  /usr/local/include/boost/core/explicit_operator_bool.hpp \
+  /usr/local/include/boost/core/swap.hpp \
+  /usr/local/include/boost/optional/bad_optional_access.hpp \
+  /usr/local/include/boost/throw_exception.hpp \
+  /usr/local/include/boost/type.hpp \
+  /usr/local/include/boost/type_traits/alignment_of.hpp \
+  /usr/local/include/boost/type_traits/has_nothrow_constructor.hpp \
+  /usr/local/include/boost/type_traits/is_default_constructible.hpp \
+  /usr/local/include/boost/type_traits/type_with_alignment.hpp \
+  /usr/local/include/boost/type_traits/decay.hpp \
+  /usr/local/include/boost/type_traits/is_nothrow_move_assignable.hpp \
+  /usr/local/include/boost/type_traits/has_trivial_move_assign.hpp \
+  /usr/local/include/boost/type_traits/is_assignable.hpp \
+  /usr/local/include/boost/type_traits/has_nothrow_assign.hpp \
+  /usr/local/include/boost/type_traits/is_nothrow_move_constructible.hpp \
+  /usr/local/include/boost/detail/reference_content.hpp \
+  /usr/local/include/boost/type_traits/has_nothrow_copy.hpp \
+  /usr/local/include/boost/type_traits/is_copy_constructible.hpp \
+  /usr/local/include/boost/type_traits/is_constructible.hpp \
+  /usr/local/include/boost/type_traits/is_destructible.hpp \
+  /usr/local/include/boost/move/utility.hpp \
+  /usr/local/include/boost/move/detail/config_begin.hpp \
+  /usr/local/include/boost/move/utility_core.hpp \
+  /usr/local/include/boost/move/core.hpp \
+  /usr/local/include/boost/move/detail/workaround.hpp \
+  /usr/local/include/boost/move/detail/config_end.hpp \
+  /usr/local/include/boost/move/detail/meta_utils.hpp \
+  /usr/local/include/boost/move/detail/meta_utils_core.hpp \
+  /usr/local/include/boost/move/traits.hpp \
+  /usr/local/include/boost/move/detail/type_traits.hpp \
+  /usr/local/include/boost/none.hpp /usr/local/include/boost/none_t.hpp \
+  /usr/local/include/boost/utility/compare_pointees.hpp \
+  /usr/local/include/boost/optional/optional_fwd.hpp \
+  /usr/local/include/boost/format/alt_sstream.hpp \
   /usr/local/include/boost/shared_ptr.hpp \
   /usr/local/include/boost/smart_ptr/shared_ptr.hpp \
   /usr/local/include/boost/config/no_tr1/memory.hpp \
-  /usr/local/include/boost/throw_exception.hpp \
   /usr/local/include/boost/smart_ptr/detail/shared_count.hpp \
   /usr/local/include/boost/smart_ptr/bad_weak_ptr.hpp \
   /usr/local/include/boost/smart_ptr/detail/sp_counted_base.hpp \
@@ -525,50 +570,6 @@ dependencies: \
   /usr/local/include/boost/predef/hardware/simd/ppc.h \
   /usr/local/include/boost/predef/hardware/simd/ppc/versions.h \
   /usr/local/include/boost/predef/version.h \
-  /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEvent.h \
-  /usr/local/include/boost/format.hpp \
-  /usr/local/include/boost/format/detail/compat_workarounds.hpp \
-  /usr/local/include/boost/format/detail/config_macros.hpp \
-  /usr/local/include/boost/format/detail/workarounds_gcc-2_95.hpp \
-  /usr/local/include/boost/format/detail/workarounds_stlport.hpp \
-  /usr/local/include/boost/format/format_fwd.hpp \
-  /usr/local/include/boost/format/internals_fwd.hpp \
-  /usr/local/include/boost/format/internals.hpp \
-  /usr/local/include/boost/optional.hpp \
-  /usr/local/include/boost/optional/optional.hpp \
-  /usr/local/include/boost/core/explicit_operator_bool.hpp \
-  /usr/local/include/boost/core/swap.hpp \
-  /usr/local/include/boost/optional/bad_optional_access.hpp \
-  /usr/local/include/boost/type.hpp \
-  /usr/local/include/boost/type_traits/alignment_of.hpp \
-  /usr/local/include/boost/type_traits/has_nothrow_constructor.hpp \
-  /usr/local/include/boost/type_traits/is_default_constructible.hpp \
-  /usr/local/include/boost/type_traits/type_with_alignment.hpp \
-  /usr/local/include/boost/type_traits/decay.hpp \
-  /usr/local/include/boost/type_traits/is_nothrow_move_assignable.hpp \
-  /usr/local/include/boost/type_traits/has_trivial_move_assign.hpp \
-  /usr/local/include/boost/type_traits/is_assignable.hpp \
-  /usr/local/include/boost/type_traits/has_nothrow_assign.hpp \
-  /usr/local/include/boost/type_traits/is_nothrow_move_constructible.hpp \
-  /usr/local/include/boost/detail/reference_content.hpp \
-  /usr/local/include/boost/type_traits/has_nothrow_copy.hpp \
-  /usr/local/include/boost/type_traits/is_copy_constructible.hpp \
-  /usr/local/include/boost/type_traits/is_constructible.hpp \
-  /usr/local/include/boost/type_traits/is_destructible.hpp \
-  /usr/local/include/boost/move/utility.hpp \
-  /usr/local/include/boost/move/detail/config_begin.hpp \
-  /usr/local/include/boost/move/utility_core.hpp \
-  /usr/local/include/boost/move/core.hpp \
-  /usr/local/include/boost/move/detail/workaround.hpp \
-  /usr/local/include/boost/move/detail/config_end.hpp \
-  /usr/local/include/boost/move/detail/meta_utils.hpp \
-  /usr/local/include/boost/move/detail/meta_utils_core.hpp \
-  /usr/local/include/boost/move/traits.hpp \
-  /usr/local/include/boost/move/detail/type_traits.hpp \
-  /usr/local/include/boost/none.hpp /usr/local/include/boost/none_t.hpp \
-  /usr/local/include/boost/utility/compare_pointees.hpp \
-  /usr/local/include/boost/optional/optional_fwd.hpp \
-  /usr/local/include/boost/format/alt_sstream.hpp \
   /usr/local/include/boost/format/alt_sstream_impl.hpp \
   /usr/local/include/boost/format/format_class.hpp \
   /usr/local/include/boost/format/exceptions.hpp \

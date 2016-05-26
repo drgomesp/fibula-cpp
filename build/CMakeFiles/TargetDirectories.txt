@@ -1,4 +1,0 @@
-/Users/drgomesp/ClionProjects/Fibula/build/CMakeFiles/Fibula.dir
-/Users/drgomesp/ClionProjects/Fibula/build/CMakeFiles/valgrind.dir
-/Users/drgomesp/ClionProjects/Fibula/build/CMakeFiles/ALL_BUILD.dir
-/Users/drgomesp/ClionProjects/Fibula/build/CMakeFiles/ZERO_CHECK.dir
