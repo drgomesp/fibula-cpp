@@ -18,12 +18,12 @@ void Kernel::bootstrap()
     boost::shared_ptr<SDLEventListener> sdlEventListener(new SDLEventListener(this));
     boost::shared_ptr<ConsoleListener> consoleListener(new ConsoleListener(this));
 
-    this->dispatcher.addListener(sdlEventListener);
-    this->dispatcher.addListener(consoleListener);
+    this->dispatcher.addListener("event.sdl.*", sdlEventListener);
+    this->dispatcher.addListener("event.console.*", consoleListener);
 
     boost::shared_ptr<Window> window(new Window("Fibula Engine :: v1.0.0", 1024, 768, this->dispatcher));
-    this->window = window;
 
+    this->window = window;
     this->booted = true;
 }
 

@@ -9,20 +9,14 @@ namespace Fibula {
         class Event
         {
         protected:
-            const std::string &name;
             const Payload &payload;
         public:
-            Event(const std::string &name, const Payload &payload) : name(name), payload(payload)
+            Event(const Payload &payload) : payload(payload)
             { }
 
             virtual const Payload &getPayload() const
             {
                 return payload;
-            }
-
-            const std::string &getName() const
-            {
-                return name;
             }
 
             virtual ~Event()

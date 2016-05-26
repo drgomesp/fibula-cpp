@@ -21,10 +21,6 @@ namespace Fibula {
             void bootstrap();
             void run();
             void terminate();
-            boost::shared_ptr<Kernel> getShared()
-            {
-                return shared_from_this();
-            }
         };
     }
 }

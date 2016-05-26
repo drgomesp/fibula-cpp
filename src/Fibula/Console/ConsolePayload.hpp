@@ -7,7 +7,6 @@ namespace Fibula {
     namespace Console {
         class ConsolePayload : public EventDispatcher::Payload
         {
-
         };
     }
 }

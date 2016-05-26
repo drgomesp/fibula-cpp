@@ -12,8 +12,8 @@ namespace Fibula {
             private:
                 const SDLPayload &payload;
             public:
-                SDLEvent(const std::string &name, const SDLPayload &payload)
-                        : Event(name, payload), payload(payload)
+                SDLEvent(const SDLPayload &payload)
+                        : Event(payload), payload(payload)
                 { }
 
                 const SDLPayload &getPayload() const

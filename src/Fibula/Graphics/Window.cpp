@@ -42,9 +42,9 @@ void Window::handleEvents()
         boost::shared_ptr<SDLPayload> sdlPayload(new SDLPayload(event));
         SDLPayload *pSDLPayload = sdlPayload.get();
 
-        boost::shared_ptr<SDLEvent> sdlEvent(new SDLEvent(boost::str(boost::format("event.sdl.%1%") % event.type), *pSDLPayload));
+        boost::shared_ptr<SDLEvent> sdlEvent(new SDLEvent(*pSDLPayload));
 
-        this->dispatcher.dispatchEvent(sdlEvent);
+        this->dispatcher.dispatchEvent("event.sdl", sdlEvent);
     }
 }
 
