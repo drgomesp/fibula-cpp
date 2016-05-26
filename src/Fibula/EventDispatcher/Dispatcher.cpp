@@ -33,17 +33,12 @@ void Dispatcher::dispatchEvent(const std::string &eventName, boost::shared_ptr<E
 
 ListenerMap::const_iterator Dispatcher::searchListenersByPrefix(const std::string &prefix) const
 {
-    std::cout << "Searching listeners by event name: " << prefix << std::endl;
     ListenerMap::const_iterator it = this->listeners.lower_bound(prefix);
 
     if (it != this->listeners.end()) {
         const std::string &key = it->first;
 
-        // Is it a prefix?
-        std::cout << "Key: " << key << std::endl;
-
         if (key.compare(0, prefix.size(), prefix) == 0) {
-            std::cout << "Found candidate for event: " << prefix << std::endl;
             return it;
         }
     }
