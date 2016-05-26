@@ -18,9 +18,9 @@ namespace Fibula {
             int width;
             int height;
             SDL_Window *window;
-            boost::shared_ptr<Dispatcher> dispatcher;
+            Dispatcher dispatcher;
         public:
-            Window(const string &title, int width, int height, boost::shared_ptr<Dispatcher> dispatcher);
+            Window(const string &title, int width, int height, Dispatcher dispatcher);
             ~Window();
             void handleEvents();
         };

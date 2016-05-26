@@ -12,9 +12,12 @@ namespace Fibula {
         class KernelAwareListener : public Listener
         {
         protected:
-            boost::shared_ptr<Kernel> kernel;
+            Kernel *kernel;
         public:
-            KernelAwareListener(boost::shared_ptr<Kernel> kernel) : kernel(kernel)
+            KernelAwareListener(Kernel *kernel) : kernel(kernel)
+            { }
+
+            virtual ~KernelAwareListener()
             { }
         };
     }

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #include "Payload.h"
 
 namespace Fibula {
@@ -7,17 +8,20 @@ namespace Fibula {
         class Event
         {
         protected:
-            Payload payload;
+            const std::string &name;
+            Payload *payload;
         public:
-            Event()
+            Event(const std::string &name, Payload *payload) : name(name), payload(payload)
             { }
 
-            Event(Payload &payload) : payload(payload)
-            { }
-
-            Payload getPayload()
+            Payload* getPayload()
             {
                 return payload;
+            }
+
+            const std::string &getName() const
+            {
+                return name;
             }
 
             virtual ~Event()
@@ -25,4 +29,3 @@ namespace Fibula {
         };
     }
 }
-

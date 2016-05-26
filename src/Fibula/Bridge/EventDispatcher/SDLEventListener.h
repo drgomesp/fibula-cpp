@@ -11,17 +11,15 @@ namespace Fibula {
             class SDLEventListener : public KernelAwareListener
             {
             public:
-                virtual void handleEvent(boost::shared_ptr<Event> event) override;
+                virtual LISTENER_RESPONSE handleEvent(Event *event) override;
 
-                SDLEventListener(boost::shared_ptr<Kernel> kernel) : KernelAwareListener(kernel)
+                SDLEventListener(Kernel *kernel) : KernelAwareListener(kernel)
                 { }
 
-                virtual ~SDLEventListener()
-                { }
+                virtual ~SDLEventListener();
             };
         }
     }
 }
-
 
 #endif //FIBULA_SDLEVENTLISTENER_H

@@ -1,7 +1,5 @@
 #include "Kernel.h"
 
-#include <iostream>
-#include <boost/shared_ptr.hpp>
 #include <Fibula/Bridge/EventDispatcher/SDLEventListener.h>
 
 using namespace Fibula::Core;
@@ -9,31 +7,19 @@ using namespace Fibula::Graphics;
 using namespace Fibula::EventDispatcher;
 using namespace Fibula::Bridge::EventDispatcher;
 
-class SimpleListener : public Listener
-{
-public:
-    virtual void handleEvent(boost::shared_ptr<Event> event) override
-    {
-        std::cout << "SimpleListener::handleEvent()" << std::endl;
-    }
-
-    ~SimpleListener()
-    {}
-};
-
 Kernel::Kernel()
 {
 }
 
 void Kernel::bootstrap()
 {
-    boost::shared_ptr<Dispatcher> eventDispatcher(new Dispatcher);
-    boost::shared_ptr<SimpleListener> sdlEventListener(new SimpleListener);
+    Dispatcher dispatcher;
+    SDLEventListener *sdlEventListener = new SDLEventListener(this);
 
-    eventDispatcher->addListener(sdlEventListener);
-    this->eventDispatcher = eventDispatcher;
+    dispatcher.addListener(sdlEventListener);
+    this->dispatcher = dispatcher;
 
-    boost::shared_ptr<Window> window(new Window("Fibula Engine :: v1.0.0", 640, 480, eventDispatcher));
+    Window *window = new Window("Fibula Engine :: v1.0.0", 640, 480, dispatcher);
     this->window = window;
 
     this->booted = true;
@@ -56,5 +42,8 @@ void Kernel::run()
 
 void Kernel::terminate()
 {
+    delete this->window;
+    this->window = NULL;
+
     this->running = false;
 }

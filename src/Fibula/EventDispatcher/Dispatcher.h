@@ -14,11 +14,11 @@ namespace Fibula {
         class Dispatcher
         {
         private:
-            boost::ptr_vector<boost::shared_ptr<Listener>> listeners;
+            vector<Listener *> listeners;
         public:
             Dispatcher() : listeners(0) { }
-            void addListener(boost::shared_ptr<Listener> listener);
-            void dispatchEvent(boost::shared_ptr<Event> event);
+            void addListener(Listener *listener);
+            void dispatchEvent(Event *event);
             ~Dispatcher() {}
         private:
             size_t getListenerMemorySize(Listener listener) const;

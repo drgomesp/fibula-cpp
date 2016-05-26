@@ -4,23 +4,24 @@
 #include <Fibula/EventDispatcher/Event.h>
 #include <SDL2/SDL_events.h>
 
-using namespace Fibula::EventDispatcher;
-
 namespace Fibula {
     namespace Bridge {
         namespace EventDispatcher {
-            class SDLEvent : public Event
+            class SDLEvent : public Fibula::EventDispatcher::Event
             {
             private:
                 Uint32 type;
             public:
-                SDLEvent(Uint32 type) : type(type)
-                {}
+                SDLEvent(const string &name, Uint32 type) : Event(name, nullptr), type(type)
+                { }
 
                 Uint32 getType() const
                 {
                     return this->type;
                 }
+
+                virtual ~SDLEvent()
+                { }
             };
         }
     }

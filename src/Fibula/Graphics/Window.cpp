@@ -1,11 +1,11 @@
 #include "Window.h"
-
-#include <boost/shared_ptr.hpp>
-#include <Fibula/Bridge/EventDispatcher/SDLEventListener.h>
+#include <Fibula/Bridge/EventDispatcher/SDLEvent.h>
+#include <boost/format.hpp>
 
 using namespace Fibula::Graphics;
+using namespace Fibula::Bridge::EventDispatcher;
 
-Window::Window(const string &title, int width, int height, boost::shared_ptr<Dispatcher> dispatcher)
+Window::Window(const string &title, int width, int height, Dispatcher dispatcher)
         : title(title),
           width(width),
           height(height),
@@ -37,8 +37,11 @@ void Window::handleEvents()
     SDL_Event event;
 
     while (SDL_PollEvent(&event)) {
-        boost::shared_ptr<SDLEvent> sdlEvent(new SDLEvent(event.type));
-        this->dispatcher->dispatchEvent(sdlEvent);
+        boost::shared_ptr<SDLEvent> sdlEvent(
+            new SDLEvent(boost::str(boost::format("event.sdl.%1%") % event.type), event.type)
+        );
+
+        this->dispatcher.dispatchEvent(sdlEvent.get());
     }
 }
 

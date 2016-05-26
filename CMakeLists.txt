@@ -12,9 +12,7 @@ set(SOURCE_FILES
     src/Fibula/Core/Kernel.h
     src/Fibula/Core/KernelAwareListener.h
     src/Fibula/Core.h
-    src/Fibula/EventDispatcher/Event.cpp
     src/Fibula/EventDispatcher/Event.h
-    src/Fibula/EventDispatcher/Listener.cpp
     src/Fibula/EventDispatcher/Listener.h
     src/Fibula/EventDispatcher/Dispatcher.cpp
     src/Fibula/EventDispatcher/Dispatcher.h
@@ -23,7 +21,9 @@ set(SOURCE_FILES
     src/Fibula/Graphics/Window.cpp
     src/Fibula/Graphics/Window.h
     src/Fibula/Graphics.h
-    src/Fibula/Bridge/EventDispatcher/SDLEventListener.cpp src/Fibula/Bridge/EventDispatcher/SDLEventListener.h src/Fibula/Bridge/EventDispatcher/SDLEvent.cpp src/Fibula/Bridge/EventDispatcher/SDLEvent.h)
+    src/Fibula/Bridge/EventDispatcher/SDLEventListener.cpp
+    src/Fibula/Bridge/EventDispatcher/SDLEventListener.h
+    src/Fibula/Bridge/EventDispatcher/SDLEvent.h)
 
 add_executable(Fibula ${SOURCE_FILES})
 

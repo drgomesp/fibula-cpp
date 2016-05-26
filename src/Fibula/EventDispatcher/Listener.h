@@ -3,12 +3,20 @@
 #include <boost/shared_ptr.hpp>
 #include "Event.h"
 
+enum LISTENER_RESPONSE
+{
+    SUCCESS = 0, FAILURE = 1
+};
+
 namespace Fibula {
     namespace EventDispatcher {
-        class Listener {
+        class Listener
+        {
         public:
-            virtual void handleEvent(boost::shared_ptr<Event> event) = 0;
-            virtual ~Listener() {};
+            virtual LISTENER_RESPONSE handleEvent(Event *event) = 0;
+
+            virtual ~Listener()
+            { }
         };
     }
 }

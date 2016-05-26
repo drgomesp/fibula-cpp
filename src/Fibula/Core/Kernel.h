@@ -14,8 +14,8 @@ namespace Fibula {
             bool running = false;
             bool booted = false;
 
-            boost::shared_ptr<Dispatcher> eventDispatcher;
-            boost::shared_ptr<Window> window;
+            Dispatcher dispatcher;
+            Window *window;
         public:
             Kernel();
             void bootstrap();

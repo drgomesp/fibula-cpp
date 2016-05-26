@@ -1,18 +1,20 @@
 #include "Dispatcher.h"
-#include <boost/foreach.hpp>
+#include <iostream>
 
 using namespace Fibula::EventDispatcher;
 
-void Dispatcher::addListener(boost::shared_ptr<Listener> listener)
+void Dispatcher::addListener(Listener *listener)
 {
     this->listeners.reserve(this->getListenerMemorySize(*listener));
-    this->listeners.push_back(&listener);
+    this->listeners.push_back(listener);
 }
 
-void Dispatcher::dispatchEvent(boost::shared_ptr<Event> event)
+void Dispatcher::dispatchEvent(Event *event)
 {
-    for (boost::shared_ptr<Listener> listener : this->listeners) {
-        listener->handleEvent(event);
+    std::cout << "Dispatching event " << event->getName() << std::endl;
+
+    for (Listener *listener: this->listeners) {
+        LISTENER_RESPONSE response = listener->handleEvent(event);
     }
 }
 
