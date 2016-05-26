@@ -12,7 +12,7 @@
 
 namespace Fibula {
     namespace EventDispatcher {
-        typedef std::vector<boost::shared_ptr<Listener>> ListenerVector;
+        typedef std::vector<boost::shared_ptr<const Listener>> ListenerVector;
         typedef std::map<std::string, ListenerVector> ListenerMap;
 
         class Dispatcher
@@ -20,13 +20,11 @@ namespace Fibula {
         private:
              ListenerMap listeners;
         public:
-            void addListener(const std::string &eventName, boost::shared_ptr<Listener> listener);
-            void dispatchEvent(const std::string &eventName, boost::shared_ptr<Event> event) const;
+            void addListener(const std::string &eventName, boost::shared_ptr<const Listener> listener);
+            void dispatchEvent(const std::string &eventName, boost::shared_ptr<const Event> event) const;
             ~Dispatcher() { }
         private:
-            size_t getListenerMemorySize(Listener listener) const;
             ListenerMap::const_iterator searchListenersByPrefix(const std::string &prefix) const;
-            bool canHandleEvent(const std::string &eventName) const;
         };
     }
 }

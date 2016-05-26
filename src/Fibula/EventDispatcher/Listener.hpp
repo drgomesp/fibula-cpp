@@ -13,7 +13,7 @@ namespace Fibula {
         class Listener
         {
         public:
-            virtual LISTENER_RESPONSE handleEvent(boost::shared_ptr<Event> event) = 0;
+            virtual LISTENER_RESPONSE handleEvent(boost::shared_ptr<const Event> event) const = 0;
 
             virtual ~Listener()
             { }
