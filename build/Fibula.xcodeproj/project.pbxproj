@@ -1,0 +1,887 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		431D3BFFDECC456BB9BC18D8 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B1F2301FC2B54B72BCDF4A12 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				A7B09ED690FB4EAFA3DAEF5A /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		6EC194EDE322436F8B0EB3B7 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 15F4AB9E13F64DB68DABAB3F /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				7D8A5D81F7864A15A929EB62 /* CMake Rules */,
+			);
+			dependencies = (
+				BCB08C403ECC44A38A6C5BAB /* PBXTargetDependency */,
+				5F69329DC46249CD80D50687 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		F936236712F0476099F2A6CD /* valgrind */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AD0E5C34BFBD4388A4D47B5F /* Build configuration list for PBXAggregateTarget "valgrind" */;
+			buildPhases = (
+			);
+			dependencies = (
+				EF70D9E6E1B34F33A8E50FA5 /* PBXTargetDependency */,
+			);
+			name = valgrind;
+			productName = valgrind;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		17C5B9E407FB45EDB195BE8E /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.cpp */ = {isa = PBXBuildFile; fileRef = 4AF9AC45EFB248BF9D1FFB56 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		1A473519DF4F48F3856B9D15 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.h */ = {isa = PBXBuildFile; fileRef = 1DD2232706224260A1697838 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.h */; settings = {COMPILER_FLAGS = ""; }; };
+		3027C4FBC1734D3195132C35 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.h */ = {isa = PBXBuildFile; fileRef = 7ABF3D11FBD5443DABA04E1A /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.h */; settings = {COMPILER_FLAGS = ""; }; };
+		4379153BDA6744E29D00E204 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher.h */ = {isa = PBXBuildFile; fileRef = 3E0DA290636349DFB902C016 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher.h */; settings = {COMPILER_FLAGS = ""; }; };
+		4E24CD676AEC444CB930FE6B /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.cpp */ = {isa = PBXBuildFile; fileRef = 0C737A911B4343CF8AA13F22 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		510463146A8D47A18331C8F8 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/Kernel.h */ = {isa = PBXBuildFile; fileRef = DA5EAF19BF1344CEBF12B465 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/Kernel.h */; settings = {COMPILER_FLAGS = ""; }; };
+		5B626FAF1A954456940F4BA9 /* /Users/drgomesp/ClionProjects/Fibula/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = C2FF9F4A4A8A4D9BA5BC3AC8 /* /Users/drgomesp/ClionProjects/Fibula/CMakeLists.txt */; settings = {COMPILER_FLAGS = ""; }; };
+		5E987801630643799DDA42BF /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.cpp */ = {isa = PBXBuildFile; fileRef = C0204385912B43779A248A96 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		628BBCD7AF934FCBBC2A9C95 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Event.h */ = {isa = PBXBuildFile; fileRef = 61C1B956033949C885202B68 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Event.h */; settings = {COMPILER_FLAGS = ""; }; };
+		802CE64912374AA3B5C78AAA /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Listener.h */ = {isa = PBXBuildFile; fileRef = F33DE29BF3774A35963348A4 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Listener.h */; settings = {COMPILER_FLAGS = ""; }; };
+		8EC1B41EF7CB4FE6B03B657B /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/KernelAwareListener.h */ = {isa = PBXBuildFile; fileRef = 7A9E5E77C9614FE68884122E /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/KernelAwareListener.h */; settings = {COMPILER_FLAGS = ""; }; };
+		90AACFE0AF1149B4ACD80CF1 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEvent.h */ = {isa = PBXBuildFile; fileRef = 0EDF8F6109A9452D9ED71628 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEvent.h */; settings = {COMPILER_FLAGS = ""; }; };
+		C305690181BF478C8EFD553C /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics.h */ = {isa = PBXBuildFile; fileRef = C079D0BF3A184B948548013B /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics.h */; settings = {COMPILER_FLAGS = ""; }; };
+		CF15BC435739498A96597796 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/Kernel.cpp */ = {isa = PBXBuildFile; fileRef = 26DBB59A85E140CDA9B8B110 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/Kernel.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		D078E336DA1A4D85B76F5F99 /* /Users/drgomesp/ClionProjects/Fibula/main.cpp */ = {isa = PBXBuildFile; fileRef = B4225142580F4405AD016793 /* /Users/drgomesp/ClionProjects/Fibula/main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		DC305CBD6C4A46659AB43305 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core.h */ = {isa = PBXBuildFile; fileRef = E629D260442F40EA8E529459 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core.h */; settings = {COMPILER_FLAGS = ""; }; };
+		DE3DC80FDA2D41C9BABAC778 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Payload.h */ = {isa = PBXBuildFile; fileRef = 73025B8F44914FA4B677AA48 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Payload.h */; settings = {COMPILER_FLAGS = ""; }; };
+		E1FC7D76904D4F7F81D12A53 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLPayload.h */ = {isa = PBXBuildFile; fileRef = 33C3B058D5F84A73BCFF710C /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLPayload.h */; settings = {COMPILER_FLAGS = ""; }; };
+		F081C7E5673245D78BA1A10F /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.h */ = {isa = PBXBuildFile; fileRef = C83965A5D9CF48D4AE1A1083 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.h */; settings = {COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		1A1B784E6BBE4CAAA004C53C /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		3DF84AD191EC4BC0BAE29444 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		630D6278664F432BAD4F3F2F /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		7468E7A4A4B343DD8F680FA9 = {
+			isa = PBXBuildStyle;
+		};
+		FBBE26199CF94D319929DD25 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		0B45E0012C804EA586D24FE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 926905CFE6434A0EB1937251 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 431D3BFFDECC456BB9BC18D8;
+			remoteInfo = ZERO_CHECK;
+		};
+		1F537BA095AB4FE68D3B6A25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 926905CFE6434A0EB1937251 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 431D3BFFDECC456BB9BC18D8;
+			remoteInfo = ZERO_CHECK;
+		};
+		422B9E9ACAA640A2A152A743 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 926905CFE6434A0EB1937251 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 431D3BFFDECC456BB9BC18D8;
+			remoteInfo = ZERO_CHECK;
+		};
+		C6AB1AA8E0834122A0ADCBC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 926905CFE6434A0EB1937251 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F887E23F6DBC4839B5EBE716;
+			remoteInfo = Fibula;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C737A911B4343CF8AA13F22 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SDLEventListener.cpp; path = src/Fibula/Bridge/EventDispatcher/SDLEventListener.cpp; sourceTree = SOURCE_ROOT; };
+		0EDF8F6109A9452D9ED71628 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEvent.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDLEvent.h; path = src/Fibula/Bridge/EventDispatcher/SDLEvent.h; sourceTree = SOURCE_ROOT; };
+		1DD2232706224260A1697838 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Window.h; path = src/Fibula/Graphics/Window.h; sourceTree = SOURCE_ROOT; };
+		26DBB59A85E140CDA9B8B110 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/Kernel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Kernel.cpp; path = src/Fibula/Core/Kernel.cpp; sourceTree = SOURCE_ROOT; };
+		33C3B058D5F84A73BCFF710C /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLPayload.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDLPayload.h; path = src/Fibula/Bridge/EventDispatcher/SDLPayload.h; sourceTree = SOURCE_ROOT; };
+		3E0DA290636349DFB902C016 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EventDispatcher.h; path = src/Fibula/EventDispatcher.h; sourceTree = SOURCE_ROOT; };
+		4AF9AC45EFB248BF9D1FFB56 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Dispatcher.cpp; path = src/Fibula/EventDispatcher/Dispatcher.cpp; sourceTree = SOURCE_ROOT; };
+		60AFD4AA77C340F1B4D51ECC /* Fibula */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Fibula; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+		61C1B956033949C885202B68 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Event.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Event.h; path = src/Fibula/EventDispatcher/Event.h; sourceTree = SOURCE_ROOT; };
+		6B80EC37762C4E5199B1D15C /* /Users/drgomesp/ClionProjects/Fibula/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		73025B8F44914FA4B677AA48 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Payload.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Payload.h; path = src/Fibula/EventDispatcher/Payload.h; sourceTree = SOURCE_ROOT; };
+		7A9E5E77C9614FE68884122E /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/KernelAwareListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = KernelAwareListener.h; path = src/Fibula/Core/KernelAwareListener.h; sourceTree = SOURCE_ROOT; };
+		7ABF3D11FBD5443DABA04E1A /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDLEventListener.h; path = src/Fibula/Bridge/EventDispatcher/SDLEventListener.h; sourceTree = SOURCE_ROOT; };
+		9CEF63E3E33B42568833AB9D /* /Users/drgomesp/ClionProjects/Fibula/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B4225142580F4405AD016793 /* /Users/drgomesp/ClionProjects/Fibula/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
+		C0204385912B43779A248A96 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Window.cpp; path = src/Fibula/Graphics/Window.cpp; sourceTree = SOURCE_ROOT; };
+		C079D0BF3A184B948548013B /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Graphics.h; path = src/Fibula/Graphics.h; sourceTree = SOURCE_ROOT; };
+		C29DC495E6D5498E8AB43132 /* /Users/drgomesp/ClionProjects/Fibula/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C2FF9F4A4A8A4D9BA5BC3AC8 /* /Users/drgomesp/ClionProjects/Fibula/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C83965A5D9CF48D4AE1A1083 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Dispatcher.h; path = src/Fibula/EventDispatcher/Dispatcher.h; sourceTree = SOURCE_ROOT; };
+		DA5EAF19BF1344CEBF12B465 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/Kernel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Kernel.h; path = src/Fibula/Core/Kernel.h; sourceTree = SOURCE_ROOT; };
+		E629D260442F40EA8E529459 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Core.h; path = src/Fibula/Core.h; sourceTree = SOURCE_ROOT; };
+		F33DE29BF3774A35963348A4 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Listener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Listener.h; path = src/Fibula/EventDispatcher/Listener.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		03D26DBA8C7F4DAC87A0C2DB = {
+			isa = PBXGroup;
+			children = (
+				2F0A3CE0D34C478099EAFF40 /* Sources */,
+				3B1123241C40412CBD51D094 /* Resources */,
+				1E8E20355BD1400EBBE10910 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0E5843133BF14C5B90EC1C21 /* Fibula */ = {
+			isa = PBXGroup;
+			children = (
+				1040E9662DAE48D19C97D93F /* Source Files */,
+				86BAB32390E149A780747C94 /* Header Files */,
+				C2FF9F4A4A8A4D9BA5BC3AC8 /* /Users/drgomesp/ClionProjects/Fibula/CMakeLists.txt */,
+			);
+			name = Fibula;
+			sourceTree = "<group>";
+		};
+		1040E9662DAE48D19C97D93F /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				B4225142580F4405AD016793 /* /Users/drgomesp/ClionProjects/Fibula/main.cpp */,
+				0C737A911B4343CF8AA13F22 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.cpp */,
+				26DBB59A85E140CDA9B8B110 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/Kernel.cpp */,
+				4AF9AC45EFB248BF9D1FFB56 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.cpp */,
+				C0204385912B43779A248A96 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		1E8E20355BD1400EBBE10910 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60AFD4AA77C340F1B4D51ECC /* Fibula */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22868FC8B0EF4F55B9F8566F /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		2F0A3CE0D34C478099EAFF40 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0E5843133BF14C5B90EC1C21 /* Fibula */,
+				87B3DFA837074FF98CC9B193 /* valgrind */,
+				A0C8F658DB7E4E6CAA408CF9 /* ALL_BUILD */,
+				72D753FEAD2F42B28FC3C64F /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		3B1123241C40412CBD51D094 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5EF22CDB228048BFB6497FA2 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		72D753FEAD2F42B28FC3C64F /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				5EF22CDB228048BFB6497FA2 /* CMake Rules */,
+				6B80EC37762C4E5199B1D15C /* /Users/drgomesp/ClionProjects/Fibula/CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		86BAB32390E149A780747C94 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				0EDF8F6109A9452D9ED71628 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEvent.h */,
+				7ABF3D11FBD5443DABA04E1A /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.h */,
+				33C3B058D5F84A73BCFF710C /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLPayload.h */,
+				E629D260442F40EA8E529459 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core.h */,
+				DA5EAF19BF1344CEBF12B465 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/Kernel.h */,
+				7A9E5E77C9614FE68884122E /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/KernelAwareListener.h */,
+				3E0DA290636349DFB902C016 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher.h */,
+				C83965A5D9CF48D4AE1A1083 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.h */,
+				61C1B956033949C885202B68 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Event.h */,
+				F33DE29BF3774A35963348A4 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Listener.h */,
+				73025B8F44914FA4B677AA48 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Payload.h */,
+				C079D0BF3A184B948548013B /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics.h */,
+				1DD2232706224260A1697838 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		87B3DFA837074FF98CC9B193 /* valgrind */ = {
+			isa = PBXGroup;
+			children = (
+				9CEF63E3E33B42568833AB9D /* /Users/drgomesp/ClionProjects/Fibula/CMakeLists.txt */,
+			);
+			name = valgrind;
+			sourceTree = "<group>";
+		};
+		A0C8F658DB7E4E6CAA408CF9 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				22868FC8B0EF4F55B9F8566F /* CMake Rules */,
+				C29DC495E6D5498E8AB43132 /* /Users/drgomesp/ClionProjects/Fibula/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F887E23F6DBC4839B5EBE716 /* Fibula */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15F146E702A9433C8211E6DA /* Build configuration list for PBXNativeTarget "Fibula" */;
+			buildPhases = (
+				28F548E204704E79B31E7B16 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				478011EDAE2B4C2BB6AE6C54 /* PBXTargetDependency */,
+			);
+			name = Fibula;
+			productName = Fibula;
+			productReference = 60AFD4AA77C340F1B4D51ECC /* Fibula */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		926905CFE6434A0EB1937251 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0730;
+			};
+			buildConfigurationList = 9A56718F976D414CAEBA7F22 /* Build configuration list for PBXProject "Fibula" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				1A1B784E6BBE4CAAA004C53C /* Debug */,
+				FBBE26199CF94D319929DD25 /* Release */,
+				630D6278664F432BAD4F3F2F /* MinSizeRel */,
+				3DF84AD191EC4BC0BAE29444 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 03D26DBA8C7F4DAC87A0C2DB;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				6EC194EDE322436F8B0EB3B7 /* ALL_BUILD */,
+				F887E23F6DBC4839B5EBE716 /* Fibula */,
+				431D3BFFDECC456BB9BC18D8 /* ZERO_CHECK */,
+				F936236712F0476099F2A6CD /* valgrind */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28E99F7A0FB14B1CB10825D7 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		3CBE71A6D3F74BD58B03EFC6 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		7D8A5D81F7864A15A929EB62 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/drgomesp/ClionProjects/Fibula/build -f /Users/drgomesp/ClionProjects/Fibula/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		A7B09ED690FB4EAFA3DAEF5A /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/drgomesp/ClionProjects/Fibula/build -f /Users/drgomesp/ClionProjects/Fibula/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		AD766FE28E2D447798E1329B = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28F548E204704E79B31E7B16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D078E336DA1A4D85B76F5F99 /* /Users/drgomesp/ClionProjects/Fibula/main.cpp */,
+				4E24CD676AEC444CB930FE6B /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Bridge/EventDispatcher/SDLEventListener.cpp */,
+				CF15BC435739498A96597796 /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Core/Kernel.cpp */,
+				17C5B9E407FB45EDB195BE8E /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/EventDispatcher/Dispatcher.cpp */,
+				5E987801630643799DDA42BF /* /Users/drgomesp/ClionProjects/Fibula/src/Fibula/Graphics/Window.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		478011EDAE2B4C2BB6AE6C54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 431D3BFFDECC456BB9BC18D8 /* ZERO_CHECK */;
+			targetProxy = 1F537BA095AB4FE68D3B6A25 /* PBXContainerItemProxy */;
+		};
+		5F69329DC46249CD80D50687 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 431D3BFFDECC456BB9BC18D8 /* ZERO_CHECK */;
+			targetProxy = 422B9E9ACAA640A2A152A743 /* PBXContainerItemProxy */;
+		};
+		BCB08C403ECC44A38A6C5BAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F887E23F6DBC4839B5EBE716 /* Fibula */;
+			targetProxy = C6AB1AA8E0834122A0ADCBC2 /* PBXContainerItemProxy */;
+		};
+		EF70D9E6E1B34F33A8E50FA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 431D3BFFDECC456BB9BC18D8 /* ZERO_CHECK */;
+			targetProxy = 0B45E0012C804EA586D24FE3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		059DEB47293840409485FF34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++14 -Wall -W -pedantic     ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -L/usr/local/Cellar/sdl2/2.0.4/lib  -lSDL2";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Fibula;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = Debug;
+		};
+		084F9DEB5E56443E9790F475 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk;
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build/build;
+			};
+			name = RelWithDebInfo;
+		};
+		0CE40A28DE0244D4AD36A579 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = RelWithDebInfo;
+		};
+		1425E40130DB4583B15A47C9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = RelWithDebInfo;
+		};
+		24DF5E71170A4A1C84EC8809 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = MinSizeRel;
+		};
+		311B6DCB6F844EB7AB960ABA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = Debug;
+		};
+		32AE46BDEA404ABF9E7C76B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk;
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build/build;
+			};
+			name = Debug;
+		};
+		35ED3E0740B54E6CAC0976FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = Release;
+		};
+		3A17D4CAE34B415CB77C9C8A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++14 -Wall -W -pedantic        -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -L/usr/local/Cellar/sdl2/2.0.4/lib  -lSDL2";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Fibula;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = RelWithDebInfo;
+		};
+		4C29EAB54B1D4D4FB165328B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = MinSizeRel;
+		};
+		4F0EC650B4F544B5BD079FA0 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk;
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build/build;
+			};
+			name = MinSizeRel;
+		};
+		92A2002F410B46F38CE96D7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = Debug;
+		};
+		9A3AFD0686E54C61BB5FFDB1 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++14 -Wall -W -pedantic     -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -L/usr/local/Cellar/sdl2/2.0.4/lib  -lSDL2";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Fibula;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = MinSizeRel;
+		};
+		B0B8A37207D2414D8AA80443 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = valgrind;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = RelWithDebInfo;
+		};
+		B5B8F80A38E4456F82A0B521 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = valgrind;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = MinSizeRel;
+		};
+		B5D4728F520B401FB853E710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = valgrind;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = Debug;
+		};
+		B5FB59136BAD429190AE6C2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = " -std=c++14 -Wall -W -pedantic     -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -L/usr/local/Cellar/sdl2/2.0.4/lib  -lSDL2";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Fibula;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = Release;
+		};
+		C7331B98DC4645D49138F7E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk;
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build/build;
+			};
+			name = Release;
+		};
+		DB7E1492D346445D864D2036 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = Release;
+		};
+		ECD97BF56D3C4D7E89E4E2EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/drgomesp/ClionProjects/Fibula/src, /usr/local/Cellar/sdl2/2.0.4/include/SDL2, /usr/local/include, );
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = valgrind;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/drgomesp/ClionProjects/Fibula/build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15F146E702A9433C8211E6DA /* Build configuration list for PBXNativeTarget "Fibula" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				059DEB47293840409485FF34 /* Debug */,
+				B5FB59136BAD429190AE6C2E /* Release */,
+				9A3AFD0686E54C61BB5FFDB1 /* MinSizeRel */,
+				3A17D4CAE34B415CB77C9C8A /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		15F4AB9E13F64DB68DABAB3F /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				311B6DCB6F844EB7AB960ABA /* Debug */,
+				DB7E1492D346445D864D2036 /* Release */,
+				24DF5E71170A4A1C84EC8809 /* MinSizeRel */,
+				0CE40A28DE0244D4AD36A579 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9A56718F976D414CAEBA7F22 /* Build configuration list for PBXProject "Fibula" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32AE46BDEA404ABF9E7C76B5 /* Debug */,
+				C7331B98DC4645D49138F7E2 /* Release */,
+				4F0EC650B4F544B5BD079FA0 /* MinSizeRel */,
+				084F9DEB5E56443E9790F475 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AD0E5C34BFBD4388A4D47B5F /* Build configuration list for PBXAggregateTarget "valgrind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5D4728F520B401FB853E710 /* Debug */,
+				ECD97BF56D3C4D7E89E4E2EB /* Release */,
+				B5B8F80A38E4456F82A0B521 /* MinSizeRel */,
+				B0B8A37207D2414D8AA80443 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B1F2301FC2B54B72BCDF4A12 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92A2002F410B46F38CE96D7A /* Debug */,
+				35ED3E0740B54E6CAC0976FD /* Release */,
+				4C29EAB54B1D4D4FB165328B /* MinSizeRel */,
+				1425E40130DB4583B15A47C9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 926905CFE6434A0EB1937251 /* Project object */;
+}

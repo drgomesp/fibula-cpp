@@ -1,22 +1,28 @@
-#include "SDLEventListener.h"
-#include <iostream>
+#include <Fibula/Bridge/EventDispatcher/SDLEventListener.hpp>
 
+using namespace Fibula::EventDispatcher;
 using namespace Fibula::Bridge::EventDispatcher;
 
 LISTENER_RESPONSE SDLEventListener::handleEvent(Event *event)
 {
     SDLEvent *sdlEvent = dynamic_cast<SDLEvent *>(event);
 
-    if (sdlEvent->getType() == SDL_QUIT) {
-        this->kernel->terminate();
-        return LISTENER_RESPONSE::SUCCESS;
+    if (!sdlEvent) {
+        return LISTENER_RESPONSE::FAILURE;
     }
 
-    return LISTENER_RESPONSE::FAILURE;
-}
+    const SDLPayload sdlPayload = sdlEvent->getPayload();
 
-SDLEventListener::~SDLEventListener()
-{
-    delete this->kernel;
-    this->kernel = NULL;
+    switch (sdlPayload.getOriginalEvent().type) {
+        case SDL_QUIT:
+            this->kernel->terminate();
+            return LISTENER_RESPONSE::SUCCESS;
+        case SDL_KEYUP:
+            if (sdlPayload.getOriginalEvent().key.keysym.sym == SDLK_ESCAPE) {
+                this->kernel->terminate();
+                return LISTENER_RESPONSE::SUCCESS;
+            }
+        default:
+            return LISTENER_RESPONSE::FAILURE;
+    }
 }

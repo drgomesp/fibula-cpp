@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Fibula/Core.h>
+#include <Fibula/Core/Kernel.hpp>
 
 using namespace std;
 using namespace Fibula::Core;

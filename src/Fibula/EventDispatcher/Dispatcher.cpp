@@ -1,4 +1,4 @@
-#include "Dispatcher.h"
+#include <Fibula/EventDispatcher/Dispatcher.hpp>
 #include <iostream>
 
 using namespace Fibula::EventDispatcher;
@@ -9,10 +9,8 @@ void Dispatcher::addListener(Listener *listener)
     this->listeners.push_back(listener);
 }
 
-void Dispatcher::dispatchEvent(Event *event)
+void Dispatcher::dispatchEvent(Event *event) const
 {
-    std::cout << "Dispatching event " << event->getName() << std::endl;
-
     for (Listener *listener: this->listeners) {
         LISTENER_RESPONSE response = listener->handleEvent(event);
     }
@@ -21,4 +19,13 @@ void Dispatcher::dispatchEvent(Event *event)
 size_t Dispatcher::getListenerMemorySize(Listener listener) const
 {
     return sizeof(listener) + this->listeners.size();
+}
+
+
+Dispatcher::~Dispatcher()
+{
+    for (Listener *listener: this->listeners) {
+        delete listener;
+        listener = NULL;
+    }
 }

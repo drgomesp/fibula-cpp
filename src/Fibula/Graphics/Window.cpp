@@ -1,11 +1,12 @@
-#include "Window.h"
-#include <Fibula/Bridge/EventDispatcher/SDLEvent.h>
+#include <Fibula/Graphics/Window.hpp>
+#include <Fibula/Bridge/EventDispatcher/SDLEvent.hpp>
 #include <boost/format.hpp>
 
 using namespace Fibula::Graphics;
+using namespace Fibula::EventDispatcher;
 using namespace Fibula::Bridge::EventDispatcher;
 
-Window::Window(const string &title, int width, int height, Dispatcher dispatcher)
+Window::Window(const std::string &title, int width, int height, const Dispatcher &dispatcher)
         : title(title),
           width(width),
           height(height),
@@ -23,13 +24,14 @@ Window::Window(const string &title, int width, int height, Dispatcher dispatcher
     );
 
     if (this->window == NULL) {
-        throw runtime_error("Could not create window");
+        throw std::runtime_error("Could not create window");
     }
 }
 
 Window::~Window()
 {
-
+    SDL_DestroyWindow(this->window);
+    SDL_Quit();
 }
 
 void Window::handleEvents()
@@ -37,8 +39,11 @@ void Window::handleEvents()
     SDL_Event event;
 
     while (SDL_PollEvent(&event)) {
+        boost::shared_ptr<SDLPayload> sdlPayload(new SDLPayload(event));
+        SDLPayload *pSDLPayload = sdlPayload.get();
+
         boost::shared_ptr<SDLEvent> sdlEvent(
-            new SDLEvent(boost::str(boost::format("event.sdl.%1%") % event.type), event.type)
+                new SDLEvent(boost::str(boost::format("event.sdl.%1%") % event.type), *pSDLPayload)
         );
 
         this->dispatcher.dispatchEvent(sdlEvent.get());

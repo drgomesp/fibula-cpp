@@ -1,6 +1,6 @@
-#include "Kernel.h"
-
-#include <Fibula/Bridge/EventDispatcher/SDLEventListener.h>
+#include <stdexcept>
+#include <Fibula/Core/Kernel.hpp>
+#include <Fibula/Bridge/EventDispatcher/SDLEventListener.hpp>
 
 using namespace Fibula::Core;
 using namespace Fibula::Graphics;
@@ -13,13 +13,10 @@ Kernel::Kernel()
 
 void Kernel::bootstrap()
 {
-    Dispatcher dispatcher;
     SDLEventListener *sdlEventListener = new SDLEventListener(this);
+    this->dispatcher.addListener(sdlEventListener);
 
-    dispatcher.addListener(sdlEventListener);
-    this->dispatcher = dispatcher;
-
-    Window *window = new Window("Fibula Engine :: v1.0.0", 640, 480, dispatcher);
+    Window *window = new Window("Fibula Engine :: v1.0.0", 640, 480, this->dispatcher);
     this->window = window;
 
     this->booted = true;
@@ -30,7 +27,7 @@ void Kernel::run()
     this->bootstrap();
 
     if (!this->booted) {
-        throw runtime_error("Failed to run engine because it was never booted");
+        throw std::runtime_error("Failed to run engine because it was never booted");
     }
 
     this->running = true;
