@@ -22,17 +22,23 @@ namespace Fibula {
         private:
             bool running = false;
             bool booted = false;
+            std::string graphicsAdapter;
 
             EventDispatcher::Dispatcher dispatcher;
             std::shared_ptr<Graphics::WindowAdapterInterface> window;
         public:
-            Kernel();
+            Kernel(std::string graphicsAdapter) : graphicsAdapter(graphicsAdapter)
+            { }
+
             void addListener(
                 const std::string &eventName,
                 std::shared_ptr<EventDispatcher::ListenerInterface> listener
             );
+
             void bootstrap();
+
             void run();
+
             void terminate();
         };
     }

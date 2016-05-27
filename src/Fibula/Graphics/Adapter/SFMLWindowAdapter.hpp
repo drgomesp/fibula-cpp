@@ -2,7 +2,6 @@
 #define FIBULA_SFMLWINDOWADAPTER_HPP
 
 #include <SFML/Graphics.hpp>
-#include <SFML/OpenGL.hpp>
 #include <Fibula/Graphics/WindowAdapterInterface.hpp>
 
 namespace Fibula {

@@ -7,9 +7,10 @@ using namespace Fibula::Core;
 using namespace Fibula::Console;
 
 int main() {
-    Kernel game;
+    std::string adapter = "sfml";
+    Kernel game(adapter);
 
-    std::shared_ptr<ConsoleListener> consoleListener = std::make_shared<ConsoleListener>(&game);
+    shared_ptr<ConsoleListener> consoleListener = make_shared<ConsoleListener>(&game);
     game.addListener("event.console.*", consoleListener);
 
     try {

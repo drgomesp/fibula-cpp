@@ -10,22 +10,12 @@ SFMLWindowAdapter::SFMLWindowAdapter(
         Core::Kernel &kernel
 ) : WindowAdapterInterface("Graphics::Adapter::SFML", title, width, height, dispatcher, kernel)
 {
-    sf::ContextSettings settings;
-    settings.depthBits = 24;
-    settings.stencilBits = 8;
-    settings.antialiasingLevel = 4;
-    settings.majorVersion = 3;
-    settings.minorVersion = 0;
-
     std::shared_ptr<sf::RenderWindow> window = std::make_shared<sf::RenderWindow>(
         sf::VideoMode(this->width, this->height),
-        this->title,
-        sf::Style::Default,
-        settings
+        this->title
     );
 
     this->window = window;
-    this->window->setVerticalSyncEnabled(true);
 }
 
 void SFMLWindowAdapter::handleEvents()
