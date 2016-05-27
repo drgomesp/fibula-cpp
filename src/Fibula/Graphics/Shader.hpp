@@ -19,11 +19,16 @@ namespace Fibula {
                     : vertexSourcePath(vertexSourcePath), fragmentSourcePath(fragmentSourcePath)
             { }
 
-            void enable() const;
-            void disable() const;
+            void bind() const;
+            void unbind() const;
 
-            GLint getUniformLocation(const std::string &name);
-            void setUniformMatrix4x4(const std::string &name, const glm::mat4x4 &matrix);
+            int getUniformLocation(const std::string &name);
+
+            void setUniform(const std::string &name, const float value);
+            void setUniform(const std::string &name, const glm::vec2 &vector);
+            void setUniform(const std::string &name, const glm::vec3 &vector);
+            void setUniform(const std::string &name, const glm::mat3x3 &matrix);
+            void setUniform(const std::string &name, const glm::mat4x4 &matrix);
 
             ~Shader();
         };

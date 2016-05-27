@@ -10,12 +10,12 @@ enum LISTENER_RESPONSE
 
 namespace Fibula {
     namespace EventDispatcher {
-        class Listener
+        class ListenerInterface
         {
         public:
             virtual LISTENER_RESPONSE handleEvent(boost::shared_ptr<const Event> event) const = 0;
 
-            virtual ~Listener()
+            virtual ~ListenerInterface()
             { }
         };
     }

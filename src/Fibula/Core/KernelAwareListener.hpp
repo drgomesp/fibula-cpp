@@ -2,12 +2,12 @@
 #define FIBULA_KERNELAWARELISTENER_HPP
 
 #include <Fibula/Core/Kernel.hpp>
-#include <Fibula/EventDispatcher/Listener.hpp>
+#include <Fibula/EventDispatcher/ListenerInterface.hpp>
 #include <Fibula/Bridge/EventDispatcher/SDLEvent.hpp>
 
 namespace Fibula {
     namespace Core {
-        class KernelAwareListener : public Fibula::EventDispatcher::Listener
+        class KernelAwareListener : public Fibula::EventDispatcher::ListenerInterface
         {
         protected:
             Kernel *kernel;

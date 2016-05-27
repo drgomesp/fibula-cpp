@@ -6,6 +6,7 @@
 #include <GL/glew.h>
 
 #include <Fibula/EventDispatcher/Dispatcher.hpp>
+#include <Fibula/Graphics/Adapter/WindowAdapterInterface.hpp>
 
 namespace Fibula {
     namespace Graphics {
@@ -15,7 +16,7 @@ namespace Fibula {
             std::string title;
             int width;
             int height;
-            SDL_Window *window;
+            Fibula::Graphics::Adapter::WindowAdapterInterface *window;
             Fibula::EventDispatcher::Dispatcher &dispatcher;
         public:
             Window(const std::string &title, int width, int height, Fibula::EventDispatcher::Dispatcher &dispatcher);

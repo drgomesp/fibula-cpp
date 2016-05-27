@@ -6,13 +6,13 @@
 #include <boost/ptr_container/ptr_vector.hpp>
 
 #include <Fibula/EventDispatcher/Event.hpp>
-#include <Fibula/EventDispatcher/Listener.hpp>
+#include <Fibula/EventDispatcher/ListenerInterface.hpp>
 #include <Fibula/EventDispatcher/Payload.hpp>
 #include <boost/shared_ptr.hpp>
 
 namespace Fibula {
     namespace EventDispatcher {
-        typedef std::vector<boost::shared_ptr<const Listener>> ListenerVector;
+        typedef std::vector<boost::shared_ptr<const ListenerInterface>> ListenerVector;
         typedef std::map<std::string, ListenerVector> ListenerMap;
 
         class Dispatcher
@@ -20,7 +20,7 @@ namespace Fibula {
         private:
              ListenerMap listeners;
         public:
-            void addListener(const std::string &eventName, boost::shared_ptr<const Listener> listener);
+            void addListener(const std::string &eventName, boost::shared_ptr<const ListenerInterface> listener);
             void dispatchEvent(const std::string &eventName, boost::shared_ptr<const Event> event) const;
             ~Dispatcher() { }
         private:

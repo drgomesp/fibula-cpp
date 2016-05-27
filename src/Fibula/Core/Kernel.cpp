@@ -2,6 +2,7 @@
 #include <Fibula/Core/Kernel.hpp>
 #include <Fibula/Bridge/EventDispatcher/SDLEventListener.hpp>
 #include <Fibula/Console/ConsoleListener.hpp>
+#include <Fibula/Graphics/Shader.hpp>
 
 using namespace Fibula::Core;
 using namespace Fibula::Console;

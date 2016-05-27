@@ -1,38 +1,51 @@
 #include <Fibula/Graphics/Shader.hpp>
-
 #include <glm/gtc/type_ptr.hpp>
 
 using namespace Fibula::Graphics;
 
-void Shader::enable() const
+void Shader::bind() const
 {
-
+    glUseProgram(this->id);
 }
 
-void Shader::disable() const
+void Shader::unbind() const
 {
-
+    glUseProgram(0);
 }
 
-GLint Shader::getUniformLocation(const std::string &name)
+int Shader::getUniformLocation(const std::string &name)
 {
     return glGetUniformLocation(this->id, name.c_str());
 }
 
-
-void Shader::setUniformMatrix4x4(const std::string &name, const glm::mat4x4 &matrix)
+void Shader::setUniform(const std::string &name, const float value)
 {
-    float m[16] = {0.0f};
-    const float *pMatrix= (const float*)glm::value_ptr(matrix);
+    glUniform1f(this->getUniformLocation(name), value);
+}
 
-    for (int i = 0; i < 16; ++i) {
-        m[i] = pMatrix[i];
-    }
+void Shader::setUniform(const std::string &name, const glm::mat4x4 &matrix)
+{
+    glUniformMatrix4fv(this->getUniformLocation(name), 1, GL_FALSE, glm::value_ptr(matrix));
+}
 
-    glUniformMatrix4fv(this->getUniformLocation(name), 1, GL_FALSE, m);
+void Shader::setUniform(const std::string &name, const glm::vec2 &vector)
+{
+    glUniform2f(this->getUniformLocation((name)), vector.x, vector.y);
+}
+
+void Shader::setUniform(const std::string &name, const glm::vec3 &vector)
+{
+    glUniform3f(this->getUniformLocation((name)), vector.x, vector.y, vector.z);
+}
+
+void Shader::setUniform(const std::string &name, const glm::mat3x3 &matrix)
+{
+    glUniformMatrix3fv(this->getUniformLocation(name), 1, GL_FALSE, glm::value_ptr(matrix));
 }
 
 Shader::~Shader()
 {
-
+    glDeleteProgram(this->id);
 }
+
+
