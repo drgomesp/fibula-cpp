@@ -24,7 +24,7 @@ namespace Fibula {
             const unsigned int height = 480;
 
             EventDispatcher::Dispatcher &dispatcher;
-            Core::Kernel *kernel;
+            Core::Kernel &kernel;
 
         public:
             WindowAdapterInterface(
@@ -33,7 +33,7 @@ namespace Fibula {
                     const unsigned int width,
                     const unsigned int height,
                     EventDispatcher::Dispatcher &dispatcher,
-                    Core::Kernel *kernel
+                    Core::Kernel &kernel
             ) : name(name), title(title), width(width), height(height), dispatcher(dispatcher), kernel(kernel)
             { }
 

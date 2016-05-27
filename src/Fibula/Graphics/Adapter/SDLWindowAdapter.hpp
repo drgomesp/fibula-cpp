@@ -17,7 +17,7 @@ namespace Fibula {
                         const unsigned int width,
                         const unsigned int height,
                         EventDispatcher::Dispatcher &dispatcher,
-                        Core::Kernel *kernel
+                        Core::Kernel &kernel
                 );
 
                 void handleEvents() override;

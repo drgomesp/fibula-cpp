@@ -7,7 +7,7 @@ SFMLWindowAdapter::SFMLWindowAdapter(
         const unsigned int width,
         const unsigned int height,
         EventDispatcher::Dispatcher &dispatcher,
-        Core::Kernel *kernel
+        Core::Kernel &kernel
 ) : WindowAdapterInterface("Graphics::Adapter::SFML", title, width, height, dispatcher, kernel)
 {
     sf::ContextSettings settings;
@@ -17,17 +17,14 @@ SFMLWindowAdapter::SFMLWindowAdapter(
     settings.majorVersion = 3;
     settings.minorVersion = 0;
 
-    sf::RenderWindow window(
+    this->window = new sf::RenderWindow(
             sf::VideoMode(this->width, this->height),
             this->title,
             sf::Style::Default,
             settings
     );
 
-    this->window = &window;
-
     this->window->setVerticalSyncEnabled(true);
-    glEnable(GL_TEXTURE_2D);
 }
 
 void SFMLWindowAdapter::handleEvents()
@@ -35,23 +32,17 @@ void SFMLWindowAdapter::handleEvents()
     sf::Event event;
 
     while (this->window->pollEvent(event)) {
-        if (event.type == sf::Event::Closed)
-        {
-            break;
-        }
-        else if (event.type == sf::Event::Resized)
-        {
-            glViewport(0, 0, event.size.width, event.size.height);
+        if (event.type == sf::Event::Closed) {
+            this->kernel.terminate();
         }
     }
 
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     this->window->display();
 }
 
 SFMLWindowAdapter::~SFMLWindowAdapter()
 {
-
+    this->window->close();
 }
 
 

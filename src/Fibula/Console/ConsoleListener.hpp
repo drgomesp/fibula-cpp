@@ -13,7 +13,7 @@ namespace Fibula {
             ConsoleListener(Fibula::Core::Kernel *kernel) : KernelAwareListener(kernel)
             { }
 
-            virtual LISTENER_RESPONSE handleEvent(boost::shared_ptr<const Fibula::EventDispatcher::Event> event) const override;
+            virtual LISTENER_RESPONSE handleEvent(const Fibula::EventDispatcher::Event &event) const override;
         };
     }
 }

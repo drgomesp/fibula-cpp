@@ -14,11 +14,11 @@ namespace Fibula {
                 sf::RenderWindow *window;
             public:
                 SFMLWindowAdapter(
-                        const std::string &title,
-                        const unsigned int width,
-                        const unsigned int height,
-                        EventDispatcher::Dispatcher &dispatcher,
-                        Core::Kernel *kernel
+                    const std::string &title,
+                    const unsigned int width,
+                    const unsigned int height,
+                    EventDispatcher::Dispatcher &dispatcher,
+                    Core::Kernel &kernel
                 );
 
                 void handleEvents() override;

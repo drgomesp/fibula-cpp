@@ -12,7 +12,7 @@ SDLWindowAdapter::SDLWindowAdapter(
         const unsigned int width,
         const unsigned int height,
         Dispatcher &dispatcher,
-        Core::Kernel *kernel
+        Core::Kernel &kernel
 ) : WindowAdapterInterface("Graphics::Adapter::SDLWindowAdapter", title, width, height, dispatcher, kernel)
 {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -33,7 +33,7 @@ SDLWindowAdapter::SDLWindowAdapter(
         throw std::runtime_error("Failed to create SDL window");
     }
 
-    boost::shared_ptr<SDLEventListener> sdlEventListener(new SDLEventListener(kernel));
+    std::shared_ptr<SDLEventListener> sdlEventListener(new SDLEventListener(&kernel));
     this->dispatcher.addListener("event.sdl.*", sdlEventListener);
 }
 
@@ -42,12 +42,10 @@ void SDLWindowAdapter::handleEvents()
     SDL_Event event;
 
     while (SDL_PollEvent(&event)) {
-        boost::shared_ptr<SDLPayload> sdlPayload(new SDLPayload(event));
-        SDLPayload *pSDLPayload = sdlPayload.get();
+        std::shared_ptr<SDLPayload> sdlPayload(new SDLPayload(event));
 
-        boost::shared_ptr<SDLEvent> sdlEvent(new SDLEvent(*pSDLPayload));
-
-        this->dispatcher.dispatchEvent("event.sdl", sdlEvent);
+        std::shared_ptr<const SDLEvent> sdlEvent(new SDLEvent(*sdlPayload));
+        this->dispatcher.dispatchEvent("event.sdl", *sdlEvent);
     }
 }
 

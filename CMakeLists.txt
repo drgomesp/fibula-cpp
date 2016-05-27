@@ -12,10 +12,8 @@ find_package(boost 1.60.0 REQUIRED smart_ptr container)
 find_package(GLM REQUIRED)
 string(STRIP ${GLM_INCLUDE_DIRS} GLM_INCLUDE_DIRS)
 
-# OpenGL
-find_package(OpenGL REQUIRED)
-string(STRIP ${OPENGL_INCLUDE_DIR} OPENGL_INCLUDE_DIR)
-string(STRIP ${OPENGL_LIBRARIES} OPENGL_LIBRARIES)
+# GLFW
+find_package(GLFW 3 REQUIRED)
 
 # GLEW
 find_package(GLEW REQUIRED)
@@ -58,12 +56,12 @@ add_executable(Fibula ${SOURCE_FILES})
 
 include_directories(${Boost_INCLUDE_DIRS})
 include_directories(${GLM_INCLUDE_DIRS})
-include_directories(${OPENGL_INCLUDE_DIRS})
+include_directories(${GLFW_INCLUDE_DIR})
 include_directories(${GLEW_INCLUDE_DIRS})
 include_directories(${SDL2_INCLUDE_DIRS})
 include_directories(${SFML_INCLUDE_DIR})
 
-target_link_libraries(Fibula ${OPENGL_LIBRARIES})
+target_link_libraries(Fibula ${GLFW_LIBRARIES})
 target_link_libraries(Fibula ${SDL2_LIBRARIES})
 target_link_libraries(Fibula ${SFML_LIBRARIES})
 target_link_libraries(Fibula ${GLEW_LIBRARIES})

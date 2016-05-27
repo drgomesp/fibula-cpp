@@ -5,7 +5,7 @@
 
 using namespace Fibula::Console;
 
-LISTENER_RESPONSE ConsoleListener::handleEvent(boost::shared_ptr<const Fibula::EventDispatcher::Event> event) const
+LISTENER_RESPONSE ConsoleListener::handleEvent(const Fibula::EventDispatcher::Event &event) const
 {
     return LISTENER_RESPONSE::SUCCESS;
 }
