@@ -22,7 +22,7 @@ namespace Fibula {
         protected:
             Dispatcher *dispatcher;
         public:
-            virtual LISTENER_RESPONSE handleEvent(const Event &event) const = 0;
+            virtual LISTENER_RESPONSE handleEvent(std::shared_ptr<const Event> event) const = 0;
 
             inline void setDispatcher(Dispatcher *dispatcher)
             {

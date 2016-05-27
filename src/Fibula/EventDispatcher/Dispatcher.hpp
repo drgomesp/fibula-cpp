@@ -27,7 +27,7 @@ namespace Fibula {
              ListenerMap listeners;
         public:
             void addListener(const std::string &eventName, std::shared_ptr<ListenerInterface> listener);
-            void dispatchEvent(const std::string &eventName, const Event &event) const;
+            void dispatchEvent(const std::string &eventName, std::shared_ptr<const Event> event) const;
             ~Dispatcher() { }
         private:
             ListenerMap::const_iterator searchListenersByPrefix(const std::string &prefix) const;

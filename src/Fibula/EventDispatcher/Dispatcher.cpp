@@ -19,7 +19,7 @@ void Dispatcher::addListener(const std::string &eventName, std::shared_ptr<Liste
     this->listeners.insert(pair);
 }
 
-void Dispatcher::dispatchEvent(const std::string &eventName, const Event &event) const
+void Dispatcher::dispatchEvent(const std::string &eventName, std::shared_ptr<const Event> event) const
 {
     ListenerMap::const_iterator it = this->searchListenersByPrefix(eventName);
 

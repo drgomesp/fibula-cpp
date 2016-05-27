@@ -3,9 +3,9 @@
 using namespace Fibula::EventDispatcher;
 using namespace Fibula::Bridge::EventDispatcher;
 
-LISTENER_RESPONSE SDLEventListener::handleEvent(const Event &event) const
+LISTENER_RESPONSE SDLEventListener::handleEvent(std::shared_ptr<const Event> event) const
 {
-    const SDLEvent *sdlEvent = dynamic_cast<const SDLEvent *>(&event);
+    const SDLEvent *sdlEvent = dynamic_cast<const SDLEvent *>(event.get());
 
     if (!sdlEvent) {
         return LISTENER_RESPONSE::FAILURE;

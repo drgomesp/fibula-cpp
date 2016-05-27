@@ -43,9 +43,9 @@ void SDLWindowAdapter::handleEvents()
 
     while (SDL_PollEvent(&event)) {
         std::shared_ptr<SDLPayload> payload = std::make_shared<SDLPayload>(event);
-        std::shared_ptr<const SDLEvent> event = std::make_shared<const SDLEvent>(*payload);
+        std::shared_ptr<const SDLEvent> e = std::make_shared<const SDLEvent>(*payload);
 
-        this->dispatcher.dispatchEvent("event.sdl", *event);
+        this->dispatcher.dispatchEvent("event.sdl", e);
     }
 }
 
