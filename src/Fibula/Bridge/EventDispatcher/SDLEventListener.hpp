@@ -10,9 +10,7 @@ namespace Fibula {
             {
             public:
                 virtual LISTENER_RESPONSE handleEvent(boost::shared_ptr<const Fibula::EventDispatcher::Event> event) const override;
-
-                SDLEventListener(Fibula::Core::Kernel *kernel) : KernelAwareListener(kernel)
-                { }
+                SDLEventListener(Fibula::Core::Kernel *kernel) : KernelAwareListener(kernel) { }
             };
         }
     }

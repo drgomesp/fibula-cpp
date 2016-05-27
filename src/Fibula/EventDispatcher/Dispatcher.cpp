@@ -5,8 +5,9 @@
 
 using namespace Fibula::EventDispatcher;
 
-void Dispatcher::addListener(const std::string &eventName, boost::shared_ptr<const ListenerInterface> listener)
+void Dispatcher::addListener(const std::string &eventName, boost::shared_ptr<ListenerInterface> listener)
 {
+    listener->setDispatcher(this);
     ListenerVector registeredListeners;
 
     if (this->listeners.find(eventName) != this->listeners.end()) {

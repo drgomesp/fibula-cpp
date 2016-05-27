@@ -1,7 +1,14 @@
 #ifndef FIBULA_LISTENER_HPP
 #define FIBULA_LISTENER_HPP
 
+namespace Fibula {
+    namespace EventDispatcher {
+        class Dispatcher;
+    }
+}
+
 #include <boost/shared_ptr.hpp>
+#include <Fibula/EventDispatcher/Dispatcher.hpp>
 
 enum LISTENER_RESPONSE
 {
@@ -12,11 +19,17 @@ namespace Fibula {
     namespace EventDispatcher {
         class ListenerInterface
         {
+        protected:
+            Dispatcher *dispatcher;
         public:
             virtual LISTENER_RESPONSE handleEvent(boost::shared_ptr<const Event> event) const = 0;
 
-            virtual ~ListenerInterface()
-            { }
+            inline void setDispatcher(Dispatcher *dispatcher)
+            {
+                this->dispatcher = dispatcher;
+            }
+
+            virtual ~ListenerInterface() { }
         };
     }
 }
