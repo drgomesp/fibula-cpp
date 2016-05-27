@@ -10,9 +10,9 @@ namespace Fibula {
 #include <boost/shared_ptr.hpp>
 #include <Fibula/EventDispatcher/Dispatcher.hpp>
 
-enum LISTENER_RESPONSE
+enum class LISTENER_RESPONSE
 {
-    SUCCESS = 0, FAILURE = 1
+    SUCCESS = 0, FAILURE = -1
 };
 
 namespace Fibula {
