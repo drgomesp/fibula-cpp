@@ -3,6 +3,7 @@
 
 #include <string>
 #include <SDL.h>
+#include <GL/glew.h>
 
 #include <Fibula/EventDispatcher/Dispatcher.hpp>
 

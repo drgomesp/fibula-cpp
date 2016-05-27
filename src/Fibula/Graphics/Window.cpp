@@ -1,6 +1,5 @@
 #include <Fibula/Graphics/Window.hpp>
 #include <Fibula/Bridge/EventDispatcher/SDLEvent.hpp>
-#include <boost/format.hpp>
 
 using namespace Fibula::Graphics;
 using namespace Fibula::EventDispatcher;
