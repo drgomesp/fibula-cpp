@@ -9,7 +9,7 @@ namespace Fibula {
         namespace Adapter {
             class SDLWindowAdapter : public WindowAdapterInterface
             {
-            private:
+            protected:
                 SDL_Window *window;
             public:
                 SDLWindowAdapter(

@@ -1,3 +1,4 @@
+#include <iostream>
 #include <Fibula/Console/ConsoleListener.hpp>
 #include <Fibula/Graphics/Adapter/SDLWindowAdapter.hpp>
 #include <boost/make_shared.hpp>
@@ -25,6 +26,8 @@ void Kernel::bootstrap()
             this->dispatcher,
             this
     ));
+
+    std::cout << "Engine successfully started with adapter " << window->getName() << std::endl;
 
     this->window = window;
     this->booted = true;

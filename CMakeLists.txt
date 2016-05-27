@@ -43,8 +43,6 @@ set(SOURCE_FILES
     src/Fibula/Console/ConsoleListener.cpp
     src/Fibula/Console/ConsoleListener.hpp
     src/Fibula/Console/ConsoleEvent.hpp
-    src/Fibula/Graphics/Shader.cpp
-    src/Fibula/Graphics/Shader.hpp
     src/Fibula/Graphics/WindowAdapterInterface.hpp
     src/Fibula/Graphics/Adapter/SDLWindowAdapter.cpp
     src/Fibula/Graphics/Adapter/SDLWindowAdapter.hpp)

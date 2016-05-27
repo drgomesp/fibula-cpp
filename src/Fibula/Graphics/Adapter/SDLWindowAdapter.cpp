@@ -7,14 +7,13 @@ using namespace Fibula::EventDispatcher;
 using namespace Fibula::Graphics::Adapter;
 using namespace Fibula::Bridge::EventDispatcher;
 
-
 SDLWindowAdapter::SDLWindowAdapter(
         const std::string &title,
         const int width,
         const int height,
         Dispatcher &dispatcher,
         Core::Kernel *kernel
-) : WindowAdapterInterface(title, width, height, dispatcher, kernel)
+) : WindowAdapterInterface("Graphics::Adapter::SDLWindowAdapter", title, width, height, dispatcher, kernel)
 {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         throw std::runtime_error("Failed to initialize SDL");
@@ -53,10 +52,11 @@ void SDLWindowAdapter::handleEvents()
 
 std::string SDLWindowAdapter::getName()
 {
-    return "sdl";
+    return this->name;
 }
 
 SDLWindowAdapter::~SDLWindowAdapter()
 {
-
+    SDL_DestroyWindow(this->window);
+    SDL_Quit();
 }
