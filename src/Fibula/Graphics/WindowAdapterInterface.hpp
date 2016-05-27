@@ -20,8 +20,8 @@ namespace Fibula {
         protected:
             std::string name;
             const std::string title = "[Fibula Engine :: v1.0.0]";
-            const int width = 640;
-            const int height = 480;
+            const unsigned int width = 640;
+            const unsigned int height = 480;
 
             EventDispatcher::Dispatcher &dispatcher;
             Core::Kernel *kernel;
@@ -30,15 +30,19 @@ namespace Fibula {
             WindowAdapterInterface(
                     std::string name,
                     const std::string &title,
-                    const int width,
-                    const int height,
+                    const unsigned int width,
+                    const unsigned int height,
                     EventDispatcher::Dispatcher &dispatcher,
                     Core::Kernel *kernel
             ) : name(name), title(title), width(width), height(height), dispatcher(dispatcher), kernel(kernel)
             { }
 
             virtual void handleEvents() = 0;
-            virtual std::string getName() = 0;
+
+            inline std::string getName()
+            {
+                return this->name;
+            }
 
             virtual ~WindowAdapterInterface()
             { }

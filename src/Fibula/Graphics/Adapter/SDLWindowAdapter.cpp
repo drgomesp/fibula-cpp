@@ -9,8 +9,8 @@ using namespace Fibula::Bridge::EventDispatcher;
 
 SDLWindowAdapter::SDLWindowAdapter(
         const std::string &title,
-        const int width,
-        const int height,
+        const unsigned int width,
+        const unsigned int height,
         Dispatcher &dispatcher,
         Core::Kernel *kernel
 ) : WindowAdapterInterface("Graphics::Adapter::SDLWindowAdapter", title, width, height, dispatcher, kernel)
@@ -29,6 +29,7 @@ SDLWindowAdapter::SDLWindowAdapter(
     );
 
     if (this->window == NULL) {
+        SDL_Quit();
         throw std::runtime_error("Failed to create SDL window");
     }
 
@@ -48,11 +49,6 @@ void SDLWindowAdapter::handleEvents()
 
         this->dispatcher.dispatchEvent("event.sdl", sdlEvent);
     }
-}
-
-std::string SDLWindowAdapter::getName()
-{
-    return this->name;
 }
 
 SDLWindowAdapter::~SDLWindowAdapter()

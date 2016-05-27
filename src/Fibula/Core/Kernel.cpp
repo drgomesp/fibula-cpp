@@ -1,6 +1,7 @@
 #include <iostream>
 #include <Fibula/Console/ConsoleListener.hpp>
 #include <Fibula/Graphics/Adapter/SDLWindowAdapter.hpp>
+#include <Fibula/Graphics/Adapter/SFMLWindowAdapter.hpp>
 #include <boost/make_shared.hpp>
 
 using namespace Fibula::Core;
@@ -19,7 +20,7 @@ void Kernel::bootstrap()
     boost::shared_ptr<ConsoleListener> consoleListener(new ConsoleListener(this));
     this->dispatcher.addListener("event.console.*", consoleListener);
 
-    boost::shared_ptr<WindowAdapterInterface> window(new SDLWindowAdapter(
+    boost::shared_ptr<WindowAdapterInterface> window(new SFMLWindowAdapter(
             "Fibula Engine :: v1.0.0",
             1024,
             768,

@@ -1,18 +1,19 @@
-#ifndef FIBULA_SDLWINDOWADAPTER_HPP
-#define FIBULA_SDLWINDOWADAPTER_HPP
+#ifndef FIBULA_SFMLWINDOWADAPTER_HPP
+#define FIBULA_SFMLWINDOWADAPTER_HPP
 
-#include <SDL2/SDL.h>
+#include <SFML/Graphics.hpp>
+#include <SFML/OpenGL.hpp>
 #include <Fibula/Graphics/WindowAdapterInterface.hpp>
 
 namespace Fibula {
     namespace Graphics {
         namespace Adapter {
-            class SDLWindowAdapter : public WindowAdapterInterface
+            class SFMLWindowAdapter : public WindowAdapterInterface
             {
             protected:
-                SDL_Window *window;
+                sf::RenderWindow *window;
             public:
-                SDLWindowAdapter(
+                SFMLWindowAdapter(
                         const std::string &title,
                         const unsigned int width,
                         const unsigned int height,
@@ -22,10 +23,10 @@ namespace Fibula {
 
                 void handleEvents() override;
 
-                ~SDLWindowAdapter();
+                ~SFMLWindowAdapter();
             };
         }
     }
 }
 
-#endif //FIBULA_SDLWINDOWADAPTER_HPP
+#endif //FIBULA_SFMLWINDOWADAPTER_HPP
