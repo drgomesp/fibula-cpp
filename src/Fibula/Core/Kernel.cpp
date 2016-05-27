@@ -16,7 +16,7 @@ Kernel::Kernel()
 
 void Kernel::bootstrap()
 {
-    std::shared_ptr<ConsoleListener> consoleListener(new ConsoleListener(this));
+    std::shared_ptr<ConsoleListener> consoleListener = std::make_shared<ConsoleListener>(this);
     this->dispatcher.addListener("event.console.*", consoleListener);
 
     std::shared_ptr<SDLWindowAdapter> window = std::make_shared<SDLWindowAdapter>(

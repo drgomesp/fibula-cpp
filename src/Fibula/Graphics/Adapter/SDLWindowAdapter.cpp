@@ -33,8 +33,8 @@ SDLWindowAdapter::SDLWindowAdapter(
         throw std::runtime_error("Failed to create SDL window");
     }
 
-    std::shared_ptr<SDLEventListener> sdlEventListener(new SDLEventListener(&kernel));
-    this->dispatcher.addListener("event.sdl.*", sdlEventListener);
+    std::shared_ptr<SDLEventListener> listener = std::make_shared<SDLEventListener>(&kernel);
+    this->dispatcher.addListener("event.sdl.*", listener);
 }
 
 void SDLWindowAdapter::handleEvents()
@@ -42,10 +42,10 @@ void SDLWindowAdapter::handleEvents()
     SDL_Event event;
 
     while (SDL_PollEvent(&event)) {
-        std::shared_ptr<SDLPayload> sdlPayload(new SDLPayload(event));
+        std::shared_ptr<SDLPayload> payload = std::make_shared<SDLPayload>(event);
+        std::shared_ptr<const SDLEvent> event = std::make_shared<const SDLEvent>(*payload);
 
-        std::shared_ptr<const SDLEvent> sdlEvent(new SDLEvent(*sdlPayload));
-        this->dispatcher.dispatchEvent("event.sdl", *sdlEvent);
+        this->dispatcher.dispatchEvent("event.sdl", *event);
     }
 }
 

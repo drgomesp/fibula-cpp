@@ -17,13 +17,14 @@ SFMLWindowAdapter::SFMLWindowAdapter(
     settings.majorVersion = 3;
     settings.minorVersion = 0;
 
-    this->window = new sf::RenderWindow(
-            sf::VideoMode(this->width, this->height),
-            this->title,
-            sf::Style::Default,
-            settings
+    std::shared_ptr<sf::RenderWindow> window = std::make_shared<sf::RenderWindow>(
+        sf::VideoMode(this->width, this->height),
+        this->title,
+        sf::Style::Default,
+        settings
     );
 
+    this->window = window;
     this->window->setVerticalSyncEnabled(true);
 }
 

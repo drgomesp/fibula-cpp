@@ -11,7 +11,7 @@ namespace Fibula {
             class SFMLWindowAdapter : public WindowAdapterInterface
             {
             protected:
-                sf::RenderWindow *window;
+                std::shared_ptr<sf::RenderWindow> window;
             public:
                 SFMLWindowAdapter(
                     const std::string &title,
