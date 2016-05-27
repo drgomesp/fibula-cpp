@@ -19,7 +19,7 @@ namespace Fibula {
     namespace Core {
         class Kernel
         {
-        private:
+        protected:
             bool running = false;
             bool booted = false;
             std::string graphicsAdapter;

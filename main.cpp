@@ -1,17 +1,11 @@
 #include <iostream>
-#include <Fibula/Core/Kernel.hpp>
-#include <Fibula/Console/ConsoleListener.hpp>
+#include <demo-game/Core/Kernel.hpp>
 
 using namespace std;
-using namespace Fibula::Core;
-using namespace Fibula::Console;
+using namespace Game::Core;
 
 int main() {
-    std::string adapter = "sfml";
-    Kernel game(adapter);
-
-    shared_ptr<ConsoleListener> consoleListener = make_shared<ConsoleListener>(&game);
-    game.addListener("event.console.*", consoleListener);
+    Kernel game("sdl");
 
     try {
         game.run();

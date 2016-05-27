@@ -50,7 +50,7 @@ set(SOURCE_FILES
     src/Fibula/Graphics/Adapter/SDLWindowAdapter.cpp
     src/Fibula/Graphics/Adapter/SDLWindowAdapter.hpp
     src/Fibula/Graphics/Adapter/SFMLWindowAdapter.cpp
-    src/Fibula/Graphics/Adapter/SFMLWindowAdapter.hpp)
+    src/Fibula/Graphics/Adapter/SFMLWindowAdapter.hpp src/demo-game/Listeners/SDL/MousePositionListener.cpp src/demo-game/Listeners/SDL/MousePositionListener.hpp src/demo-game/Core/Kernel.cpp src/demo-game/Core/Kernel.cpp src/demo-game/Core/Kernel.hpp)
 
 add_executable(Fibula ${SOURCE_FILES})
 
