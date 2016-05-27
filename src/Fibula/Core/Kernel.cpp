@@ -1,12 +1,11 @@
-#include <stdexcept>
-#include <Fibula/Core/Kernel.hpp>
-#include <Fibula/Bridge/EventDispatcher/SDLEventListener.hpp>
 #include <Fibula/Console/ConsoleListener.hpp>
-#include <Fibula/Graphics/Shader.hpp>
+#include <Fibula/Graphics/Adapter/SDLWindowAdapter.hpp>
+#include <boost/make_shared.hpp>
 
 using namespace Fibula::Core;
 using namespace Fibula::Console;
 using namespace Fibula::Graphics;
+using namespace Fibula::Graphics::Adapter;
 using namespace Fibula::EventDispatcher;
 using namespace Fibula::Bridge::EventDispatcher;
 
@@ -16,13 +15,16 @@ Kernel::Kernel()
 
 void Kernel::bootstrap()
 {
-    boost::shared_ptr<SDLEventListener> sdlEventListener(new SDLEventListener(this));
     boost::shared_ptr<ConsoleListener> consoleListener(new ConsoleListener(this));
-
-    this->dispatcher.addListener("event.sdl.*", sdlEventListener);
     this->dispatcher.addListener("event.console.*", consoleListener);
 
-    boost::shared_ptr<Window> window(new Window("Fibula Engine :: v1.0.0", 1024, 768, this->dispatcher));
+    boost::shared_ptr<WindowAdapterInterface> window(new SDLWindowAdapter(
+            "Fibula Engine :: v1.0.0",
+            1024,
+            768,
+            this->dispatcher,
+            this
+    ));
 
     this->window = window;
     this->booted = true;
@@ -47,3 +49,9 @@ void Kernel::terminate()
 {
     this->running = false;
 }
+
+boost::shared_ptr<Kernel> Kernel::getShared()
+{
+    return this->shared_from_this();
+}
+

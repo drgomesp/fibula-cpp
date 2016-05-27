@@ -1,7 +1,17 @@
 #ifndef FIBULA_KERNEL_HPP
 #define FIBULA_KERNEL_HPP
 
-#include <Fibula/Graphics/Window.hpp>
+namespace Fibula {
+    namespace EventDispatcher {
+        class Dispatcher;
+    }
+
+    namespace Graphics {
+        class WindowAdapterInterface;
+    }
+}
+
+#include <Fibula/Graphics/WindowAdapterInterface.hpp>
 #include <Fibula/EventDispatcher/Dispatcher.hpp>
 #include <boost/shared_ptr.hpp>
 #include <boost/enable_shared_from_this.hpp>
@@ -14,13 +24,14 @@ namespace Fibula {
             bool running = false;
             bool booted = false;
 
-            Fibula::EventDispatcher::Dispatcher dispatcher;
-            boost::shared_ptr<Fibula::Graphics::Window> window;
+            EventDispatcher::Dispatcher dispatcher;
+            boost::shared_ptr<Graphics::WindowAdapterInterface> window;
         public:
             Kernel();
             void bootstrap();
             void run();
             void terminate();
+            boost::shared_ptr<Kernel> getShared();
         };
     }
 }

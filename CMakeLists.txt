@@ -35,8 +35,6 @@ set(SOURCE_FILES
     src/Fibula/EventDispatcher/Dispatcher.cpp
     src/Fibula/EventDispatcher/Dispatcher.hpp
     src/Fibula/EventDispatcher/Payload.hpp
-    src/Fibula/Graphics/Window.cpp
-    src/Fibula/Graphics/Window.hpp
     src/Fibula/Bridge/EventDispatcher/SDLEventListener.cpp
     src/Fibula/Bridge/EventDispatcher/SDLEventListener.hpp
     src/Fibula/Bridge/EventDispatcher/SDLEvent.hpp
@@ -47,7 +45,7 @@ set(SOURCE_FILES
     src/Fibula/Console/ConsoleEvent.hpp
     src/Fibula/Graphics/Shader.cpp
     src/Fibula/Graphics/Shader.hpp
-    src/Fibula/Graphics/Adapter/WindowAdapterInterface.hpp
+    src/Fibula/Graphics/WindowAdapterInterface.hpp
     src/Fibula/Graphics/Adapter/SDLWindowAdapter.cpp
     src/Fibula/Graphics/Adapter/SDLWindowAdapter.hpp)
 
