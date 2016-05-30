@@ -8,11 +8,6 @@ using namespace Fibula::Graphics;
 using namespace Fibula::Graphics::Adapter;
 using namespace Fibula::EventDispatcher;
 
-void Kernel::addListener(const std::string &eventName, std::shared_ptr<ListenerInterface> listener)
-{
-    this->dispatcher.addListener(eventName, listener);
-}
-
 void Kernel::bootstrap()
 {
     std::shared_ptr<WindowAdapterInterface> window = std::make_shared<SDLWindowAdapter>(

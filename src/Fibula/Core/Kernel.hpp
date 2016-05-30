@@ -30,11 +30,6 @@ namespace Fibula {
             Kernel(std::string graphicsAdapter) : graphicsAdapter(graphicsAdapter)
             { }
 
-            void addListener(
-                const std::string &eventName,
-                std::shared_ptr<EventDispatcher::ListenerInterface> listener
-            );
-
             void bootstrap();
 
             void run();

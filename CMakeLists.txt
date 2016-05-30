@@ -25,9 +25,6 @@ set(SOURCE_FILES
         src/Fibula/Bridge/EventDispatcher/SDLEvent.hpp
         src/Fibula/Bridge/EventDispatcher/SDLPayload.hpp
         src/Fibula/EventDispatcher/Payload.hpp
-        src/Fibula/Console/ConsoleListener.cpp
-        src/Fibula/Console/ConsoleListener.hpp
-        src/Fibula/Console/ConsoleEvent.hpp
         src/Fibula/Graphics/WindowAdapterInterface.hpp
         src/Fibula/Graphics/Adapter/SDLWindowAdapter.cpp
         src/Fibula/Graphics/Adapter/SDLWindowAdapter.hpp

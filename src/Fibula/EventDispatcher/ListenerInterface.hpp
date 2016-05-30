@@ -10,22 +10,20 @@ namespace Fibula {
 #include <boost/shared_ptr.hpp>
 #include <Fibula/EventDispatcher/Dispatcher.hpp>
 
-enum class LISTENER_RESPONSE
-{
+enum class LISTENER_RESPONSE {
     SUCCESS = 0, FAILURE = -1
 };
 
 namespace Fibula {
     namespace EventDispatcher {
-        class ListenerInterface
-        {
+        template<class EventType>
+        class ListenerInterface {
         protected:
             Dispatcher *dispatcher;
         public:
-            virtual LISTENER_RESPONSE handleEvent(std::shared_ptr<const Event> event) const = 0;
+            virtual LISTENER_RESPONSE handleEvent(EventType *event) const = 0;
 
-            inline void setDispatcher(Dispatcher *dispatcher)
-            {
+            inline void setDispatcher(Dispatcher *dispatcher) {
                 this->dispatcher = dispatcher;
             }
 

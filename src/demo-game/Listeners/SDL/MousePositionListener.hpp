@@ -17,10 +17,6 @@ namespace Game {
                 MousePositionListener(Fibula::Core::Kernel *kernel) : SDLEventListener(kernel)
                 { }
 
-                LISTENER_RESPONSE handleEvent(
-                    std::shared_ptr<const Fibula::EventDispatcher::Event> event
-                ) const override;
-
                 ~MousePositionListener()
                 { }
             };

@@ -2,15 +2,19 @@
 #define FIBULA_SDLEVENTLISTENER_HPP
 
 #include <Fibula/Core/KernelAwareListener.hpp>
+#include <Fibula/Bridge/EventDispatcher/SDLEvent.hpp>
 
 namespace Fibula {
     namespace Bridge {
         namespace EventDispatcher {
-            class SDLEventListener : public Fibula::Core::KernelAwareListener
-            {
+            using Event = Fibula::Core::Event;
+            using Kernel = Fibula::Core::Kernel;
+
+            class SDLEventListener : public Fibula::Core::KernelAwareListener<SDLEvent> {
             public:
-                virtual LISTENER_RESPONSE handleEvent(std::shared_ptr<const Fibula::EventDispatcher::Event> event) const override;
-                SDLEventListener(Core::Kernel *kernel) : KernelAwareListener(kernel) { }
+                SDLEventListener(Kernel *kernel) : KernelAwareListener(kernel) { }
+
+                virtual LISTENER_RESPONSE handleEvent(SDLEvent *event) const override;
             };
         }
     }

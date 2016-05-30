@@ -3,11 +3,14 @@
 
 #include <Fibula/Core/Kernel.hpp>
 #include <Fibula/EventDispatcher/ListenerInterface.hpp>
-#include <Fibula/Bridge/EventDispatcher/SDLEvent.hpp>
+#include <Fibula/EventDispatcher/Event.hpp>
 
 namespace Fibula {
     namespace Core {
-        class KernelAwareListener : public Fibula::EventDispatcher::ListenerInterface
+        using Event = Fibula::EventDispatcher::Event;
+
+        template<class EventType>
+        class KernelAwareListener : public Fibula::EventDispatcher::ListenerInterface<EventType>
         {
         protected:
             Kernel *kernel;
