@@ -1,10 +1,10 @@
-#include <Fibula/Graphics/Adapter/SDLWindowAdapter.hpp>
+#include <Fibula/Graphics/Window/Adapter/SDLWindowAdapter.hpp>
 #include <Fibula/Bridge/EventDispatcher/SDLEvent.hpp>
 #include <Fibula/Bridge/EventDispatcher/SDLEventListener.hpp>
 
 using namespace Fibula::Core;
 using namespace Fibula::EventDispatcher;
-using namespace Fibula::Graphics::Adapter;
+using namespace Fibula::Graphics::Window::Adapter;
 using namespace Fibula::Bridge::EventDispatcher;
 
 SDLWindowAdapter::SDLWindowAdapter(

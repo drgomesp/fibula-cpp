@@ -1,11 +1,11 @@
 #include <iostream>
 #include <memory>
 
-#include <Fibula/Graphics/Adapter/SDLWindowAdapter.hpp>
+#include <Fibula/Graphics/Window/Adapter/SDLWindowAdapter.hpp>
 
 using namespace Fibula::Core;
-using namespace Fibula::Graphics;
-using namespace Fibula::Graphics::Adapter;
+using namespace Fibula::Graphics::Window;
+using namespace Fibula::Graphics::Window::Adapter;
 using namespace Fibula::EventDispatcher;
 
 void Kernel::addListener(const std::string &eventName, std::shared_ptr<ListenerInterface> listener)

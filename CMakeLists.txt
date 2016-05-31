@@ -28,9 +28,9 @@ set(SOURCE_FILES
         src/Fibula/Console/ConsoleListener.cpp
         src/Fibula/Console/ConsoleListener.hpp
         src/Fibula/Console/ConsoleEvent.hpp
-        src/Fibula/Graphics/WindowAdapterInterface.hpp
-        src/Fibula/Graphics/Adapter/SDLWindowAdapter.cpp
-        src/Fibula/Graphics/Adapter/SDLWindowAdapter.hpp
+        src/Fibula/Graphics/Window/WindowAdapterInterface.hpp
+        src/Fibula/Graphics/Window/Adapter/SDLWindowAdapter.cpp
+        src/Fibula/Graphics/Window/Adapter/SDLWindowAdapter.hpp
         src/demo-game/Listeners/SDL/MousePositionListener.cpp
         src/demo-game/Listeners/SDL/MousePositionListener.hpp
         src/demo-game/Core/Kernel.cpp

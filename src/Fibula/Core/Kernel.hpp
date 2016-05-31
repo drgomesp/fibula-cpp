@@ -7,12 +7,14 @@ namespace Fibula {
     }
 
     namespace Graphics {
-        class WindowAdapterInterface;
+        namespace Window {
+            class WindowAdapterInterface;
+        }
     }
 }
 
 #include <memory>
-#include <Fibula/Graphics/WindowAdapterInterface.hpp>
+#include <Fibula/Graphics/Window/WindowAdapterInterface.hpp>
 #include <Fibula/EventDispatcher/Dispatcher.hpp>
 
 namespace Fibula {
@@ -25,7 +27,7 @@ namespace Fibula {
             std::string graphicsAdapter;
 
             EventDispatcher::Dispatcher dispatcher;
-            std::shared_ptr<Graphics::WindowAdapterInterface> window;
+            std::shared_ptr<Graphics::Window::WindowAdapterInterface> window;
         public:
             Kernel(std::string graphicsAdapter) : graphicsAdapter(graphicsAdapter)
             { }
