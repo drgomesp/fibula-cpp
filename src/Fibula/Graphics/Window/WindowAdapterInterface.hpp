@@ -53,6 +53,16 @@ namespace Fibula {
                 virtual void handleEvents() = 0;
                 virtual void render() = 0;
 
+                inline const unsigned int getWidth() const
+                {
+                    return width;
+                }
+
+                inline const unsigned int getHeight() const
+                {
+                    return height;
+                }
+
                 inline std::string getName()
                 {
                     return this->name;

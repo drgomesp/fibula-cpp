@@ -13,14 +13,15 @@ namespace Fibula {
         namespace TileMap {
 
             using string = std::string;
+            using vector = std::vector;
             using SPTile = std::shared_ptr<Tile>;
-            using TileVector = std::vector<SPTile>;
+            using TileVector = vector<SPTile>;
 
             class TileMapLayer
             {
                 const string &name;
                 bool visible;
-                TileVector tiles;
+                TileVector *tiles;
                 TileSet *tileSet;
 
             public:
@@ -29,10 +30,14 @@ namespace Fibula {
                       visible(visible),
                       tileSet(tileSet)
                 { }
+
+                ~TileMapLayer()
+                { }
+
+                void createTilesFromVector(const vector<unsigned int> &data);
             };
         }
     }
 }
-
 
 #endif //FIBULA_TILEMAPLAYER_HPP

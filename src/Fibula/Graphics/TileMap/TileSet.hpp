@@ -16,7 +16,6 @@ namespace Fibula {
                 const SDL_Texture *texture;
 
             public:
-
                 TileSet(const unsigned int width, const unsigned int height,
                         const unsigned int tileWidth, const unsigned int tileHeight,
                         const SDL_Texture *texture)
@@ -25,6 +24,31 @@ namespace Fibula {
                       tileHeight(tileHeight),
                       texture(texture)
                 { }
+
+                const unsigned int getWidth() const
+                {
+                    return width;
+                }
+
+                const unsigned int getHeight() const
+                {
+                    return height;
+                }
+
+                const unsigned int getTileWidth() const
+                {
+                    return tileWidth;
+                }
+
+                const unsigned int getTileHeight() const
+                {
+                    return tileHeight;
+                }
+
+                const SDL_Texture *getTexture() const
+                {
+                    return texture;
+                }
 
                 virtual ~TileSet()
                 { }

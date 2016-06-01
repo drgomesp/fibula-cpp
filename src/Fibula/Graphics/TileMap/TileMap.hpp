@@ -30,7 +30,7 @@ namespace Fibula {
                       height(height)
                 { }
 
-                virtual ~TileMap()
+                ~TileMap()
                 { }
             };
         }
