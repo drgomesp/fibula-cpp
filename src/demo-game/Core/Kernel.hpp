@@ -7,8 +7,10 @@ namespace Game {
     namespace Core {
         class Kernel : public Fibula::Core::Kernel
         {
+        protected:
+            const std::string &name;
         public:
-            Kernel(const std::string &graphicsAdapter);
+            Kernel(const std::string &name);
         };
     }
 }

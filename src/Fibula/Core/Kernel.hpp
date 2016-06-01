@@ -14,24 +14,24 @@ namespace Fibula {
 }
 
 #include <memory>
+
 #include <Fibula/Graphics/Window/WindowAdapterInterface.hpp>
 #include <Fibula/EventDispatcher/Dispatcher.hpp>
 
 namespace Fibula {
     namespace Core {
+
+        using WindowAdapterInterface = Fibula::Graphics::Window::WindowAdapterInterface;
+
         class Kernel
         {
         protected:
             bool running = false;
             bool booted = false;
-            std::string graphicsAdapter;
 
             EventDispatcher::Dispatcher dispatcher;
-            std::shared_ptr<Graphics::Window::WindowAdapterInterface> window;
+            std::shared_ptr<WindowAdapterInterface> window;
         public:
-            Kernel(std::string graphicsAdapter) : graphicsAdapter(graphicsAdapter)
-            { }
-
             void addListener(
                 const std::string &eventName,
                 std::shared_ptr<EventDispatcher::ListenerInterface> listener

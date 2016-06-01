@@ -12,6 +12,7 @@ namespace Fibula {
                 {
                 protected:
                     SDL_Window *window;
+                    std::shared_ptr<RendererAdapter> rendererAdapter;
                 public:
                     SDLWindowAdapter(
                         const std::string &title,
@@ -21,7 +22,13 @@ namespace Fibula {
                         Core::Kernel &kernel
                     );
 
-                    void handleEvents() override;
+                    virtual void handleEvents() override;
+                    virtual void render() override;
+
+                    inline SDL_Window *getWindowImpl()
+                    {
+                        return this->window;
+                    }
 
                     ~SDLWindowAdapter();
                 };

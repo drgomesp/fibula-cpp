@@ -2,6 +2,7 @@
 #include <memory>
 
 #include <Fibula/Graphics/Window/Adapter/SDLWindowAdapter.hpp>
+#include <Fibula/Graphics/Window/Adapter/SDLRendererAdapter.hpp>
 
 using namespace Fibula::Core;
 using namespace Fibula::Graphics::Window;
@@ -40,6 +41,7 @@ void Kernel::run()
     this->running = true;
 
     while (this->running) {
+        this->window->render();
         this->window->handleEvents();
     }
 }

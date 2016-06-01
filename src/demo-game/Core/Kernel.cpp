@@ -6,7 +6,7 @@
 using namespace Game::Core;
 using namespace Game::Listeners::SDL;
 
-Kernel::Kernel(const std::string &graphicsAdapter) : Fibula::Core::Kernel(graphicsAdapter)
+Kernel::Kernel(const std::string &name) : name(name)
 {
     std::shared_ptr<MousePositionListener> mousePositionListener = std::make_shared<MousePositionListener>(this);
     this->addListener("event.sdl", mousePositionListener);

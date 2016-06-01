@@ -4,6 +4,8 @@
 #include <string>
 #include <boost/shared_ptr.hpp>
 
+#include <Fibula/Graphics/Window/RendererAdapter.hpp>
+
 namespace Fibula {
     namespace Core {
         class Kernel;
@@ -16,6 +18,9 @@ namespace Fibula {
 namespace Fibula {
     namespace Graphics {
         namespace Window {
+
+            using RendererAdapter = Fibula::Graphics::Window::RendererAdapter;
+
             class WindowAdapterInterface
             {
             protected:
@@ -26,6 +31,7 @@ namespace Fibula {
 
                 EventDispatcher::Dispatcher &dispatcher;
                 Core::Kernel &kernel;
+                std::shared_ptr<RendererAdapter> rendererAdapter;
 
             public:
                 WindowAdapterInterface(
@@ -35,11 +41,17 @@ namespace Fibula {
                     const unsigned int height,
                     EventDispatcher::Dispatcher &dispatcher,
                     Core::Kernel &kernel
-                ) : name(name), title(title), width(width), height(height), dispatcher(dispatcher),
+                ) :
+                    name(name),
+                    title(title),
+                    width(width),
+                    height(height),
+                    dispatcher(dispatcher),
                     kernel(kernel)
                 { }
 
                 virtual void handleEvents() = 0;
+                virtual void render() = 0;
 
                 inline std::string getName()
                 {
