@@ -1,8 +1,6 @@
 #ifndef FIBULA_TILE_HPP
 #define FIBULA_TILE_HPP
 
-#include <tkDecls.h>
-
 namespace Fibula {
     namespace Graphics {
         namespace TileMap {
