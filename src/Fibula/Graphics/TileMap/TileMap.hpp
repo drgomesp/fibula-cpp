@@ -24,11 +24,18 @@ namespace Fibula {
                 LayerVector layers;
 
             public:
-                TileMap(const string &name, unsigned int width, unsigned int height)
-                    : name(name),
-                      width(width),
-                      height(height)
+                TileMap(const string &name, unsigned int width, unsigned int height) : name(name),
+                                                                                       width(width),
+                                                                                       height(
+                                                                                           height)
                 { }
+
+                void addLayer(SPLayer layer);
+
+                const LayerVector &getLayers() const
+                {
+                    return layers;
+                }
 
                 ~TileMap()
                 { }

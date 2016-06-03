@@ -2,7 +2,7 @@
 #include <Fibula/Bridge/EventDispatcher/SDLEvent.hpp>
 #include <Fibula/Bridge/EventDispatcher/SDLEventListener.hpp>
 #include <Fibula/Graphics/Window/Adapter/SDLWindowAdapter.hpp>
-#include <Fibula/Graphics/Window/Adapter/SDLRendererAdapter.hpp>
+#include <Fibula/Graphics/Window/Adapter/SFMLRendererAdapter.hpp>
 
 using namespace std;
 using namespace Fibula::Core;
@@ -16,7 +16,7 @@ SDLWindowAdapter::SDLWindowAdapter(
     const unsigned int height,
     Dispatcher &dispatcher,
     Kernel &kernel
-) : WindowAdapterInterface("Graphics::Adapter::SDLWindowAdapter", title, width, height, dispatcher, kernel)
+) : WindowAdapter("Graphics::Adapter::SDLWindowAdapter", title, width, height, dispatcher, kernel)
 {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         throw runtime_error("Failed to initialize SDL");
@@ -31,7 +31,7 @@ SDLWindowAdapter::SDLWindowAdapter(
         SDL_WINDOW_OPENGL
     );
 
-    this->rendererAdapter = std::make_shared<SDLRendererAdapter>(this);
+    this->rendererAdapter = std::make_shared<SFMLRendererAdapter>(this);
 
     if (NULL == this->window) {
         SDL_Quit();

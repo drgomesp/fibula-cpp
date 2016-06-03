@@ -13,12 +13,12 @@ namespace Fibula {
                 const unsigned int height;
                 const unsigned int tileWidth;
                 const unsigned int tileHeight;
-                const SDL_Texture *texture;
+                SDL_Texture *texture;
 
             public:
                 TileSet(const unsigned int width, const unsigned int height,
                         const unsigned int tileWidth, const unsigned int tileHeight,
-                        const SDL_Texture *texture)
+                        SDL_Texture *texture)
                     : width(width), height(height),
                       tileWidth(tileWidth),
                       tileHeight(tileHeight),
@@ -45,7 +45,7 @@ namespace Fibula {
                     return tileHeight;
                 }
 
-                const SDL_Texture *getTexture() const
+                SDL_Texture *getTexture()
                 {
                     return texture;
                 }

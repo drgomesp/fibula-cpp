@@ -29,10 +29,40 @@ namespace Fibula {
                       tileSet(tileSet)
                 { }
 
+                TileSet *getTileSet() const
+                {
+                    return tileSet;
+                }
+
+                void setTileSet(TileSet *tileSet)
+                {
+                    TileMapLayer::tileSet = tileSet;
+                }
+
+                const TileVector &getTiles() const
+                {
+                    return tiles;
+                }
+
+                void setTiles(const TileVector &tiles)
+                {
+                    TileMapLayer::tiles = tiles;
+                }
+
+                bool isVisible() const
+                {
+                    return visible;
+                }
+
+                void setVisible(bool visible)
+                {
+                    TileMapLayer::visible = visible;
+                }
+
                 ~TileMapLayer()
                 { }
 
-                void createTilesFromVector(const std::vector<unsigned int> &data);
+                void createTilesFromVector(const std::vector<int> &data);
             };
         }
     }

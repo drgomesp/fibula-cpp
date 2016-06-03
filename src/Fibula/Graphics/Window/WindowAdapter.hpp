@@ -21,7 +21,7 @@ namespace Fibula {
 
             using RendererAdapter = Fibula::Graphics::Window::RendererAdapter;
 
-            class WindowAdapterInterface
+            class WindowAdapter
             {
             protected:
                 std::string name;
@@ -34,7 +34,7 @@ namespace Fibula {
                 std::shared_ptr<RendererAdapter> rendererAdapter;
 
             public:
-                WindowAdapterInterface(
+                WindowAdapter(
                     std::string name,
                     const std::string &title,
                     const unsigned int width,
@@ -68,7 +68,7 @@ namespace Fibula {
                     return this->name;
                 }
 
-                virtual ~WindowAdapterInterface()
+                virtual ~WindowAdapter()
                 { }
             };
         }

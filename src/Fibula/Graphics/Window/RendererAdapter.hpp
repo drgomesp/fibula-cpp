@@ -1,5 +1,5 @@
-#ifndef FIBULA_RENDERERADAPTER_HPP
-#define FIBULA_RENDERERADAPTER_HPP
+#ifndef FIBULA_WINDOWRENDERERADAPTER_HPP
+#define FIBULA_WINDOWRENDERERADAPTER_HPP
 
 namespace Fibula {
     namespace Graphics {
@@ -16,6 +16,5 @@ namespace Fibula {
         }
     }
 }
-
 
 #endif //FIBULA_RENDERERADAPTER_HPP

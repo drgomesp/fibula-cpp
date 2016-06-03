@@ -1,8 +1,6 @@
 #include <iostream>
-#include <memory>
 
-#include <Fibula/Graphics/Window/Adapter/SDLWindowAdapter.hpp>
-#include <Fibula/Graphics/Window/Adapter/SDLRendererAdapter.hpp>
+#include <Fibula/Graphics/Window/Adapter/SFMLWindowAdapter.hpp>
 
 using namespace Fibula::Core;
 using namespace Fibula::Graphics::Window;
@@ -16,7 +14,7 @@ void Kernel::addListener(const std::string &eventName, std::shared_ptr<ListenerI
 
 void Kernel::bootstrap()
 {
-    std::shared_ptr<WindowAdapterInterface> window = std::make_shared<SDLWindowAdapter>(
+    std::shared_ptr<WindowAdapter> window = std::make_shared<SFMLWindowAdapter>(
         "Fibula Engine :: v1.0.0",
         1024,
         768,

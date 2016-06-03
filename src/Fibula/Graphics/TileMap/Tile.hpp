@@ -16,6 +16,21 @@ namespace Fibula {
                      const unsigned int position) : width(width), height(height), position(position)
                 { }
 
+                const unsigned int getWidth() const
+                {
+                    return width;
+                }
+
+                const unsigned int getHeight() const
+                {
+                    return height;
+                }
+
+                const unsigned int getPosition() const
+                {
+                    return position;
+                }
+
                 ~Tile()
                 { }
             };
