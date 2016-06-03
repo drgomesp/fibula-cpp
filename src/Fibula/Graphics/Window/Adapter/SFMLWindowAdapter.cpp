@@ -9,23 +9,22 @@ using namespace Fibula::EventDispatcher;
 using namespace Fibula::Graphics::Window::Adapter;
 
 SFMLWindowAdapter::SFMLWindowAdapter(
-    const std::string &title,
+    const string &title,
     const unsigned int width,
     const unsigned int height,
-    EventDispatcher::Dispatcher &dispatcher,
-    Kernel &kernel
-) : WindowAdapter("Graphics::Adapter::SFML", title, width, height, dispatcher, kernel)
+    shared_ptr<Dispatcher> dispatcher,
+    Kernel &kernel,
+    shared_ptr<RendererAdapter> renderer)
+    : WindowAdapter("SFML", title, width, height, dispatcher, kernel, renderer)
 {
-    std::shared_ptr<sf::RenderWindow> window = std::make_shared<sf::RenderWindow>(
+    this->window = std::make_shared<sf::RenderWindow>(
         sf::VideoMode(this->width, this->height),
         this->title
     );
 
-    std::shared_ptr<SFMLRendererAdapter> renderer = std::make_shared<SFMLRendererAdapter>();
-
-    this->window = window;
     this->renderer = renderer;
 }
+
 
 void SFMLWindowAdapter::handleEvents()
 {
@@ -44,7 +43,7 @@ void SFMLWindowAdapter::render()
 {
     this->window->clear();
 
-    this->window->draw(*this->renderer);
+    this->renderer->render(this->window.get());
 
     this->window->display();
 }

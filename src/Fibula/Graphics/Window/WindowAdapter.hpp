@@ -20,38 +20,43 @@ namespace Fibula {
     namespace Graphics {
         namespace Window {
 
+            using namespace std;
+            using Kernel = Fibula::Core::Kernel;
+            using Dispatcher = Fibula::EventDispatcher::Dispatcher;
             using RendererAdapter = Fibula::Graphics::Window::RendererAdapter;
 
             class WindowAdapter
             {
             protected:
-                std::string name;
+                string name;
                 const std::string title = "[Fibula Engine :: v1.0.0]";
                 const unsigned int width = 640;
                 const unsigned int height = 480;
 
-                EventDispatcher::Dispatcher &dispatcher;
-                Core::Kernel &kernel;
-                std::shared_ptr<RendererAdapter> renderer;
+                shared_ptr<Dispatcher> dispatcher;
+                Kernel &kernel;
+                shared_ptr<RendererAdapter> renderer;
 
             public:
                 WindowAdapter(
-                    std::string name,
-                    const std::string &title,
+                    const string &name,
+                    const string &title,
                     const unsigned int width,
                     const unsigned int height,
-                    EventDispatcher::Dispatcher &dispatcher,
-                    Core::Kernel &kernel
-                ) :
-                    name(name),
-                    title(title),
-                    width(width),
-                    height(height),
-                    dispatcher(dispatcher),
-                    kernel(kernel)
+                    shared_ptr<Dispatcher> dispatcher,
+                    Kernel &kernel,
+                    shared_ptr<RendererAdapter> renderer)
+                    : name(name),
+                      title(title),
+                      width(width),
+                      height(height),
+                      dispatcher(dispatcher),
+                      kernel(kernel),
+                      renderer(renderer)
                 { }
 
                 virtual void handleEvents() = 0;
+
                 virtual void render() = 0;
 
                 inline unsigned int getWidth()

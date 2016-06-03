@@ -15,10 +15,10 @@ namespace Fibula {
                     SFMLRendererAdapter()
                     { }
 
+                    virtual void render(sf::RenderWindow *window) override;
+
                     ~SFMLRendererAdapter()
                     { }
-                private:
-                    virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
                 };
             }
         }

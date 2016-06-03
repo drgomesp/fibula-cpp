@@ -52,11 +52,6 @@ set(SOURCE_FILES
     src/demo-game/Core/Kernel.cpp src/demo-game/Core/Kernel.hpp
 
     src/Fibula/Graphics/Window/RendererAdapter.hpp
-    src/Fibula/Graphics/TileMap/RendererAdapter.hpp
-    src/Fibula/Graphics/TileMap/RendererAdapter.cpp
-    src/Fibula/Graphics/TileMap/RendererAdapter.hpp
-    src/Fibula/Graphics/TileMap/Renderer/OrthogonalRenderer.cpp
-    src/Fibula/Graphics/TileMap/Renderer/OrthogonalRenderer.hpp
     src/Fibula/Graphics/Window/Adapter/SFMLWindowAdapter.cpp
     src/Fibula/Graphics/Window/Adapter/SFMLWindowAdapter.hpp
     src/Fibula/Graphics/Window/Adapter/SFMLRendererAdapter.cpp

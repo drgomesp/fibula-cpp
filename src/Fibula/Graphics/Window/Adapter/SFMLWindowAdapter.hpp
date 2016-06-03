@@ -8,22 +8,25 @@ namespace Fibula {
     namespace Graphics {
         namespace Window {
             namespace Adapter {
+                using namespace std;
                 using WindowAdapter = Fibula::Graphics::Window::WindowAdapter;
 
                 class SFMLWindowAdapter : public WindowAdapter
                 {
                 protected:
-                    std::shared_ptr<sf::RenderWindow> window;
+                    shared_ptr<sf::RenderWindow> window;
+
                 public:
                     SFMLWindowAdapter(
-                        const std::string &title,
+                        const string &title,
                         const unsigned int width,
                         const unsigned int height,
-                        EventDispatcher::Dispatcher &dispatcher,
-                        Core::Kernel &kernel
-                    );
+                        shared_ptr<Dispatcher> dispatcher,
+                        Kernel &kernel,
+                        shared_ptr<RendererAdapter> renderer);
 
                     virtual void handleEvents() override;
+
                     virtual void render() override;
 
                     inline sf::RenderWindow *getWindowImpl()

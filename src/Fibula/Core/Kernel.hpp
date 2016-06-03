@@ -21,6 +21,8 @@ namespace Fibula {
 namespace Fibula {
     namespace Core {
 
+        using namespace std;
+        using Dispatcher = Fibula::EventDispatcher::Dispatcher;
         using WindowAdapter = Fibula::Graphics::Window::WindowAdapter;
 
         class Kernel
@@ -29,8 +31,8 @@ namespace Fibula {
             bool running = false;
             bool booted = false;
 
-            EventDispatcher::Dispatcher dispatcher;
-            std::shared_ptr<WindowAdapter> window;
+            shared_ptr<Dispatcher> dispatcher;
+            shared_ptr<WindowAdapter> window;
         public:
             void addListener(
                 const std::string &eventName,

@@ -3,15 +3,18 @@
 
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Transformable.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 namespace Fibula {
     namespace Graphics {
         namespace Window {
-            class RendererAdapter : public sf::Drawable, public sf::Transformable
+            class RendererAdapter
             {
             public:
                 RendererAdapter()
                 { }
+
+                virtual void render(sf::RenderWindow *window) = 0;
 
                 virtual ~RendererAdapter()
                 { }
