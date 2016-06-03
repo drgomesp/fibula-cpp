@@ -14,7 +14,7 @@ void Kernel::addListener(const std::string &eventName, std::shared_ptr<ListenerI
 
 void Kernel::bootstrap()
 {
-    std::shared_ptr<WindowAdapter> window = std::make_shared<SFMLWindowAdapter>(
+    std::shared_ptr<SFMLWindowAdapter> window = std::make_shared<SFMLWindowAdapter>(
         "Fibula Engine :: v1.0.0",
         1024,
         768,
@@ -39,8 +39,8 @@ void Kernel::run()
     this->running = true;
 
     while (this->running) {
-        this->window->render();
         this->window->handleEvents();
+        this->window->render();
     }
 }
 

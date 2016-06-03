@@ -19,7 +19,7 @@ namespace Fibula {
             class TileMapLayer
             {
                 const string &name;
-                bool visible;
+                bool visible = true;
                 TileVector tiles;
                 TileSet *tileSet;
             public:

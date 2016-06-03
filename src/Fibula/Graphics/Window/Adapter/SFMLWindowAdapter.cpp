@@ -1,4 +1,5 @@
 #include "SFMLWindowAdapter.hpp"
+#include "SFMLRendererAdapter.hpp"
 
 #include <Fibula/Core/Kernel.hpp>
 #include <Fibula/EventDispatcher/Dispatcher.hpp>
@@ -20,7 +21,10 @@ SFMLWindowAdapter::SFMLWindowAdapter(
         this->title
     );
 
+    std::shared_ptr<SFMLRendererAdapter> renderer = std::make_shared<SFMLRendererAdapter>();
+
     this->window = window;
+    this->renderer = renderer;
 }
 
 void SFMLWindowAdapter::handleEvents()
@@ -38,7 +42,11 @@ void SFMLWindowAdapter::handleEvents()
 
 void SFMLWindowAdapter::render()
 {
+    this->window->clear();
 
+    this->window->draw(*this->renderer);
+
+    this->window->display();
 }
 
 SFMLWindowAdapter::~SFMLWindowAdapter()

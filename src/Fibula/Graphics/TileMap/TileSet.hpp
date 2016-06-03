@@ -1,7 +1,7 @@
 #ifndef FIBULA_TILESET_HPP
 #define FIBULA_TILESET_HPP
 
-#include <SDL2/SDL.h>
+#include <SFML/Graphics/Texture.hpp>
 
 namespace Fibula {
     namespace Graphics {
@@ -13,12 +13,12 @@ namespace Fibula {
                 const unsigned int height;
                 const unsigned int tileWidth;
                 const unsigned int tileHeight;
-                SDL_Texture *texture;
+                sf::Texture *texture;
 
             public:
                 TileSet(const unsigned int width, const unsigned int height,
                         const unsigned int tileWidth, const unsigned int tileHeight,
-                        SDL_Texture *texture)
+                        sf::Texture *texture)
                     : width(width), height(height),
                       tileWidth(tileWidth),
                       tileHeight(tileHeight),
@@ -45,7 +45,7 @@ namespace Fibula {
                     return tileHeight;
                 }
 
-                SDL_Texture *getTexture()
+                sf::Texture *getTexture()
                 {
                     return texture;
                 }

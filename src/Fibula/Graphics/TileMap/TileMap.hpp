@@ -6,6 +6,7 @@
 #include <vector>
 
 #include <Fibula/Graphics/TileMap/TileMapLayer.hpp>
+#include <SFML/Graphics/Drawable.hpp>
 
 namespace Fibula {
     namespace Graphics {
@@ -15,7 +16,7 @@ namespace Fibula {
             using SPLayer= std::shared_ptr<TileMapLayer>;
             using LayerVector = std::vector<SPLayer>;
 
-            class TileMap
+            class TileMap : sf::Drawable
             {
             protected:
                 const string &name;
@@ -24,10 +25,13 @@ namespace Fibula {
                 LayerVector layers;
 
             public:
-                TileMap(const string &name, unsigned int width, unsigned int height) : name(name),
-                                                                                       width(width),
-                                                                                       height(
-                                                                                           height)
+                TileMap(const string &name, unsigned int width, unsigned int height)
+                    : name(name),
+                      width(width),
+                      height(height)
+                { }
+
+                virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const override
                 { }
 
                 void addLayer(SPLayer layer);

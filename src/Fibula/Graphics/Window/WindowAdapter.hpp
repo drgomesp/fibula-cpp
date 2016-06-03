@@ -14,6 +14,7 @@ namespace Fibula {
 
 #include <Fibula/Core/Kernel.hpp>
 #include <Fibula/EventDispatcher/Dispatcher.hpp>
+#include <SFML/Graphics/Drawable.hpp>
 
 namespace Fibula {
     namespace Graphics {
@@ -31,7 +32,7 @@ namespace Fibula {
 
                 EventDispatcher::Dispatcher &dispatcher;
                 Core::Kernel &kernel;
-                std::shared_ptr<RendererAdapter> rendererAdapter;
+                std::shared_ptr<RendererAdapter> renderer;
 
             public:
                 WindowAdapter(
@@ -53,12 +54,12 @@ namespace Fibula {
                 virtual void handleEvents() = 0;
                 virtual void render() = 0;
 
-                inline const unsigned int getWidth() const
+                inline unsigned int getWidth()
                 {
                     return width;
                 }
 
-                inline const unsigned int getHeight() const
+                inline unsigned int getHeight()
                 {
                     return height;
                 }
