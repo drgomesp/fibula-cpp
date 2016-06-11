@@ -1,7 +1,10 @@
 #include <math.h>
 
+#include <Fibula/Graphics/Texture.hpp>
 #include <Fibula/Graphics/TileMap/TileSet.hpp>
 
+using namespace std;
+using namespace Fibula::Graphics;
 using namespace Fibula::Graphics::TileMap;
 
 ivec2 TileSet::getCoordinatesFromId(unsigned int id)
@@ -16,4 +19,19 @@ ivec2 TileSet::getCoordinatesFromId(unsigned int id)
     coordinates.y = row * this->tileHeight;
 
     return coordinates;
+}
+
+unsigned int TileSet::getTileWidth() const
+{
+    return tileWidth;
+}
+
+unsigned int TileSet::getTileHeight() const
+{
+    return tileHeight;
+}
+
+const shared_ptr<Texture> &TileSet::getTexture() const
+{
+    return texture;
 }

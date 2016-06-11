@@ -20,11 +20,16 @@ namespace Fibula {
                 TileSet(
                     const shared_ptr<Texture> &texture,
                     unsigned int tileWidth,
-                    unsigned int tileHeight)
-                    : Sprite(texture), tileWidth(tileWidth), tileHeight(tileHeight)
-                { }
+                    unsigned int tileHeight
+                ) : Sprite(texture->getWidth(), texture->getHeight(), 0, 0, texture),
+                    tileWidth(tileWidth), tileHeight(tileHeight)
+                {}
 
                 ivec2 getCoordinatesFromId(unsigned int id);
+                unsigned int getTileWidth() const;
+                unsigned int getTileHeight() const;
+
+                const shared_ptr<Texture> &getTexture() const;
             };
         }
     }

@@ -15,12 +15,22 @@ namespace Fibula {
 
         class Sprite : public Drawable
         {
-        private:
-            shared_ptr<const sf::Sprite> _sfml_sprite;
         protected:
+            unsigned int width;
+            unsigned int height;
+            unsigned int offsetX;
+            unsigned int offsetY;
+            shared_ptr<const sf::Sprite> _sfml_sprite;
             shared_ptr<Texture> texture;
         public:
-            Sprite(const shared_ptr<Texture> &texture);
+            Sprite(
+                unsigned int width,
+                unsigned int height,
+                unsigned int offsetX,
+                unsigned int offsetY,
+                const shared_ptr<Texture> &texture
+            );
+
             virtual void draw(sf::RenderWindow *window) override;
         };
     }
