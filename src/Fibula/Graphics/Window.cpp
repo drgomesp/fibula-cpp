@@ -36,8 +36,7 @@ void Window::handleEvents()
 {
     sf::Event event;
 
-    while (this->_sfml_window->pollEvent(event))
-    {
+    while (this->_sfml_window->pollEvent(event)) {
         if (event.type == sf::Event::Closed) {
             this->_sfml_window->close();
         } else {

@@ -43,6 +43,7 @@ void Kernel::run()
 void Kernel::terminate()
 {
     this->running = false;
+    this->window->close();
 }
 
 void Kernel::handleEvents()

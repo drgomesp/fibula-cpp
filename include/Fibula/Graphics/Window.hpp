@@ -60,6 +60,7 @@ namespace Fibula {
             void handleEvents();
             void handleInputs();
             void update();
+            void close();
 
             void addDrawable(shared_ptr<Drawable> drawable);
         };

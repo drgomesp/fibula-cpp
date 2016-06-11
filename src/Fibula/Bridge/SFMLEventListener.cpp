@@ -15,6 +15,12 @@ LISTENER_RESPONSE SFMLEventListener::handleEvent(shared_ptr<const Event> event) 
     }
 
     const SFMLPayload _sfml_payload = _sfml_event->getPayload();
+    sf::Event e = _sfml_payload.getOriginalEvent();
+
+    if (e.type == sf::Event::Closed) {
+        this->kernel->terminate();
+        return LISTENER_RESPONSE::SUCCESS;
+    }
 
     switch (_sfml_payload.getOriginalEvent().type) {
         default:
