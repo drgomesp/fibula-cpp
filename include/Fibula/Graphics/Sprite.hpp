@@ -20,16 +20,25 @@ namespace Fibula {
             unsigned int height;
             unsigned int offsetX;
             unsigned int offsetY;
-            shared_ptr<const sf::Sprite> _sfml_sprite;
+            unsigned int x;
+            unsigned int y;
             shared_ptr<Texture> texture;
+            shared_ptr<const sf::Sprite> _sfml_sprite;
         public:
             Sprite(
                 unsigned int width,
                 unsigned int height,
                 unsigned int offsetX,
                 unsigned int offsetY,
+                unsigned int x,
+                unsigned int y,
                 const shared_ptr<Texture> &texture
             );
+
+            const shared_ptr<Texture> &getTexture() const
+            {
+                return texture;
+            }
 
             virtual void draw(sf::RenderWindow *window) override;
         };

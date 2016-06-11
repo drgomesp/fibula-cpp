@@ -30,8 +30,3 @@ unsigned int TileSet::getTileHeight() const
 {
     return tileHeight;
 }
-
-const shared_ptr<Texture> &TileSet::getTexture() const
-{
-    return texture;
-}

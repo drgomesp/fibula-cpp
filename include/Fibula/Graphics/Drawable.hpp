@@ -4,6 +4,8 @@
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
+#include <Fibula/Graphics/Window.hpp>
+
 namespace Fibula {
     namespace Graphics {
 
@@ -11,7 +13,8 @@ namespace Fibula {
 
         class Drawable
         {
-        public:
+            friend class Window;
+        protected:
             virtual void draw(sf::RenderWindow *window) = 0;
         };
     }

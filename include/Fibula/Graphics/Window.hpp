@@ -10,6 +10,10 @@ namespace Fibula {
     namespace Core {
         class Kernel;
     }
+
+    namespace Graphics {
+        class Drawable;
+    }
 }
 
 #include <Fibula/Core/Kernel.hpp>

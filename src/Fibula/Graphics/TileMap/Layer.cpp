@@ -13,14 +13,14 @@ bool Layer::load(vector<int> data)
             ivec2 coordinates = this->tileSet->getCoordinatesFromId(*it - 1);
 
             shared_ptr<Tile> tile = make_shared<Tile>(
-                this->getTileSet()->getTexture(),
+                this->tileSet->getTexture(),
                 *it,
-                this->getTileSet()->getTileWidth(),
-                this->getTileSet()->getTileHeight(),
+                this->tileSet->getTileWidth(),
+                this->tileSet->getTileHeight(),
                 coordinates.x,
                 coordinates.y,
-                r,
-                c
+                r * this->tileSet->getTileHeight(),
+                c * this->tileSet->getTileWidth()
             );
 
             this->tiles.push_back(tile);

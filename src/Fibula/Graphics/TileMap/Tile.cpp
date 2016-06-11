@@ -13,6 +13,8 @@ Tile::Tile(
     unsigned int offsetY,
     unsigned int x,
     unsigned int y
-) : Sprite(width, height, offsetX, offsetY, texture), id(id), width(width), height(height), offsetX(offsetX), offsetY(offsetY), x(x), y(y)
+) : Sprite(width, height, offsetX, offsetY, x, y, texture), id(id)
 {
 }
+
+
