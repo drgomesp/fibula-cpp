@@ -26,7 +26,7 @@ void Window::setUp(Kernel *kernel)
 void Window::draw()
 {
     for (shared_ptr<Drawable> drawable : this->drawables) {
-        this->_sfml_window->clear();
+        this->_sfml_window->clear(sf::Color::White);
         drawable->draw(this->shared_from_this());
         this->_sfml_window->display();
     }

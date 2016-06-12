@@ -35,18 +35,10 @@ namespace Fibula {
                 );
 
                 bool load(vector<unsigned int> data);
-
                 virtual void draw(shared_ptr<Window> window) override;
-
-                shared_ptr<TileSet> getTileSet()
-                {
-                    return this->tileSet;
-                }
-
-                const vector<shared_ptr<Tile>> &getTiles() const
-                {
-                    return tiles;
-                }
+            private:
+                void loadIsometric(vector<unsigned int> data);
+                void loadOrthogonal(vector<unsigned int> data);
             };
         }
     }
