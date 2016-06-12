@@ -1,13 +1,17 @@
 #ifndef FIBULA_TILEMAP_HPP
 #define FIBULA_TILEMAP_HPP
 
+#include <Fibula/Events/Cargo.hpp>
 #include <Fibula/Graphics/Drawable.hpp>
 #include <Fibula/Graphics/TileMap/Layer.hpp>
 
 namespace Fibula {
     namespace Graphics {
+
+        using Cargo = Fibula::Events::Cargo;
+
         namespace TileMap {
-            class Map : public Drawable
+            class Map : public Drawable, public Cargo
             {
             protected:
                 const string &name;
@@ -26,9 +30,8 @@ namespace Fibula {
                 );
 
                 virtual void draw(shared_ptr<Window> window) override;
-
-            public:
-                virtual void loadLayer(shared_ptr<Layer> layer, vector<unsigned int> &data) = 0;
+                virtual void loadLayer(shared_ptr<Layer> layer, const vector<unsigned int> &data) = 0;
+                virtual int getTileFromCoordinates(unsigned int x, unsigned int y) = 0;
             };
         }
     }

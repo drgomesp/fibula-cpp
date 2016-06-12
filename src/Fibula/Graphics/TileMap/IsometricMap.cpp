@@ -2,11 +2,11 @@
 
 using namespace Fibula::Graphics::TileMap;
 
-void IsometricMap::loadLayer(shared_ptr<Layer> layer, vector<unsigned int> &data)
+void IsometricMap::loadLayer(shared_ptr<Layer> layer, const vector<unsigned int> &data)
 {
     shared_ptr<TileSet> tileSet = layer->getTileSet();
 
-    vector<unsigned int>::iterator it = data.begin();
+    auto it = data.begin();
 
     for (int c = 0; c < this->widthInTiles; ++c) {
         for (int r = 0; r < this->heightInTiles; ++r, it++) {
@@ -32,4 +32,9 @@ void IsometricMap::loadLayer(shared_ptr<Layer> layer, vector<unsigned int> &data
     }
 
     this->layers.push_back(layer);
+}
+
+int IsometricMap::getTileFromCoordinates(unsigned int x, unsigned int y)
+{
+
 }
