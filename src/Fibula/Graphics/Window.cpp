@@ -27,7 +27,7 @@ void Window::draw()
 {
     for (shared_ptr<Drawable> drawable : this->drawables) {
         this->_sfml_window->clear();
-        drawable->draw(this->_sfml_window.get());
+        drawable->draw(this->shared_from_this());
         this->_sfml_window->display();
     }
 }

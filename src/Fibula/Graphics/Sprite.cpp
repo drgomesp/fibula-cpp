@@ -18,7 +18,7 @@ Sprite::Sprite(
     this->_sfml_sprite = make_shared<sf::Sprite>(_sfml_sprite);
 }
 
-void Sprite::draw(sf::RenderWindow *window)
+void Sprite::draw(shared_ptr<Window> window)
 {
-    window->draw(*this->_sfml_sprite);
+    window->get_sfml_window()->draw(*this->_sfml_sprite);
 }

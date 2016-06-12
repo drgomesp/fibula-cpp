@@ -10,7 +10,7 @@ void TileMap::addLayer(shared_ptr<Layer> layer, vector<unsigned int> data)
     }
 }
 
-void TileMap::draw(sf::RenderWindow *window)
+void TileMap::draw(shared_ptr<Fibula::Graphics::Window> window)
 {
     for (shared_ptr<Layer> layer : this->layers) {
         layer->draw(window);

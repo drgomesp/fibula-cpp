@@ -7,22 +7,32 @@
 namespace Fibula {
     namespace Graphics {
         namespace TileMap {
+            enum class Projection
+            {
+                ORTHOGONAL = 1,
+                ISOMETRIC = 2
+            };
+
             class TileMap : public Drawable
             {
             protected:
+                Projection projection;
                 const string &name;
                 int width;
                 int height;
                 vector<shared_ptr<Layer>> layers;
             public:
                 TileMap(
+                    Projection projection,
                     const string &name,
                     int width,
                     int height
-                ) : name(name), width(width), height(height)
+                ) : projection(projection), name(name), width(width), height(height)
                 {}
 
-                virtual void draw(sf::RenderWindow *window) override;
+                virtual void draw(shared_ptr<Window> window) override;
+
+            public:
                 void addLayer(shared_ptr<Layer> layer, vector<unsigned int> data);
             };
         }

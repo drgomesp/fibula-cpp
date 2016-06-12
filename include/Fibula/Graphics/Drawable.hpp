@@ -13,9 +13,8 @@ namespace Fibula {
 
         class Drawable
         {
-            friend class Window;
-        protected:
-            virtual void draw(sf::RenderWindow *window) = 0;
+        public:
+            virtual void draw(shared_ptr<Window> window) = 0;
         };
     }
 }

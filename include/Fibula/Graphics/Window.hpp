@@ -29,8 +29,10 @@ namespace Fibula {
         using Dispatcher = Fibula::Events::Dispatcher;
         using DrawablesVector = vector<shared_ptr<Drawable>>;
 
-        class Window
+        class Window : public enable_shared_from_this<Window>
         {
+            friend class Sprite;
+
         private:
             Dispatcher &dispatcher;
             shared_ptr<sf::RenderWindow> _sfml_window;

@@ -30,7 +30,7 @@ bool Layer::load(vector<unsigned int> data)
     return true;
 }
 
-void Layer::draw(sf::RenderWindow *window)
+void Layer::draw(shared_ptr<Fibula::Graphics::Window> window)
 {
     for (shared_ptr<Tile> tile : this->tiles) {
         tile->draw(window);

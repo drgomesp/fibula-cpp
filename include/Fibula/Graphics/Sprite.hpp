@@ -40,7 +40,7 @@ namespace Fibula {
                 return texture;
             }
 
-            virtual void draw(sf::RenderWindow *window) override;
+            virtual void draw(shared_ptr<Window> window) override;
         };
     }
 }

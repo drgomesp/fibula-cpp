@@ -37,7 +37,7 @@ namespace Fibula {
 
                 bool load(vector<unsigned int> data);
 
-                virtual void draw(sf::RenderWindow *window) override;
+                virtual void draw(shared_ptr<Window> window) override;
 
                 shared_ptr<TileSet> getTileSet()
                 {
