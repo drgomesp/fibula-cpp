@@ -7,28 +7,23 @@
 namespace Fibula {
     namespace Graphics {
         namespace TileMap {
-            enum class Projection
-            {
-                ORTHOGONAL = 1,
-                ISOMETRIC = 2
-            };
-
             class TileMap : public Drawable
             {
             protected:
-                Projection projection;
                 const string &name;
-                int width;
-                int height;
+                unsigned int widthInTiles;
+                unsigned int heightInTiles;
+                unsigned int tileWidth;
+                unsigned int tileHeight;
                 vector<shared_ptr<Layer>> layers;
             public:
                 TileMap(
-                    Projection projection,
                     const string &name,
-                    int width,
-                    int height
-                ) : projection(projection), name(name), width(width), height(height)
-                {}
+                    unsigned int widthInTiles,
+                    unsigned int heightInTiles,
+                    unsigned int tileWidth,
+                    unsigned int tileHeight
+                );
 
                 virtual void draw(shared_ptr<Window> window) override;
 

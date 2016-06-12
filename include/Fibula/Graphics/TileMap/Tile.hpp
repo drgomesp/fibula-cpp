@@ -11,14 +11,12 @@ namespace Fibula {
                 unsigned int id;
             public:
                 Tile(
-                    const shared_ptr<Texture> &texture,
-                    unsigned int id,
-                    unsigned int width,
-                    unsigned int height,
+                    const dvec2 &size,
+                    const dvec2 &position,
                     unsigned int offsetX,
                     unsigned int offsetY,
-                    unsigned int x,
-                    unsigned int y
+                    unsigned int id,
+                    const shared_ptr<Texture> &texture
                 );
             };
         }

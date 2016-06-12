@@ -16,22 +16,16 @@ namespace Fibula {
         class Sprite : public Drawable
         {
         protected:
-            unsigned int width;
-            unsigned int height;
             unsigned int offsetX;
             unsigned int offsetY;
-            unsigned int x;
-            unsigned int y;
             shared_ptr<Texture> texture;
             shared_ptr<const sf::Sprite> _sfml_sprite;
         public:
             Sprite(
-                unsigned int width,
-                unsigned int height,
+                const dvec2 &size,
+                const dvec2 &position,
                 unsigned int offsetX,
                 unsigned int offsetY,
-                unsigned int x,
-                unsigned int y,
                 const shared_ptr<Texture> &texture
             );
 

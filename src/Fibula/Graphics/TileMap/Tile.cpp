@@ -5,16 +5,11 @@ using namespace Fibula::Graphics;
 using namespace Fibula::Graphics::TileMap;
 
 Tile::Tile(
-    const shared_ptr<Texture> &texture,
-    unsigned int id,
-    unsigned int width,
-    unsigned int height,
+    const dvec2 &size,
+    const dvec2 &position,
     unsigned int offsetX,
     unsigned int offsetY,
-    unsigned int x,
-    unsigned int y
-) : Sprite(width, height, offsetX, offsetY, x, y, texture), id(id)
-{
-}
-
-
+    unsigned int id,
+    const shared_ptr<Texture> &texture
+) : Sprite(size, position, offsetX, offsetY, texture), id(id)
+{}

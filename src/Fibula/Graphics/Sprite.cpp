@@ -3,18 +3,15 @@
 using namespace Fibula::Graphics;
 
 Sprite::Sprite(
-    unsigned int width,
-    unsigned int height,
-    unsigned int offsetX,
-    unsigned int offsetY,
-    unsigned int x,
-    unsigned int y,
-    const shared_ptr<Texture> &texture)
-    : width(width), height(height), offsetX(offsetX), offsetY(offsetY), texture(texture), x(x), y(y)
+    const dvec2 &size,
+    const dvec2 &position,
+    unsigned int offsetX, unsigned int offsetY,
+    const shared_ptr<Texture> &texture
+) : Drawable(size, position), offsetX(offsetX), offsetY(offsetY), texture(texture)
 {
-    sf::IntRect rect(offsetX, offsetY, width, height);
+    sf::IntRect rect(offsetX, offsetY, size.x, size.y);
     sf::Sprite _sfml_sprite(*texture->get_sfml_texture(), rect);
-    _sfml_sprite.setPosition(x, y);
+    _sfml_sprite.setPosition(position.x, position.y);
     this->_sfml_sprite = make_shared<sf::Sprite>(_sfml_sprite);
 }
 

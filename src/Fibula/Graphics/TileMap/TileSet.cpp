@@ -30,3 +30,8 @@ unsigned int TileSet::getTileHeight() const
 {
     return tileHeight;
 }
+
+Projection TileSet::getProjection() const
+{
+    return projection;
+}

@@ -18,8 +18,8 @@ namespace Fibula {
             {
             protected:
                 const string &name;
-                unsigned int width;
-                unsigned int height;
+                unsigned int widthInTiles;
+                unsigned int heightInTiles;
                 bool visible = true;
                 float opacity = 1.0f;
                 vector<shared_ptr<Tile>> tiles;
@@ -27,13 +27,12 @@ namespace Fibula {
             public:
                 Layer(
                     const string &name,
-                    unsigned int width,
-                    unsigned int height,
+                    unsigned int widthInTiles,
+                    unsigned int heightInTiles,
                     bool visible,
                     float opacity,
                     const shared_ptr<TileSet> &tileSet
-                ) : name(name), width(width), height(height), visible(visible), opacity(opacity), tileSet(tileSet)
-                {}
+                );
 
                 bool load(vector<unsigned int> data);
 
