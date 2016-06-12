@@ -20,19 +20,10 @@ void Dispatcher::addListener(const std::string &eventName, std::shared_ptr<Liste
 
 void Dispatcher::dispatchEvent(const std::string &eventName, std::shared_ptr<const Event> event) const
 {
-    ListenerMap::const_iterator it = this->searchListenersByPrefix(eventName);
-    /* You can write something like this instead of those iterators and stuff
     for (auto item : listeners) {
         auto candidates = item.second;
+
         for (auto listener : candidates) {
-            LISTENER_RESPONSE response = listener->handleEvent(event);
-        }
-    }*/
-
-    for (it; it != this->listeners.end(); ++it) {
-        ListenerVector candidates = it->second;
-
-        for (std::shared_ptr<const Listener> listener: candidates) {
             LISTENER_RESPONSE response = listener->handleEvent(event);
         }
     }

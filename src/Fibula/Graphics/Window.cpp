@@ -66,6 +66,11 @@ void Window::update()
 
 }
 
+void Window::close()
+{
+    this->_sfml_window->close();
+}
+
 bool Window::isOpen()
 {
     return this->_sfml_window->isOpen();
