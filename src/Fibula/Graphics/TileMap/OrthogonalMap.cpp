@@ -2,7 +2,7 @@
 
 using namespace Fibula::Graphics::TileMap;
 
-void OrthogonalMap::loadLayer(shared_ptr<Layer> layer, vector<unsigned int> data)
+void OrthogonalMap::loadLayer(shared_ptr<Layer> layer, vector<unsigned int> &data)
 {
     shared_ptr<TileSet> tileSet = layer->getTileSet();
 
@@ -11,7 +11,7 @@ void OrthogonalMap::loadLayer(shared_ptr<Layer> layer, vector<unsigned int> data
     for (int c = 0; c < this->widthInTiles; ++c) {
         for (int r = 0; r < this->heightInTiles; ++r, it++) {
             unsigned int id = *it;
-            ivec2 pixelCoordinates = tileSet->getCoordinatesFromId(id);
+            ivec2 pixelCoordinates = tileSet->getCoordinatesFromId(id == 0 ? id : id - 1);
 
             int positionX = r * tileSet->getTileHeight();
             int positionY = c * tileSet->getTileWidth();

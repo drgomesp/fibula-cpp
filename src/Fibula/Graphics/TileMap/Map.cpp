@@ -20,13 +20,6 @@ Map::Map(
     Drawable::size.y = tileWidth * widthInTiles;
 }
 
-void Map::loadLayer(shared_ptr<Layer> layer, vector<unsigned int> data)
-{
-    if (layer->load(data)) {
-        this->layers.push_back(layer);
-    }
-}
-
 void Map::draw(shared_ptr<Fibula::Graphics::Window> window)
 {
     for (auto layer : this->layers) {

@@ -15,7 +15,7 @@ namespace Fibula {
 
         class Drawable
         {
-        protected:
+        public:
             dvec2 size;
             dvec2 position;
 
@@ -25,6 +25,7 @@ namespace Fibula {
                 const dvec2 &position
             ) : size(size), position(position)
             {}
+
 
             virtual void draw(shared_ptr<Window> window) = 0;
         };

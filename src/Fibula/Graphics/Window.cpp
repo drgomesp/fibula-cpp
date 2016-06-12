@@ -41,11 +41,13 @@ void Window::setUp(Kernel *kernel)
 
 void Window::draw()
 {
+    this->_sfml_window->clear();
+
     for (shared_ptr<Drawable> drawable : this->drawables) {
-        this->_sfml_window->clear(sf::Color::White);
         drawable->draw(this->shared_from_this());
-        this->_sfml_window->display();
     }
+
+    this->_sfml_window->display();
 }
 
 void Window::handleEvents()

@@ -2,7 +2,7 @@
 
 using namespace Fibula::Graphics::TileMap;
 
-void IsometricMap::loadLayer(shared_ptr<Layer> layer, vector<unsigned int> data)
+void IsometricMap::loadLayer(shared_ptr<Layer> layer, vector<unsigned int> &data)
 {
     shared_ptr<TileSet> tileSet = layer->getTileSet();
 

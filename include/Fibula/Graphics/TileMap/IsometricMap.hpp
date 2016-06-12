@@ -18,7 +18,7 @@ namespace Fibula {
                 {}
 
             public:
-                virtual void loadLayer(shared_ptr<Layer> layer, vector<unsigned int> data) override;
+                virtual void loadLayer(shared_ptr<Layer> layer, vector<unsigned int> &data) override;
             };
         }
     }
