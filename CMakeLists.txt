@@ -1,12 +1,20 @@
 cmake_minimum_required(VERSION 3.5)
+
 project(Fibula)
 
-message(STATUS "Fibula: v2.0.0")
-
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -framework OpenGl -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system -lGLEW -std=c++14 -Wall -pedantic")
 
-set(FIBULA_INCLUDE_DIR "include")
+# Getting git version look into GitVersion.cmake to understand pretty usefull
+# It will get version from git repository tags so you always will know which version you have
+# simply just creating a tag in git repository
+include(GitVersion)
+get_git_version(GIT_VERSION)
+string(REGEX MATCH "[0-9]+\\.[0-9]+\\.[0-9]+" VERSION ${GIT_VERSION})
+message(STATUS "Fibula Version: ${VERSION}")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -framework OpenGL -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system -lGLEW -std=c++14 -Wall -pedantic")
+
+set(FIBULA_INCLUDE_DIR include)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_LIST_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_LIST_DIR})
 
@@ -18,6 +26,7 @@ file(GLOB CORE ${FIBULA_INCLUDE_DIR}/Fibula/Core/*.hpp)
 file(GLOB EVENTS ${FIBULA_INCLUDE_DIR}/Fibula/Events/*.hpp)
 file(GLOB GRAPHICS ${FIBULA_INCLUDE_DIR}/Fibula/Graphics/*.hpp)
 file(GLOB GRAPHICS_TILEMAP ${FIBULA_INCLUDE_DIR}/Fibula/Graphics/TileMap/*.hpp)
+file(GLOB HEADERS ${FIBULA_INCLUDE_DIR}/Fibula/*.hpp)
 file(GLOB_RECURSE SOURCE_LIST src/*.cpp)
 
 set(HEADER_LIST
@@ -26,6 +35,7 @@ set(HEADER_LIST
     ${EVENTS}
     ${GRAPHICS}
     ${GRAPHICS_TILEMAP}
+    ${HEADERS}
     )
 
 # GLM
@@ -70,6 +80,7 @@ install(FILES ${CORE} DESTINATION include/${PROJECT_NAME}/Core/)
 install(FILES ${EVENTS} DESTINATION include/${PROJECT_NAME}/Events/)
 install(FILES ${GRAPHICS} DESTINATION include/${PROJECT_NAME}/Graphics/)
 install(FILES ${GRAPHICS_TILEMAP} DESTINATION include/${PROJECT_NAME}/Graphics/TileMap/)
+install(FILES ${HEADERS} DESTINATION include/${PROJECT_NAME}/)
 
 add_custom_target(install_${PROJECT_NAME}
                   make install
