@@ -28,7 +28,6 @@ function(get_git_version var)
                 WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
                 OUTPUT_VARIABLE GIT_HASH
                 ERROR_QUIET)
-        string(STRIP ${GIT_HASH} GIT_HASH)
 
         # Work out if the repository is dirty
         execute_process(COMMAND ${GIT_EXECUTABLE} update-index -q --refresh

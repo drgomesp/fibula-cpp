@@ -3,14 +3,14 @@
 using namespace std;
 using namespace Fibula::Graphics::TileMap;
 
-bool Layer::load(vector<int> data)
+bool Layer::load(vector<unsigned int> data)
 {
-    vector<int>::iterator it = data.begin();
+    vector<unsigned int>::iterator it = data.begin();
 
     for (int c = 0; c < this->width; ++c) {
         for (int r = 0; r < this->height; ++r, ++it) {
-            // NOTE: Tiled Map Editor detail (start from 1 instead of 0)
-            ivec2 coordinates = this->tileSet->getCoordinatesFromId(*it - 1);
+            // NOTE: Tiled Map Editor detail (when different than 0, start from 1)
+            ivec2 coordinates = this->tileSet->getCoordinatesFromId((*it) == 0 ? (*it) : *it - 1);
 
             shared_ptr<Tile> tile = make_shared<Tile>(
                 this->tileSet->getTexture(),

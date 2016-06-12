@@ -16,7 +16,7 @@ namespace Fibula {
         public:
             virtual LISTENER_RESPONSE handleEvent(shared_ptr<const Event> event) const override;
 
-            SFMLEventListener(const shared_ptr<Kernel> &kernel) : KernelAwareListener(kernel)
+            SFMLEventListener(Kernel *kernel) : KernelAwareListener(kernel)
             { }
         };
     }

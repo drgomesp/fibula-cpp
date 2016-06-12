@@ -15,7 +15,7 @@ Window::Window(unsigned int width, unsigned int height, const string &title, Dis
     this->_sfml_window = make_shared<sf::RenderWindow>(sf::VideoMode(width, height), title);
 }
 
-void Window::setUp(shared_ptr<Kernel> kernel)
+void Window::setUp(Kernel *kernel)
 {
     std::shared_ptr<SFMLEventListener> listener = make_shared<SFMLEventListener>(kernel);
     this->dispatcher.addListener("event.sfml", listener);
@@ -37,21 +37,18 @@ void Window::handleEvents()
     sf::Event event;
 
     while (this->_sfml_window->pollEvent(event)) {
-        if (event.type == sf::Event::Closed) {
-            this->_sfml_window->close();
-        } else {
-            for (shared_ptr<Drawable> drawable : this->drawables) {
-                std::shared_ptr<SFMLPayload> payload = make_shared<SFMLPayload>(event);
 
-                if (Cargo *cargo = dynamic_cast<Cargo *>(drawable.get())) {
-                    payload->setCargo(cargo);
-                } else {
-                    payload->setCargo(nullptr);
-                }
+        for (shared_ptr<Drawable> drawable : this->drawables) {
+            std::shared_ptr<SFMLPayload> payload = make_shared<SFMLPayload>(event);
 
-                std::shared_ptr<SFMLEvent> e = make_shared<SFMLEvent>(*payload);
-                this->dispatcher.dispatchEvent("event.sfml", e);
+            if (Cargo *cargo = dynamic_cast<Cargo *>(drawable.get())) {
+                payload->setCargo(cargo);
+            } else {
+                payload->setCargo(nullptr);
             }
+
+            std::shared_ptr<SFMLEvent> e = make_shared<SFMLEvent>(*payload);
+            this->dispatcher.dispatchEvent("event.sfml", e);
         }
     }
 }

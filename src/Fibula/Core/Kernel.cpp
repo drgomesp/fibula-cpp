@@ -1,5 +1,7 @@
 #include <Fibula/Core/Kernel.hpp>
 
+#include <SFML/System/Clock.hpp>
+
 using namespace Fibula::Core;
 using namespace Fibula::Events;
 
@@ -15,13 +17,12 @@ void Kernel::bootstrap()
 
     printf("Engine successfully started :: Fibula v1.0.0\n");
 
+    this->window->setUp(this);
     this->booted = true;
 }
 
 void Kernel::registerListeners()
-{
-
-}
+{ }
 
 void Kernel::run()
 {
@@ -30,11 +31,15 @@ void Kernel::run()
 
     this->running = true;
 
+    sf::Clock clock;
+
     while (this->running && this->window->isOpen()) {
+        sf::Time elapsed = clock.restart();
+
         this->handleEvents();
         this->handleInputs();
-        this->window->draw();
         this->update();
+        this->window->draw();
     }
 
     this->terminate();

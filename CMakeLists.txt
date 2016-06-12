@@ -10,7 +10,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 include(GitVersion)
 get_git_version(GIT_VERSION)
 string(REGEX MATCH "[0-9]+\\.[0-9]+\\.[0-9]+" VERSION ${GIT_VERSION})
-message(STATUS "Fibula Version: ${VERSION}")
+message(STATUS "Fibula :: v${VERSION}")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -framework OpenGL -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system -lGLEW -std=c++14 -Wall -pedantic")
 

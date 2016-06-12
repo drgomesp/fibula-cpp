@@ -54,7 +54,7 @@ namespace Fibula {
                 Dispatcher &dispatcher
             );
 
-            void setUp(shared_ptr<Kernel> kernel);
+            void setUp(Kernel *kernel);
             void draw();
             bool isOpen();
             void handleEvents();

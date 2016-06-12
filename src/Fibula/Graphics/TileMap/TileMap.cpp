@@ -3,7 +3,7 @@
 using namespace std;
 using namespace Fibula::Graphics::TileMap;
 
-void TileMap::addLayer(shared_ptr<Layer> layer, vector<int> data)
+void TileMap::addLayer(shared_ptr<Layer> layer, vector<unsigned int> data)
 {
     if (layer->load(data)) {
         this->layers.push_back(layer);

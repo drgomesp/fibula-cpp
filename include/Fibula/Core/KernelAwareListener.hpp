@@ -11,9 +11,9 @@ namespace Fibula {
         class KernelAwareListener : public Listener
         {
         protected:
-            shared_ptr<Kernel> kernel;
+            Kernel *kernel;
         public:
-            KernelAwareListener(shared_ptr<Kernel> kernel) : kernel(kernel)
+            KernelAwareListener(Kernel *kernel) : kernel(kernel)
             { }
 
             virtual ~KernelAwareListener()

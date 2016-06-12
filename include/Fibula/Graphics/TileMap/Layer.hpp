@@ -35,7 +35,7 @@ namespace Fibula {
                 ) : name(name), width(width), height(height), visible(visible), opacity(opacity), tileSet(tileSet)
                 {}
 
-                bool load(vector<int> data);
+                bool load(vector<unsigned int> data);
 
                 virtual void draw(sf::RenderWindow *window) override;
 

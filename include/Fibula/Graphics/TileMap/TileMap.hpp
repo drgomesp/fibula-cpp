@@ -23,7 +23,7 @@ namespace Fibula {
                 {}
 
                 virtual void draw(sf::RenderWindow *window) override;
-                void addLayer(shared_ptr<Layer> layer, vector<int> data);
+                void addLayer(shared_ptr<Layer> layer, vector<unsigned int> data);
             };
         }
     }
