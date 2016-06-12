@@ -93,3 +93,13 @@ void Layer::draw(shared_ptr<Fibula::Graphics::Window> window)
         tile->draw(window);
     }
 }
+
+const shared_ptr<TileSet> &Layer::getTileSet() const
+{
+    return tileSet;
+}
+
+void Layer::addTile(shared_ptr<Tile> tile)
+{
+    this->tiles.push_back(tile);
+}

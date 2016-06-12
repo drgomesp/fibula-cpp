@@ -4,6 +4,7 @@
 #include <vector>
 
 #include <glm/vec2.hpp>
+#include <SFML/OpenGL.hpp>
 #include <SFML/Graphics.hpp>
 
 namespace Fibula {

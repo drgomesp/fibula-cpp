@@ -7,7 +7,7 @@
 namespace Fibula {
     namespace Graphics {
         namespace TileMap {
-            class TileMap : public Drawable
+            class Map : public Drawable
             {
             protected:
                 const string &name;
@@ -17,7 +17,7 @@ namespace Fibula {
                 unsigned int tileHeight;
                 vector<shared_ptr<Layer>> layers;
             public:
-                TileMap(
+                Map(
                     const string &name,
                     unsigned int widthInTiles,
                     unsigned int heightInTiles,
@@ -28,7 +28,7 @@ namespace Fibula {
                 virtual void draw(shared_ptr<Window> window) override;
 
             public:
-                void addLayer(shared_ptr<Layer> layer, vector<unsigned int> data);
+                virtual void loadLayer(shared_ptr<Layer> layer, vector<unsigned int> data) = 0;
             };
         }
     }

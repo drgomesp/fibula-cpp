@@ -14,10 +14,17 @@ LISTENER_RESPONSE SFMLEventListener::handleEvent(shared_ptr<const Event> event) 
         return LISTENER_RESPONSE::FAILURE;
     }
 
-    switch (_sfml_event->getPayload().getOriginalEvent().type) {
+    auto e = _sfml_event->getPayload().getOriginalEvent();
+
+    switch (e.type) {
         case (sf::Event::Closed):
             this->kernel->terminate();
             return LISTENER_RESPONSE::SUCCESS;
+        case (sf::Event::KeyReleased):
+            if (e.key.code == sf::Keyboard::Escape) {
+                this->kernel->terminate();
+                return LISTENER_RESPONSE::SUCCESS;
+            }
         default:
             return LISTENER_RESPONSE::FAILURE;
     }

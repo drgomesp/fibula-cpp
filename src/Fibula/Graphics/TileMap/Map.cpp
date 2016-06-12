@@ -1,9 +1,9 @@
-#include <Fibula/Graphics/TileMap/TileMap.hpp>
+#include <Fibula/Graphics/TileMap/Map.hpp>
 
 using namespace std;
 using namespace Fibula::Graphics::TileMap;
 
-TileMap::TileMap(
+Map::Map(
     const string &name,
     unsigned int widthInTiles,
     unsigned int heightInTiles,
@@ -20,16 +20,16 @@ TileMap::TileMap(
     Drawable::size.y = tileWidth * widthInTiles;
 }
 
-void TileMap::addLayer(shared_ptr<Layer> layer, vector<unsigned int> data)
+void Map::loadLayer(shared_ptr<Layer> layer, vector<unsigned int> data)
 {
     if (layer->load(data)) {
         this->layers.push_back(layer);
     }
 }
 
-void TileMap::draw(shared_ptr<Fibula::Graphics::Window> window)
+void Map::draw(shared_ptr<Fibula::Graphics::Window> window)
 {
-    for (shared_ptr<Layer> layer : this->layers) {
+    for (auto layer : this->layers) {
         layer->draw(window);
     }
 }

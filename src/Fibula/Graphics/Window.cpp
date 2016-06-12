@@ -12,7 +12,23 @@ Window::Window(unsigned int width, unsigned int height, const string &title, Dis
       title(title),
       dispatcher(dispatcher)
 {
-    this->_sfml_window = make_shared<sf::RenderWindow>(sf::VideoMode(width, height), title);
+    sf::ContextSettings settings;
+    settings.depthBits = 24;
+    settings.stencilBits = 8;
+    settings.antialiasingLevel = 4;
+
+    this->_sfml_window = make_shared<sf::RenderWindow>(
+        sf::VideoMode(width, height),
+        title,
+        sf::Style::Default,
+        settings
+    );
+
+    this->_sfml_window->setVerticalSyncEnabled(true);
+
+    glEnable(GL_TEXTURE_2D);
+
+    printf("Initialized OpenGL context :: version %s\n", glGetString(GL_VERSION));
 }
 
 void Window::setUp(Kernel *kernel)
