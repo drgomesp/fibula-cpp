@@ -35,6 +35,8 @@ namespace Fibula {
             void run();
             void terminate();
 
+            const shared_ptr<Window> &getWindow() const;
+
             /* Game specific functions */
             virtual void bootstrap();
             virtual void registerListeners();

@@ -33,6 +33,10 @@ Window::Window(unsigned int width, unsigned int height, const string &title, Dis
 
 void Window::setUp(Kernel *kernel)
 {
+    auto _sfml_view = make_shared<sf::View>(sf::FloatRect(0, 0, width, height));
+    this->camera = make_shared<Camera>(this->shared_from_this(), _sfml_view);
+    this->_sfml_window->setView(*_sfml_view);
+
     std::shared_ptr<SFMLEventListener> listener = make_shared<SFMLEventListener>(kernel);
     this->dispatcher.addListener("event.sfml", listener);
 
@@ -94,4 +98,9 @@ bool Window::isOpen()
 void Window::addDrawable(shared_ptr<Drawable> drawable)
 {
     this->drawables.push_back(drawable);
+}
+
+const shared_ptr<Camera> &Window::getCamera() const
+{
+    return camera;
 }

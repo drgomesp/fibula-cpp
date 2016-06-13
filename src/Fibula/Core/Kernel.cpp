@@ -64,3 +64,8 @@ void Kernel::update()
 {
     this->window->update();
 }
+
+const shared_ptr<Window> &Kernel::getWindow() const
+{
+    return window;
+}

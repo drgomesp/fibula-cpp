@@ -13,12 +13,14 @@ namespace Fibula {
     }
 
     namespace Graphics {
+        class Camera;
         class Drawable;
     }
 }
 
 #include <Fibula/Core/Kernel.hpp>
 #include <Fibula/Events/Dispatcher.hpp>
+#include <Fibula/Graphics/Camera.hpp>
 #include <Fibula/Graphics/Drawable.hpp>
 
 namespace Fibula {
@@ -32,6 +34,7 @@ namespace Fibula {
 
         class Window : public enable_shared_from_this<Window>
         {
+            friend class Camera;
             friend class Sprite;
 
         private:
@@ -48,6 +51,7 @@ namespace Fibula {
             unsigned int width;
             unsigned int height;
             const string title;
+            shared_ptr<Camera> camera;
 
         public:
             Window(
@@ -56,6 +60,8 @@ namespace Fibula {
                 const string &title,
                 Dispatcher &dispatcher
             );
+
+            const shared_ptr<Camera> &getCamera() const;
 
             void setUp(Kernel *kernel);
             void draw();
