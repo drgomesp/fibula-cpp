@@ -8,7 +8,7 @@ using namespace Fibula::Events;
 void Kernel::bootstrap()
 {
     this->dispatcher = make_shared<Dispatcher>();
-    this->window = make_shared<Window>(800, 600, "Fibula :: SFML", *this->dispatcher);
+    this->window = make_shared<Window>(1280, 768, "Fibula :: SFML", *this->dispatcher);
 
     if (NULL == this->window) {
         throw runtime_error("Failed to create window");

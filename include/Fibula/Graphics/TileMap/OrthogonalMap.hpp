@@ -19,7 +19,7 @@ namespace Fibula {
 
             public:
                 virtual void loadLayer(shared_ptr<Layer> layer, const vector<unsigned int> &data) override;
-                virtual int getTileFromCoordinates(unsigned int x, unsigned int y) override;
+                virtual ivec2 getTileCoordinatesFromPixelCoordinates(unsigned int x, unsigned int y) override;
             };
         }
     }

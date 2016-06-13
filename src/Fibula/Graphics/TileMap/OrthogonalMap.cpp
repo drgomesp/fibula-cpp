@@ -1,5 +1,8 @@
 #include <Fibula/Graphics/TileMap/OrthogonalMap.hpp>
 
+#include <math.h>
+
+using namespace glm;
 using namespace Fibula::Graphics::TileMap;
 
 void OrthogonalMap::loadLayer(shared_ptr<Layer> layer, const vector<unsigned int> &data)
@@ -32,7 +35,10 @@ void OrthogonalMap::loadLayer(shared_ptr<Layer> layer, const vector<unsigned int
     this->layers.push_back(layer);
 }
 
-int OrthogonalMap::getTileFromCoordinates(unsigned int x, unsigned int y)
+ivec2 OrthogonalMap::getTileCoordinatesFromPixelCoordinates(unsigned int x, unsigned int y)
 {
-    return ((x / this->tileHeight) * (y / this->tileWidth));
+    int worldX = (int) floor(x / this->tileHeight);
+    int worldY = (int) floor(y / this->tileWidth);
+
+    return ivec2(worldX, worldY);
 }

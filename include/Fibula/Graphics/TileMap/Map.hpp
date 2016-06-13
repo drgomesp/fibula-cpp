@@ -1,6 +1,7 @@
 #ifndef FIBULA_TILEMAP_HPP
 #define FIBULA_TILEMAP_HPP
 
+#include <glm/vec2.hpp>
 #include <Fibula/Events/Cargo.hpp>
 #include <Fibula/Graphics/Drawable.hpp>
 #include <Fibula/Graphics/TileMap/Layer.hpp>
@@ -31,7 +32,7 @@ namespace Fibula {
 
                 virtual void draw(shared_ptr<Window> window) override;
                 virtual void loadLayer(shared_ptr<Layer> layer, const vector<unsigned int> &data) = 0;
-                virtual int getTileFromCoordinates(unsigned int x, unsigned int y) = 0;
+                virtual ivec2 getTileCoordinatesFromPixelCoordinates(unsigned int x, unsigned int y) = 0;
             };
         }
     }

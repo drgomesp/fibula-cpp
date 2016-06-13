@@ -1,14 +1,9 @@
 #include <Fibula/Bridge/SFMLEventListener.hpp>
-
 #include <Fibula/Bridge/SFMLEvent.hpp>
 
 using namespace std;
 using namespace Fibula::Bridge;
 using namespace Fibula::Events;
-
-// NOTE: temporary
-#include <Fibula/Graphics/TileMap/Map.hpp>
-using namespace Fibula::Graphics::TileMap;
 
 LISTENER_RESPONSE SFMLEventListener::handleEvent(shared_ptr<const Event> event) const
 {
@@ -29,11 +24,8 @@ LISTENER_RESPONSE SFMLEventListener::handleEvent(shared_ptr<const Event> event) 
                 this->kernel->terminate();
                 return LISTENER_RESPONSE::SUCCESS;
             }
-        case sf::Event::MouseMoved:
-            if (Map *map = dynamic_cast<Map *>(event->getPayload().getCargo())) {
-                int tile = map->getTileFromCoordinates((unsigned int) e.mouseMove.x, (unsigned int) e.mouseMove.y);
-                printf("Tile number %i\n", tile);
-            }
+        case sf::Event::Resized:
+
         default:
             return LISTENER_RESPONSE::FAILURE;
     }

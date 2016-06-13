@@ -57,7 +57,7 @@ else ()
 endif ()
 
 # SFML
-find_package(SFML 2.2 REQUIRED)
+find_package(SFML 2.3 REQUIRED)
 if (NOT SFML_FOUND)
     message(SEND_ERROR "Failed to find SFML 2")
     return()
