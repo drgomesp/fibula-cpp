@@ -32,7 +32,7 @@ namespace Fibula {
 
                 virtual void draw(shared_ptr<Window> window) override;
                 virtual void loadLayer(shared_ptr<Layer> layer, const vector<unsigned int> &data) = 0;
-                virtual ivec2 getTileCoordinatesFromPixelCoordinates(unsigned int x, unsigned int y) = 0;
+                virtual ivec2 getCoordinatesFromPixels(unsigned int x, unsigned int y) = 0;
             };
         }
     }

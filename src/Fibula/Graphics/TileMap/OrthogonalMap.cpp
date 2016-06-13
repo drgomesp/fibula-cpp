@@ -35,7 +35,7 @@ void OrthogonalMap::loadLayer(shared_ptr<Layer> layer, const vector<unsigned int
     this->layers.push_back(layer);
 }
 
-ivec2 OrthogonalMap::getTileCoordinatesFromPixelCoordinates(unsigned int x, unsigned int y)
+ivec2 OrthogonalMap::getCoordinatesFromPixels(unsigned int x, unsigned int y)
 {
     int worldX = (int) floor(x / this->tileHeight);
     int worldY = (int) floor(y / this->tileWidth);

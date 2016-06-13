@@ -24,8 +24,6 @@ LISTENER_RESPONSE SFMLEventListener::handleEvent(shared_ptr<const Event> event) 
                 this->kernel->terminate();
                 return LISTENER_RESPONSE::SUCCESS;
             }
-        case sf::Event::Resized:
-
         default:
             return LISTENER_RESPONSE::FAILURE;
     }

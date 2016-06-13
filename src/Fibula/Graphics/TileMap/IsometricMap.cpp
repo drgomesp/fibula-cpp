@@ -34,7 +34,7 @@ void IsometricMap::loadLayer(shared_ptr<Layer> layer, const vector<unsigned int>
     this->layers.push_back(layer);
 }
 
-ivec2 IsometricMap::getTileCoordinatesFromPixelCoordinates(unsigned int x, unsigned int y)
+ivec2 IsometricMap::getCoordinatesFromPixels(unsigned int x, unsigned int y)
 {
     return ivec2(-1, -1);
 }
