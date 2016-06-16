@@ -1,0 +1,46 @@
+{ "height":5,
+ "layers":[
+        {
+         "data":[2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+         "height":5,
+         "name":"Tile Layer 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":5,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 147, 0, 0, 0, 146, 0, 0, 0, 145, 0, 0, 0, 157, 0, 0, 0, 156, 0, 0, 0, 155, 0, 0],
+         "height":5,
+         "name":"Tile Layer 2",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":5,
+         "x":0,
+         "y":0
+        }],
+ "nextobjectid":1,
+ "orientation":"isometric",
+ "renderorder":"left-down",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "columns":10,
+         "firstgid":1,
+         "image":"..\/..\/..\/Downloads\/iso-64x64-outside.png",
+         "imageheight":1024,
+         "imagewidth":640,
+         "margin":0,
+         "name":"iso-64x64-outside",
+         "spacing":0,
+         "tilecount":160,
+         "tileheight":64,
+         "tilewidth":64
+        }],
+ "tilewidth":64,
+ "version":1,
+ "width":5
+}
